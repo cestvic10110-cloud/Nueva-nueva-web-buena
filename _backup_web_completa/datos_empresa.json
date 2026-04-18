@@ -1,0 +1,21 @@
+{
+  "empresa": "Cestería Vicent, S.L.",
+  "nif": "B46301503",
+  "fundacion": 1969,
+  "descripcion_corta": "Fabricante de cestas de mimbre al por mayor. Más de 50 años de tradición artesanal al servicio de empresas.",
+  "contacto": {
+    "telefono": "+34 679 28 61 78",
+    "email": "cesteriavicent@cesteriavicent.es",
+    "whatsapp": "+34 679 28 61 78",
+    "horario": "Lunes a Viernes 9:00 – 19:00 h"
+  },
+  "ubicacion": {
+    "direccion": "C/ Leonardo Carreres, 24",
+    "codigo_postal": "46812",
+    "poblacion": "Aielo de Malferit",
+    "provincia": "Valencia",
+    "pais": "España"
+  },
+  "redes_sociales": {},
+  "modelo_negocio": "B2B exclusivo (sin venta a particulares)"
+}

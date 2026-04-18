@@ -1,0 +1,2009 @@
+[
+  {
+    "id": "1003",
+    "name": "1003",
+    "category": "oportunidades",
+    "price": "Consultar",
+    "image": "/Rincon Oportunidades/1003-1.png",
+    "dimensions": "Consultar medidas",
+    "variants": []
+  },
+  {
+    "id": "1004",
+    "name": "1004",
+    "category": "oportunidades",
+    "price": "Consultar",
+    "image": "/Rincon Oportunidades/1004..png",
+    "dimensions": "Consultar medidas",
+    "variants": []
+  },
+  {
+    "id": "1005",
+    "name": "1005",
+    "category": "oportunidades",
+    "price": "Consultar",
+    "image": "/Rincon Oportunidades/1005..png",
+    "dimensions": "Consultar medidas",
+    "variants": []
+  },
+  {
+    "id": "2012",
+    "name": "NAVIDEÑA MIMBRE NOGAL",
+    "category": "cestas-navidenas",
+    "price": "Consultar",
+    "image": "/Cestas Navideñas/2012.png",
+    "dimensions": "Varias medidas disponibles",
+    "variants": [
+      {
+        "reference": "2012/1",
+        "name": "NAVIDEÑA MIMBRE NOGAL Nº1",
+        "dimensions": "55 X 30 X 18/55"
+      },
+      {
+        "reference": "2012/2",
+        "name": "NAVIDEÑA MIMBRE NOGAL Nº2",
+        "dimensions": "60 X 35 X 20/60"
+      },
+      {
+        "reference": "2012/3",
+        "name": "NAVIDEÑA MIMBRE NOGAL Nº3",
+        "dimensions": "65 X 40 X 24/65"
+      }
+    ]
+  },
+  {
+    "id": "2015",
+    "name": "NAVIDEÑA COLOR BLANCO NACIONAL",
+    "category": "cestas-navidenas",
+    "price": "Consultar",
+    "image": "/Cestas Navideñas/2015.png",
+    "dimensions": "60 X 35 X 20/60",
+    "variants": [
+      {
+        "reference": "2015",
+        "name": "NAVIDEÑA COLOR BLANCO NACIONAL",
+        "dimensions": "60 X 35 X 20/60"
+      }
+    ]
+  },
+  {
+    "id": "2016",
+    "name": "NAVIDEÑA MIMBRE NACIONAL",
+    "category": "cestas-navidenas",
+    "price": "Consultar",
+    "image": "/Cestas Navideñas/2016.png",
+    "dimensions": "Varias medidas disponibles",
+    "variants": [
+      {
+        "reference": "2016/1",
+        "name": "NAVIDEÑA MIMBRE NACIONAL Nº1",
+        "dimensions": "55 x 30 x 16/52"
+      },
+      {
+        "reference": "2016/2",
+        "name": "NAVIDEÑA MIMBRE NACIONAL Nº2",
+        "dimensions": "59 x 34 x 18/57"
+      },
+      {
+        "reference": "2016/3",
+        "name": "NAVIDEÑA MIMBRE NACIONAL Nº3",
+        "dimensions": "65 X 40 X 24/65"
+      }
+    ]
+  },
+  {
+    "id": "2017",
+    "name": "NAVIDEÑA PLATA METAL",
+    "category": "cestas-navidenas",
+    "price": "Consultar",
+    "image": "/Cestas Navideñas/2017.png",
+    "dimensions": "60 X 35 X 20/60",
+    "variants": [
+      {
+        "reference": "2017",
+        "name": "NAVIDEÑA PLATA METAL",
+        "dimensions": "60 X 35 X 20/60"
+      }
+    ]
+  },
+  {
+    "id": "2500",
+    "name": "NAVIDEÑA REPIE NACIONAL",
+    "category": "cestas-navidenas",
+    "price": "Consultar",
+    "image": "/Cestas Navideñas/2500.png",
+    "dimensions": "70 X 40 X 25/80",
+    "variants": [
+      {
+        "reference": "2500",
+        "name": "NAVIDEÑA REPIE NACIONAL Nº1",
+        "dimensions": "70 X 40 X 25/80"
+      }
+    ]
+  },
+  {
+    "id": "4220",
+    "name": "BANDEJA PVC BLANCA",
+    "category": "bandejas",
+    "price": "Consultar",
+    "image": "/Bandejas/4220.png",
+    "dimensions": "25 X 15 X 5",
+    "variants": [
+      {
+        "reference": "4220",
+        "name": "BANDEJA PVC BLANCA",
+        "dimensions": "25 X 15 X 5"
+      }
+    ]
+  },
+  {
+    "id": "4224",
+    "name": "BANDEJA PVC MARRÓN",
+    "category": "bandejas",
+    "price": "Consultar",
+    "image": "/Bandejas/4224.png",
+    "dimensions": "33 X 26 X 6",
+    "variants": [
+      {
+        "reference": "4224",
+        "name": "BANDEJA PVC MARRÓN",
+        "dimensions": "33 X 26 X 6"
+      }
+    ]
+  },
+  {
+    "id": "4231",
+    "name": "BANDEJA SEAGRASS",
+    "category": "bandejas",
+    "price": "Consultar",
+    "image": "/Bandejas/4231.png",
+    "dimensions": "40 x 30 x 9",
+    "variants": [
+      {
+        "reference": "4231",
+        "name": "BANDEJA SEAGRASS",
+        "dimensions": "40 x 30 x 9"
+      }
+    ]
+  },
+  {
+    "id": "4330",
+    "name": "BANDEJA PVC NOGAL",
+    "category": "bandejas",
+    "price": "Consultar",
+    "image": "/Bandejas/4330.png",
+    "dimensions": "42 x 32 x 8",
+    "variants": [
+      {
+        "reference": "4330",
+        "name": "BANDEJA PVC NOGAL",
+        "dimensions": "42 x 32 x 8"
+      }
+    ]
+  },
+  {
+    "id": "4331",
+    "name": "BANDEJA MIMBRE ASAS MADERA",
+    "category": "bandejas",
+    "price": "Consultar",
+    "image": "/Bandejas/4331.png",
+    "dimensions": "40 X 30 X 8",
+    "variants": [
+      {
+        "reference": "4331",
+        "name": "BANDEJA MIMBRE ASAS MADERA",
+        "dimensions": "40 X 30 X 8"
+      }
+    ]
+  },
+  {
+    "id": "4332",
+    "name": "BANDEJA MIMBRE OVAL FORRO",
+    "category": "bandejas",
+    "price": "Consultar",
+    "image": "/Bandejas/4332.png",
+    "dimensions": "40 X 30 X 10",
+    "variants": [
+      {
+        "reference": "4332",
+        "name": "BANDEJA MIMBRE OVAL FORRO",
+        "dimensions": "40 X 30 X 10"
+      }
+    ]
+  },
+  {
+    "id": "4333",
+    "name": "BANDEJA BLANCA FORRADA",
+    "category": "bandejas",
+    "price": "Consultar",
+    "image": "/Bandejas/4333.png",
+    "dimensions": "40 X 30 X 10",
+    "variants": [
+      {
+        "reference": "4333",
+        "name": "BANDEJA BLANCA FORRADA",
+        "dimensions": "40 X 30 X 10"
+      }
+    ]
+  },
+  {
+    "id": "4334",
+    "name": "BANDEJA CASTAÑO FORRADA ASAS MADERA",
+    "category": "bandejas",
+    "price": "Consultar",
+    "image": "/Bandejas/4334.png",
+    "dimensions": "40 X 30 X 10",
+    "variants": [
+      {
+        "reference": "4334",
+        "name": "BANDEJA CASTAÑO FORRADA ASAS MADERA",
+        "dimensions": "40 X 30 X 10"
+      }
+    ]
+  },
+  {
+    "id": "4335",
+    "name": "BANDEJA FORJA FORRADA",
+    "category": "forja",
+    "price": "Consultar",
+    "image": "/Forja/4335.png",
+    "dimensions": "47 X 33 X 8",
+    "variants": [
+      {
+        "reference": "4335",
+        "name": "BANDEJA FORJA FORRADA",
+        "dimensions": "47 X 33 X 8"
+      }
+    ]
+  },
+  {
+    "id": "4337",
+    "name": "BANDEJA SEAGRASS",
+    "category": "bandejas",
+    "price": "Consultar",
+    "image": "/Bandejas/4337.png",
+    "dimensions": "40 X 30 X 10",
+    "variants": [
+      {
+        "reference": "4337",
+        "name": "BANDEJA SEAGRASS",
+        "dimensions": "40 X 30 X 10"
+      }
+    ]
+  },
+  {
+    "id": "4338",
+    "name": "BANDEJA NOGAL ASA MADERA",
+    "category": "bandejas",
+    "price": "Consultar",
+    "image": "/Bandejas/4338.png",
+    "dimensions": "Varias medidas disponibles",
+    "variants": [
+      {
+        "reference": "4338/1",
+        "name": "BANDEJA NOGAL ASA MADERA Nº1",
+        "dimensions": "55 X 35 X 10"
+      },
+      {
+        "reference": "4338/2",
+        "name": "BANDEJA NOGAL ASA MADERA Nº2",
+        "dimensions": "65 X 40 X 11"
+      },
+      {
+        "reference": "4338/3",
+        "name": "BANDEJA NOGAL ASA MADERA Nº3",
+        "dimensions": "75 X 45 X 11"
+      }
+    ]
+  },
+  {
+    "id": "4339",
+    "name": "BANDEJA JAMONERA ANCHA NACIONAL",
+    "category": "bandejas",
+    "price": "Consultar",
+    "image": "/Bandejas/4339.png",
+    "dimensions": "75 X 40 X 8",
+    "variants": [
+      {
+        "reference": "4339",
+        "name": "BANDEJA JAMONERA ANCHA NACIONAL Nº2",
+        "dimensions": "75 X 40 X 8"
+      }
+    ]
+  },
+  {
+    "id": "4340",
+    "name": "BANDEJA METAL NEGRO",
+    "category": "forja",
+    "price": "Consultar",
+    "image": "/Forja/4340.png",
+    "dimensions": "45 X 30 X 10",
+    "variants": [
+      {
+        "reference": "4340",
+        "name": "BANDEJA METAL NEGRO",
+        "dimensions": "45 X 30 X 10"
+      }
+    ]
+  },
+  {
+    "id": "4370",
+    "name": "BANDEJA FORRADA Nº 1",
+    "category": "bandejas",
+    "price": "Consultar",
+    "image": "/Bandejas/4370.png",
+    "dimensions": "Varias medidas disponibles",
+    "variants": [
+      {
+        "reference": "4370/1",
+        "name": "BANDEJA FORRADA Nº 1",
+        "dimensions": "55 X 35 X 10"
+      },
+      {
+        "reference": "4370/2",
+        "name": "BANDEJA FORRADA Nº 2",
+        "dimensions": "60 X 40 X 10"
+      }
+    ]
+  },
+  {
+    "id": "4390",
+    "name": "BANDEJA COMBINADA ASAS MADERA",
+    "category": "bandejas",
+    "price": "Consultar",
+    "image": "/Bandejas/4390.png",
+    "dimensions": "60 X 40 X 15",
+    "variants": [
+      {
+        "reference": "4390",
+        "name": "BANDEJA COMBINADA ASAS MADERA",
+        "dimensions": "60 X 40 X 15"
+      }
+    ]
+  },
+  {
+    "id": "4522",
+    "name": "CUÉVANO PLATA/BLANCO",
+    "category": "cuevanos",
+    "price": "Consultar",
+    "image": "/Cuevanos/4522.png",
+    "dimensions": "40 X 30 X 15",
+    "variants": [
+      {
+        "reference": "4522",
+        "name": "CUÉVANO PLATA/BLANCO",
+        "dimensions": "40 X 30 X 15"
+      }
+    ]
+  },
+  {
+    "id": "4523",
+    "name": "CUÉVANO MARRON/BLANCO",
+    "category": "cuevanos",
+    "price": "Consultar",
+    "image": "/Cuevanos/4523.png",
+    "dimensions": "40 X 30 X 15",
+    "variants": [
+      {
+        "reference": "4523",
+        "name": "CUÉVANO MARRON/BLANCO",
+        "dimensions": "40 X 30 X 15"
+      }
+    ]
+  },
+  {
+    "id": "4524",
+    "name": "CUÉVANO MIMBRE ASAS",
+    "category": "cuevanos",
+    "price": "Consultar",
+    "image": "/Cuevanos/4524.png",
+    "dimensions": "40 X 30 X 15",
+    "variants": [
+      {
+        "reference": "4524",
+        "name": "CUÉVANO MIMBRE ASAS",
+        "dimensions": "40 X 30 X 15"
+      }
+    ]
+  },
+  {
+    "id": "4526",
+    "name": "4526",
+    "category": "oportunidades",
+    "price": "Consultar",
+    "image": "/Rincon Oportunidades/4526..png",
+    "dimensions": "Consultar medidas",
+    "variants": []
+  },
+  {
+    "id": "4533",
+    "name": "CUÉVANO AZUL",
+    "category": "cuevanos",
+    "price": "Consultar",
+    "image": "/Cuevanos/4533.png",
+    "dimensions": "40 X 30 X 15",
+    "variants": [
+      {
+        "reference": "4533",
+        "name": "CUÉVANO AZUL",
+        "dimensions": "40 X 30 X 15"
+      }
+    ]
+  },
+  {
+    "id": "4547",
+    "name": "CUÉVANO METAL FORRADO",
+    "category": "forja",
+    "price": "Consultar",
+    "image": "/Forja/4547.png",
+    "dimensions": "50 X 30 X 20",
+    "variants": [
+      {
+        "reference": "4547",
+        "name": "CUÉVANO METAL FORRADO",
+        "dimensions": "50 X 30 X 20"
+      }
+    ]
+  },
+  {
+    "id": "4548",
+    "name": "CUÉVANO DORADO",
+    "category": "cuevanos",
+    "price": "Consultar",
+    "image": "/Cuevanos/4548.png",
+    "dimensions": "50 X 30 X 20",
+    "variants": [
+      {
+        "reference": "4548",
+        "name": "CUÉVANO DORADO",
+        "dimensions": "50 X 30 X 20"
+      }
+    ]
+  },
+  {
+    "id": "4550",
+    "name": "CUÉVANO METAL",
+    "category": "forja",
+    "price": "Consultar",
+    "image": "/Forja/4550.png",
+    "dimensions": "50 X 30 X 20",
+    "variants": [
+      {
+        "reference": "4550",
+        "name": "CUÉVANO METAL",
+        "dimensions": "50 X 30 X 20"
+      }
+    ]
+  },
+  {
+    "id": "4551",
+    "name": "4551",
+    "category": "oportunidades",
+    "price": "Consultar",
+    "image": "/Rincon Oportunidades/4551..png",
+    "dimensions": "Consultar medidas",
+    "variants": []
+  },
+  {
+    "id": "4552",
+    "name": "CUÉVANO GRIS FORRADO",
+    "category": "cuevanos",
+    "price": "Consultar",
+    "image": "/Cuevanos/4552.png",
+    "dimensions": "50 X 30 X 20",
+    "variants": [
+      {
+        "reference": "4552",
+        "name": "CUÉVANO GRIS FORRADO",
+        "dimensions": "50 X 30 X 20"
+      }
+    ]
+  },
+  {
+    "id": "4553",
+    "name": "CUÉVANO ALGAS",
+    "category": "cuevanos",
+    "price": "Consultar",
+    "image": "/Cuevanos/4553.png",
+    "dimensions": "50 X 30 X 20",
+    "variants": [
+      {
+        "reference": "4553",
+        "name": "CUÉVANO ALGAS",
+        "dimensions": "50 X 30 X 20"
+      }
+    ]
+  },
+  {
+    "id": "4554",
+    "name": "4554",
+    "category": "cuevanos",
+    "price": "Consultar",
+    "image": "/Cuevanos/4554.jpg",
+    "dimensions": "Consultar medidas",
+    "variants": []
+  },
+  {
+    "id": "4788",
+    "name": "JAMONERO BANCO MIEL",
+    "category": "madera",
+    "price": "Consultar",
+    "image": "/Madera/4788.png",
+    "dimensions": "40 X 17 X 3/24",
+    "variants": [
+      {
+        "reference": "4788",
+        "name": "JAMONERO BANCO MIEL",
+        "dimensions": "40 X 17 X 3/24"
+      }
+    ]
+  },
+  {
+    "id": "4792",
+    "name": "JAMONERO PINZA",
+    "category": "madera",
+    "price": "Consultar",
+    "image": "/Madera/4792.png",
+    "dimensions": "40 X 17 X 3/30",
+    "variants": [
+      {
+        "reference": "4792",
+        "name": "JAMONERO PINZA",
+        "dimensions": "40 X 17 X 3/30"
+      }
+    ]
+  },
+  {
+    "id": "5213",
+    "name": "RELOJ VINTAGE",
+    "category": "estuches",
+    "price": "Consultar",
+    "image": "/Estuches/5213.png",
+    "dimensions": "34 X 3 X 34",
+    "variants": [
+      {
+        "reference": "5213",
+        "name": "RELOJ VINTAGE",
+        "dimensions": "34 X 3 X 34"
+      }
+    ]
+  },
+  {
+    "id": "5214",
+    "name": "5214",
+    "category": "estuches",
+    "price": "Consultar",
+    "image": "/Estuches/5214.png",
+    "dimensions": "Consultar medidas",
+    "variants": []
+  },
+  {
+    "id": "5462",
+    "name": "REVISTERO NIÑOS",
+    "category": "estuches",
+    "price": "Consultar",
+    "image": "/Estuches/5462.png",
+    "dimensions": "40 X 30 X 20/40",
+    "variants": [
+      {
+        "reference": "5462",
+        "name": "REVISTERO NIÑOS",
+        "dimensions": "40 X 30 X 20/40"
+      }
+    ]
+  },
+  {
+    "id": "5472",
+    "name": "5472",
+    "category": "oportunidades",
+    "price": "Consultar",
+    "image": "/Rincon Oportunidades/5472..png",
+    "dimensions": "Consultar medidas",
+    "variants": []
+  },
+  {
+    "id": "5475",
+    "name": "REVISTERO FORJA",
+    "category": "forja",
+    "price": "Consultar",
+    "image": "/Forja/5475.png",
+    "dimensions": "36 X 25 X 50",
+    "variants": [
+      {
+        "reference": "5475",
+        "name": "REVISTERO FORJA",
+        "dimensions": "36 X 25 X 50"
+      }
+    ]
+  },
+  {
+    "id": "5739",
+    "name": "SINFONIER NOGAL 3 CAJONES",
+    "category": "oportunidades",
+    "price": "Consultar",
+    "image": "/Rincon Oportunidades/5739.png",
+    "dimensions": "30 X 30 X 60",
+    "variants": [
+      {
+        "reference": "5739",
+        "name": "SINFONIER NOGAL 3 CAJONES",
+        "dimensions": "30 X 30 X 60"
+      }
+    ]
+  },
+  {
+    "id": "7119",
+    "name": "7119",
+    "category": "oportunidades",
+    "price": "Consultar",
+    "image": "/Rincon Oportunidades/7119.2..png",
+    "dimensions": "Consultar medidas",
+    "variants": []
+  },
+  {
+    "id": "7120",
+    "name": "CAJA VINO MADERA 3 BOT.",
+    "category": "madera",
+    "price": "Consultar",
+    "image": "/Madera/7120-3.png",
+    "dimensions": "Varias medidas disponibles",
+    "variants": [
+      {
+        "reference": "7120/3",
+        "name": "CAJA VINO MADERA 3 BOT.",
+        "dimensions": "35 X 30 X 10"
+      },
+      {
+        "reference": "7120/92",
+        "name": "CAJA JAMONERA 92 CM.",
+        "dimensions": "92 X 35 X 15"
+      }
+    ]
+  },
+  {
+    "id": "7124",
+    "name": "CAJÓN MADERA TINTADO",
+    "category": "madera",
+    "price": "Consultar",
+    "image": "/Madera/7124.jpg",
+    "dimensions": "50 X 27 X 25",
+    "variants": [
+      {
+        "reference": "7124",
+        "name": "CAJÓN MADERA TINTADO",
+        "dimensions": "50 X 27 X 25"
+      }
+    ]
+  },
+  {
+    "id": "7126",
+    "name": "CAJA PLEGABLE NIEVE",
+    "category": "baules",
+    "price": "Consultar",
+    "image": "/Baules/7126.png",
+    "dimensions": "43 X 28 X 23",
+    "variants": [
+      {
+        "reference": "7126",
+        "name": "CAJA PLEGABLE NIEVE",
+        "dimensions": "43 X 28 X 23"
+      }
+    ]
+  },
+  {
+    "id": "7129",
+    "name": "COFRE BICOLOR",
+    "category": "oportunidades",
+    "price": "Consultar",
+    "image": "/Rincon Oportunidades/7129..png",
+    "dimensions": "50 X 30 X 25",
+    "variants": [
+      {
+        "reference": "7129",
+        "name": "COFRE BICOLOR",
+        "dimensions": "50 X 30 X 25"
+      }
+    ]
+  },
+  {
+    "id": "7130",
+    "name": "BANDEJA MADERA",
+    "category": "bandejas",
+    "price": "Consultar",
+    "image": "/Bandejas/7130.png",
+    "dimensions": "Varias medidas disponibles",
+    "variants": [
+      {
+        "reference": "7130/1",
+        "name": "BANDEJA MADERA Nº1",
+        "dimensions": "40 X 30 X 8"
+      },
+      {
+        "reference": "7130/2",
+        "name": "BANDEJA MADERA Nº2",
+        "dimensions": "50 X 35 X 10"
+      }
+    ]
+  },
+  {
+    "id": "7137",
+    "name": "BAÚL MIMBRE BLANCO FORRADO",
+    "category": "baules",
+    "price": "Consultar",
+    "image": "/Baules/7137.png",
+    "dimensions": "Varias medidas disponibles",
+    "variants": [
+      {
+        "reference": "7137/1",
+        "name": "BAÚL MIMBRE BLANCO FORRADO Nº1",
+        "dimensions": "65 X 30 X 30"
+      },
+      {
+        "reference": "7137/2",
+        "name": "BAÚL MIMBRE BLANCO FORRADO Nº2",
+        "dimensions": "75 X 35 X 35"
+      },
+      {
+        "reference": "7137/3",
+        "name": "BAÚL MIMBRE BLANCO FORRADO Nº3",
+        "dimensions": "80 X 40 X 40"
+      }
+    ]
+  },
+  {
+    "id": "7139",
+    "name": "BAÚL MIMBRE BUFF FORRADO",
+    "category": "baules",
+    "price": "Consultar",
+    "image": "/Baules/7139.png",
+    "dimensions": "Varias medidas disponibles",
+    "variants": [
+      {
+        "reference": "7139/1",
+        "name": "BAÚL MIMBRE BUFF FORRADO Nº1",
+        "dimensions": "65 X 30 X 30"
+      },
+      {
+        "reference": "7139/2",
+        "name": "BAÚL MIMBRE BUFF FORRADO Nº2",
+        "dimensions": "75 X 35 X 35"
+      },
+      {
+        "reference": "7139/3",
+        "name": "BAÚL MIMBRE BUFF FORRADO Nº3",
+        "dimensions": "80 X 40 X 40"
+      }
+    ]
+  },
+  {
+    "id": "7182",
+    "name": "7182",
+    "category": "oportunidades",
+    "price": "Consultar",
+    "image": "/Rincon Oportunidades/7182..png",
+    "dimensions": "Consultar medidas",
+    "variants": []
+  },
+  {
+    "id": "7213",
+    "name": "BAÚL BUDA PLEGABLE Nº 2",
+    "category": "baules",
+    "price": "Consultar",
+    "image": "/Baules/7215.png",
+    "dimensions": "Varias medidas disponibles",
+    "variants": [
+      {
+        "reference": "7213/2",
+        "name": "BAÚL BUDA PLEGABLE Nº 2",
+        "dimensions": "60 X 30 X 30"
+      },
+      {
+        "reference": "7213/3",
+        "name": "BAÚL BUDA PLEGABLE Nº3",
+        "dimensions": "76 X 38 X 38"
+      }
+    ]
+  },
+  {
+    "id": "7214",
+    "name": "BAÚL PLEGABLE WINDOW",
+    "category": "baules",
+    "price": "Consultar",
+    "image": "/Baules/7214.png",
+    "dimensions": "Varias medidas disponibles",
+    "variants": [
+      {
+        "reference": "7214/2",
+        "name": "BAÚL PLEGABLE WINDOW Nº2",
+        "dimensions": "60 X 30 X 30"
+      },
+      {
+        "reference": "7214/3",
+        "name": "BAÚL PLEGABLE WINDOW Nº3",
+        "dimensions": "76 X 38 X 38"
+      }
+    ]
+  },
+  {
+    "id": "7215",
+    "name": "BAÚL PLEGABLE VESPA",
+    "category": "baules",
+    "price": "Consultar",
+    "image": "/Baules/7213.png",
+    "dimensions": "Varias medidas disponibles",
+    "variants": [
+      {
+        "reference": "7215/2",
+        "name": "BAÚL PLEGABLE VESPA Nº2",
+        "dimensions": "60 X 30 X 30"
+      },
+      {
+        "reference": "7215/3",
+        "name": "PUFF PLEGABLE VESPA Nº3",
+        "dimensions": "76 X 38 X 38"
+      }
+    ]
+  },
+  {
+    "id": "7220",
+    "name": "BAÚL PLEGABLE ELEFANTES",
+    "category": "baules",
+    "price": "Consultar",
+    "image": "/Baules/7220.png",
+    "dimensions": "60 X 30 X 30",
+    "variants": [
+      {
+        "reference": "7220/2",
+        "name": "BAÚL PLEGABLE ELEFANTES Nº2",
+        "dimensions": "60 X 30 X 30"
+      }
+    ]
+  },
+  {
+    "id": "7221",
+    "name": "BÁUL PLEGABLE EXPLORE",
+    "category": "baules",
+    "price": "Consultar",
+    "image": "/Baules/7221.png",
+    "dimensions": "Varias medidas disponibles",
+    "variants": [
+      {
+        "reference": "7221/2",
+        "name": "BÁUL PLEGABLE EXPLORE Nº2",
+        "dimensions": "60 X 30 X 30"
+      },
+      {
+        "reference": "7221/3",
+        "name": "BAÚL PLEGABLE EXPLORE Nº3",
+        "dimensions": "76 X 38 X 38"
+      }
+    ]
+  },
+  {
+    "id": "7232",
+    "name": "BAÚL MOSAICO",
+    "category": "baules",
+    "price": "Consultar",
+    "image": "/Baules/7232.png",
+    "dimensions": "Varias medidas disponibles",
+    "variants": [
+      {
+        "reference": "7232/1",
+        "name": "BAÚL MOSAICO Nº1",
+        "dimensions": "60 X 30 X 30"
+      },
+      {
+        "reference": "7232/2",
+        "name": "BAÚL MOSAICO Nº2",
+        "dimensions": "70 X 35 X 35"
+      }
+    ]
+  },
+  {
+    "id": "7233",
+    "name": "BAÚL MARRÓN",
+    "category": "baules",
+    "price": "Consultar",
+    "image": "/Baules/7233.png",
+    "dimensions": "Varias medidas disponibles",
+    "variants": [
+      {
+        "reference": "7233/1",
+        "name": "BAÚL MARRÓN Nº1",
+        "dimensions": "60 X 30 X 30"
+      },
+      {
+        "reference": "7233/2",
+        "name": "BAÚL MARRÓN Nº2",
+        "dimensions": "70 X 35 X 35"
+      }
+    ]
+  },
+  {
+    "id": "7234",
+    "name": "BAÚL PAISAJE",
+    "category": "baules",
+    "price": "Consultar",
+    "image": "/Baules/7234.png",
+    "dimensions": "Varias medidas disponibles",
+    "variants": [
+      {
+        "reference": "7234/1",
+        "name": "BAÚL PAISAJE Nº1",
+        "dimensions": "60 X 30 X 30"
+      },
+      {
+        "reference": "7234/2",
+        "name": "BAÚL PAISAJE Nº2",
+        "dimensions": "70 X 35 X 35"
+      }
+    ]
+  },
+  {
+    "id": "7236",
+    "name": "BAÚL CÓCTEL",
+    "category": "baules",
+    "price": "Consultar",
+    "image": "/Baules/7236.png",
+    "dimensions": "Varias medidas disponibles",
+    "variants": [
+      {
+        "reference": "7236/1",
+        "name": "BAÚL CÓCTEL Nº1",
+        "dimensions": "60 X 30 X 30"
+      },
+      {
+        "reference": "7236/2",
+        "name": "BAÚL CÓCTEL Nº2",
+        "dimensions": "70 X 35 X 35"
+      }
+    ]
+  },
+  {
+    "id": "7240",
+    "name": "BAÚL VINTAGE",
+    "category": "baules",
+    "price": "Consultar",
+    "image": "/Baules/7240.png",
+    "dimensions": "60 X 30 X 30",
+    "variants": [
+      {
+        "reference": "7240/1",
+        "name": "BAÚL VINTAGE Nº1",
+        "dimensions": "60 X 30 X 30"
+      }
+    ]
+  },
+  {
+    "id": "7241",
+    "name": "BAÚL HOME AZUL",
+    "category": "baules",
+    "price": "Consultar",
+    "image": "/Baules/7241.png",
+    "dimensions": "Varias medidas disponibles",
+    "variants": [
+      {
+        "reference": "7241/1",
+        "name": "BAÚL HOME AZUL Nº1",
+        "dimensions": "60 X 30 X 30"
+      },
+      {
+        "reference": "7241/2",
+        "name": "BAÚL HOME AZUL Nº2",
+        "dimensions": "70 X 35 X 35"
+      }
+    ]
+  },
+  {
+    "id": "7244",
+    "name": "BAÚL TRAVEL TO ROYAL",
+    "category": "baules",
+    "price": "Consultar",
+    "image": "/Baules/7244.png",
+    "dimensions": "Varias medidas disponibles",
+    "variants": [
+      {
+        "reference": "7244/1",
+        "name": "BAÚL TRAVEL TO ROYAL Nº1",
+        "dimensions": "60 X 30 X 30"
+      },
+      {
+        "reference": "7244/2",
+        "name": "BAÚL TRAVEL TO ROYAL Nº2",
+        "dimensions": "70 X 35 X 35"
+      },
+      {
+        "reference": "7244/3",
+        "name": "BAÚL TRAVEL TO ROYAL Nº3",
+        "dimensions": "80 X 40 X 40"
+      }
+    ]
+  },
+  {
+    "id": "7246",
+    "name": "BAÚL FARO",
+    "category": "baules",
+    "price": "Consultar",
+    "image": "/Baules/7246.png",
+    "dimensions": "70 X 35 X 35",
+    "variants": [
+      {
+        "reference": "7246/2",
+        "name": "BAÚL FARO Nº2",
+        "dimensions": "70 X 35 X 35"
+      }
+    ]
+  },
+  {
+    "id": "7249",
+    "name": "7249",
+    "category": "oportunidades",
+    "price": "Consultar",
+    "image": "/Rincon Oportunidades/7249.2..png",
+    "dimensions": "Consultar medidas",
+    "variants": []
+  },
+  {
+    "id": "7257",
+    "name": "ARCÓN CORREAS",
+    "category": "oportunidades",
+    "price": "Consultar",
+    "image": "/Rincon Oportunidades/7257..png",
+    "dimensions": "Varias medidas disponibles",
+    "variants": [
+      {
+        "reference": "7257/1",
+        "name": "ARCÓN CORREAS Nº1",
+        "dimensions": "60 X 30 X 30"
+      },
+      {
+        "reference": "7257/2",
+        "name": "ARCÓN CORREAS Nº2",
+        "dimensions": "70 X 35 X 35"
+      }
+    ]
+  },
+  {
+    "id": "7260",
+    "name": "7260",
+    "category": "oportunidades",
+    "price": "Consultar",
+    "image": "/Rincon Oportunidades/7260..png",
+    "dimensions": "Consultar medidas",
+    "variants": []
+  },
+  {
+    "id": "7262",
+    "name": "BAÚL MADERA CORREAS TAPA ACOLCHADA",
+    "category": "baules",
+    "price": "Consultar",
+    "image": "/Baules/7262.png",
+    "dimensions": "Varias medidas disponibles",
+    "variants": [
+      {
+        "reference": "7262/1",
+        "name": "BAÚL MADERA CORREAS TAPA ACOLCHADA Nº1",
+        "dimensions": "60 X 30 X 30"
+      },
+      {
+        "reference": "7262/2",
+        "name": "BAÚL MADERA CORREAS TAPA ACOLCHADA Nº2",
+        "dimensions": "70 X 35 X 35"
+      },
+      {
+        "reference": "7262/3",
+        "name": "BAÚL MADERA CORREAS TAPA ACOLCHADA Nº3",
+        "dimensions": "80 X 40 X 40"
+      }
+    ]
+  },
+  {
+    "id": "7263",
+    "name": "7263",
+    "category": "oportunidades",
+    "price": "Consultar",
+    "image": "/Rincon Oportunidades/7263..png",
+    "dimensions": "Consultar medidas",
+    "variants": []
+  },
+  {
+    "id": "7264",
+    "name": "BAÚL HERITAGE",
+    "category": "baules",
+    "price": "Consultar",
+    "image": "/Baules/7264.png",
+    "dimensions": "Varias medidas disponibles",
+    "variants": [
+      {
+        "reference": "7264/1",
+        "name": "BAÚL HERITAGE Nº1",
+        "dimensions": "60 X 30 X 30"
+      },
+      {
+        "reference": "7264/2",
+        "name": "BAÚL HERITAGE Nº2",
+        "dimensions": "70 X 35 X 35"
+      },
+      {
+        "reference": "7264/3",
+        "name": "BAÚL HERITAGE Nº3",
+        "dimensions": "80 X 40 X 40"
+      }
+    ]
+  },
+  {
+    "id": "7265",
+    "name": "7265",
+    "category": "baules",
+    "price": "Consultar",
+    "image": "/Baules/7265.png",
+    "dimensions": "Consultar medidas",
+    "variants": []
+  },
+  {
+    "id": "7266",
+    "name": "BAÚL ZEN",
+    "category": "oportunidades",
+    "price": "Consultar",
+    "image": "/Rincon Oportunidades/7266..png",
+    "dimensions": "80 X 40 X 40",
+    "variants": [
+      {
+        "reference": "7266/3",
+        "name": "BAÚL ZEN Nº3",
+        "dimensions": "80 X 40 X 40"
+      }
+    ]
+  },
+  {
+    "id": "7275",
+    "name": "BAÚL PIRATA",
+    "category": "baules",
+    "price": "Consultar",
+    "image": "/Baules/7275.png",
+    "dimensions": "50 X 25 X 25",
+    "variants": [
+      {
+        "reference": "7275",
+        "name": "BAÚL PIRATA",
+        "dimensions": "50 X 25 X 25"
+      }
+    ]
+  },
+  {
+    "id": "7276",
+    "name": "BAÚL FLORES",
+    "category": "baules",
+    "price": "Consultar",
+    "image": "/Baules/7276.png",
+    "dimensions": "50 X 25 X 25",
+    "variants": [
+      {
+        "reference": "7276",
+        "name": "BAÚL FLORES",
+        "dimensions": "50 X 25 X 25"
+      }
+    ]
+  },
+  {
+    "id": "7277",
+    "name": "7277",
+    "category": "oportunidades",
+    "price": "Consultar",
+    "image": "/Rincon Oportunidades/7277..png",
+    "dimensions": "Consultar medidas",
+    "variants": []
+  },
+  {
+    "id": "7278",
+    "name": "BAÚL NIÑOS",
+    "category": "baules",
+    "price": "Consultar",
+    "image": "/Baules/7278.png",
+    "dimensions": "50 X 25 X 25",
+    "variants": [
+      {
+        "reference": "7278",
+        "name": "BAÚL NIÑOS",
+        "dimensions": "50 X 25 X 25"
+      }
+    ]
+  },
+  {
+    "id": "7280",
+    "name": "CAJA ELEGANCE",
+    "category": "baules",
+    "price": "Consultar",
+    "image": "/Baules/7280.png",
+    "dimensions": "Varias medidas disponibles",
+    "variants": [
+      {
+        "reference": "7280/1",
+        "name": "CAJA ELEGANCE Nº1",
+        "dimensions": "40 X 25 X 25"
+      },
+      {
+        "reference": "7280/2",
+        "name": "CAJA ELEGANCE Nº2",
+        "dimensions": "50 X 30 X 30"
+      }
+    ]
+  },
+  {
+    "id": "7282",
+    "name": "CAJA ARMONIA",
+    "category": "baules",
+    "price": "Consultar",
+    "image": "/Baules/7282.png",
+    "dimensions": "Varias medidas disponibles",
+    "variants": [
+      {
+        "reference": "7282/1",
+        "name": "CAJA ARMONIA Nº1",
+        "dimensions": "40 X 25 X 25"
+      },
+      {
+        "reference": "7282/2",
+        "name": "CAJA ARMONIA Nº2",
+        "dimensions": "50 X 30 X 30"
+      }
+    ]
+  },
+  {
+    "id": "7408",
+    "name": "CESTA OVAL ASA ALTA",
+    "category": "cestas",
+    "price": "Consultar",
+    "image": "/Cestas/7408.png",
+    "dimensions": "30 X 20 X 10/45",
+    "variants": [
+      {
+        "reference": "7408",
+        "name": "CESTA OVAL ASA ALTA",
+        "dimensions": "30 X 20 X 10/45"
+      }
+    ]
+  },
+  {
+    "id": "7412",
+    "name": "NAVIDEÑA MINI",
+    "category": "cestas-navidenas",
+    "price": "Consultar",
+    "image": "/Cestas/7412.png",
+    "dimensions": "40 X 30 X 14/40",
+    "variants": [
+      {
+        "reference": "7412",
+        "name": "NAVIDEÑA MINI",
+        "dimensions": "40 X 30 X 14/40"
+      }
+    ]
+  },
+  {
+    "id": "7416",
+    "name": "7416",
+    "category": "oportunidades",
+    "price": "Consultar",
+    "image": "/Rincon Oportunidades/7416..png",
+    "dimensions": "Consultar medidas",
+    "variants": []
+  },
+  {
+    "id": "7422",
+    "name": "CESTA EXPOSITOR NOGAL",
+    "category": "cestas",
+    "price": "Consultar",
+    "image": "/Cestas/7422.png",
+    "dimensions": "55 X 30 X 20/50",
+    "variants": [
+      {
+        "reference": "7422",
+        "name": "CESTA EXPOSITOR NOGAL",
+        "dimensions": "55 X 30 X 20/50"
+      }
+    ]
+  },
+  {
+    "id": "7424",
+    "name": "CESTA RECTANGULAR BICOLOR",
+    "category": "cestas",
+    "price": "Consultar",
+    "image": "/Cestas/7424.png",
+    "dimensions": "Varias medidas disponibles",
+    "variants": [
+      {
+        "reference": "7424/1",
+        "name": "CESTA RECTANGULAR BICOLOR Nº1",
+        "dimensions": "40 X 30 X 16/40"
+      },
+      {
+        "reference": "7424/2",
+        "name": "CESTA RECTANGULAR BICOLOR Nº2",
+        "dimensions": "50 X 35 X 19/45"
+      }
+    ]
+  },
+  {
+    "id": "7425",
+    "name": "CESTA OVAL NEGRA",
+    "category": "cestas",
+    "price": "Consultar",
+    "image": "/Cestas/7425.png",
+    "dimensions": "Varias medidas disponibles",
+    "variants": [
+      {
+        "reference": "7425/1",
+        "name": "CESTA OVAL NEGRA Nº1",
+        "dimensions": "40 X 30 X 16/40"
+      },
+      {
+        "reference": "7425/2",
+        "name": "CESTA OVAL NEGRA Nº2",
+        "dimensions": "50 X 35 X 19/45"
+      }
+    ]
+  },
+  {
+    "id": "7426",
+    "name": "CESTA OVAL FORRO NEGRO",
+    "category": "cestas",
+    "price": "Consultar",
+    "image": "/Cestas/7426.png",
+    "dimensions": "Varias medidas disponibles",
+    "variants": [
+      {
+        "reference": "7426/1",
+        "name": "CESTA OVAL FORRO NEGRO Nº1",
+        "dimensions": "40 X 30 X 16/40"
+      },
+      {
+        "reference": "7426/2",
+        "name": "CESTA OVAL FORRO NEGRO Nº2",
+        "dimensions": "50 X 35 X 19/45"
+      }
+    ]
+  },
+  {
+    "id": "7442",
+    "name": "BOLSO PALMA PEQUEÑO",
+    "category": "cestas",
+    "price": "Consultar",
+    "image": "/Cestas/7442.png",
+    "dimensions": "Varias medidas disponibles",
+    "variants": [
+      {
+        "reference": "7442/1",
+        "name": "BOLSO PALMA PEQUEÑO",
+        "dimensions": "34 X 15 X 18/23"
+      },
+      {
+        "reference": "7442/2",
+        "name": "BOLSO PALMA",
+        "dimensions": "50 X 30 X 35/42"
+      }
+    ]
+  },
+  {
+    "id": "7445",
+    "name": "CAPAZO ESPARTO",
+    "category": "cestas",
+    "price": "Consultar",
+    "image": "/Cestas/7445.png",
+    "dimensions": "Varias medidas disponibles",
+    "variants": [
+      {
+        "reference": "7445/1",
+        "name": "CAPAZO ESPARTO Nº1",
+        "dimensions": "40 X 40 X 11/20"
+      },
+      {
+        "reference": "7445/2",
+        "name": "CAPAZO ESPARTO Nº2",
+        "dimensions": "45 X 45 X 20/24"
+      }
+    ]
+  },
+  {
+    "id": "7461",
+    "name": "CESTA BAMBÚ ASA ABATIBLE FORRADA",
+    "category": "cestas",
+    "price": "Consultar",
+    "image": "/Cestas/7461.png",
+    "dimensions": "40 X 29 X 11/25",
+    "variants": [
+      {
+        "reference": "7461",
+        "name": "CESTA BAMBÚ ASA ABATIBLE FORRADA",
+        "dimensions": "40 X 29 X 11/25"
+      }
+    ]
+  },
+  {
+    "id": "7462",
+    "name": "CESTA FORRADA ASA ABATIBLE FORJA",
+    "category": "forja",
+    "price": "Consultar",
+    "image": "/Forja/7462.png",
+    "dimensions": "40 X 30 X 15/25",
+    "variants": [
+      {
+        "reference": "7462",
+        "name": "CESTA FORRADA ASA ABATIBLE FORJA",
+        "dimensions": "40 X 30 X 15/25"
+      }
+    ]
+  },
+  {
+    "id": "7463",
+    "name": "CESTA NOGAL FORRADA ASA ABATIBLE",
+    "category": "cuevanos",
+    "price": "Consultar",
+    "image": "/Cuevanos/7463.png",
+    "dimensions": "50 X 35 X 20/40",
+    "variants": [
+      {
+        "reference": "7463",
+        "name": "CESTA NOGAL FORRADA ASA ABATIBLE",
+        "dimensions": "50 X 35 X 20/40"
+      }
+    ]
+  },
+  {
+    "id": "7464",
+    "name": "CESTA BICOLOR FORRO",
+    "category": "cestas",
+    "price": "Consultar",
+    "image": "/Cestas/7464.png",
+    "dimensions": "40 X 30 X 16/40",
+    "variants": [
+      {
+        "reference": "7464/1",
+        "name": "CESTA BICOLOR FORRO Nº1",
+        "dimensions": "40 X 30 X 16/40"
+      }
+    ]
+  },
+  {
+    "id": "7465",
+    "name": "7465",
+    "category": "oportunidades",
+    "price": "Consultar",
+    "image": "/Rincon Oportunidades/7465..png",
+    "dimensions": "Consultar medidas",
+    "variants": []
+  },
+  {
+    "id": "7466",
+    "name": "CESTA MIMBRE CORDÓN PLATA",
+    "category": "cestas",
+    "price": "Consultar",
+    "image": "/Cestas/7466.png",
+    "dimensions": "Varias medidas disponibles",
+    "variants": [
+      {
+        "reference": "7466/1",
+        "name": "CESTA MIMBRE CORDÓN PLATA Nº1",
+        "dimensions": "40 X 30 X 16/40"
+      },
+      {
+        "reference": "7466/2",
+        "name": "CESTA MIMBRE CORDÓN PLATA Nº2",
+        "dimensions": "50 X 35 X 19/45"
+      },
+      {
+        "reference": "7466/3",
+        "name": "CESTA MIMBRE CORDÓN PLATA Nº3",
+        "dimensions": "60 X 40 X 20/50"
+      }
+    ]
+  },
+  {
+    "id": "7469",
+    "name": "CESTA OVAL BICOLOR",
+    "category": "cestas",
+    "price": "Consultar",
+    "image": "/Cestas/7469.png",
+    "dimensions": "Varias medidas disponibles",
+    "variants": [
+      {
+        "reference": "7469/1",
+        "name": "CESTA OVAL BICOLOR Nº1",
+        "dimensions": "40 X 30 X 16/40"
+      },
+      {
+        "reference": "7469/2",
+        "name": "CESTA OVAL BICOLOR Nº2",
+        "dimensions": "50 X 35 X 19/45"
+      },
+      {
+        "reference": "7469/3",
+        "name": "CESTA OVAL BICOLOR Nº3",
+        "dimensions": "60 X 40 X 20/50"
+      }
+    ]
+  },
+  {
+    "id": "7470",
+    "name": "CAJA MIMBRE FORRADA",
+    "category": "baules",
+    "price": "Consultar",
+    "image": "/Cestas/7470.png",
+    "dimensions": "Varias medidas disponibles",
+    "variants": [
+      {
+        "reference": "7470/1",
+        "name": "CAJA MIMBRE FORRADA Nº1",
+        "dimensions": "40 X 30 X 15"
+      },
+      {
+        "reference": "7470/2",
+        "name": "CAJA MIMBRE FORRADA Nº2",
+        "dimensions": "50 X 35 X 20"
+      }
+    ]
+  },
+  {
+    "id": "7471",
+    "name": "7471",
+    "category": "cestas",
+    "price": "Consultar",
+    "image": "/Cestas/7471.png",
+    "dimensions": "Consultar medidas",
+    "variants": []
+  },
+  {
+    "id": "7473",
+    "name": "7473",
+    "category": "cestas",
+    "price": "Consultar",
+    "image": "/Cestas/7473.png",
+    "dimensions": "Consultar medidas",
+    "variants": []
+  },
+  {
+    "id": "7474",
+    "name": "CESTA RECTANGULAR NOGAL",
+    "category": "cestas",
+    "price": "Consultar",
+    "image": "/Cestas/7474.png",
+    "dimensions": "Varias medidas disponibles",
+    "variants": [
+      {
+        "reference": "7474/1",
+        "name": "CESTA RECTANGULAR NOGAL Nº1",
+        "dimensions": "40 X 30 X 16/40"
+      },
+      {
+        "reference": "7474/2",
+        "name": "CESTA RECTANGULAR NOGAL Nº2",
+        "dimensions": "50 X 35 X 19/45"
+      }
+    ]
+  },
+  {
+    "id": "7857",
+    "name": "7857",
+    "category": "oportunidades",
+    "price": "Consultar",
+    "image": "/Rincon Oportunidades/7857..png",
+    "dimensions": "Consultar medidas",
+    "variants": []
+  },
+  {
+    "id": "7859",
+    "name": "ESTUCHE NIEVE",
+    "category": "estuches",
+    "price": "Consultar",
+    "image": "/Estuches/7859.png",
+    "dimensions": "40 X 30 X 15",
+    "variants": [
+      {
+        "reference": "7859",
+        "name": "ESTUCHE NIEVE",
+        "dimensions": "40 X 30 X 15"
+      }
+    ]
+  },
+  {
+    "id": "7860",
+    "name": "ESTUCHE VESPA AZUL",
+    "category": "estuches",
+    "price": "Consultar",
+    "image": "/Estuches/7860.png",
+    "dimensions": "40 X 30 X 15",
+    "variants": [
+      {
+        "reference": "7860",
+        "name": "ESTUCHE VESPA AZUL",
+        "dimensions": "40 X 30 X 15"
+      }
+    ]
+  },
+  {
+    "id": "7862",
+    "name": "ESTUCHE BICI",
+    "category": "estuches",
+    "price": "Consultar",
+    "image": "/Estuches/7862.png",
+    "dimensions": "40 X 30 X 15",
+    "variants": [
+      {
+        "reference": "7862",
+        "name": "ESTUCHE BICI",
+        "dimensions": "40 X 30 X 15"
+      }
+    ]
+  },
+  {
+    "id": "7863",
+    "name": "7863",
+    "category": "estuches",
+    "price": "Consultar",
+    "image": "/Estuches/7863.png",
+    "dimensions": "Consultar medidas",
+    "variants": []
+  },
+  {
+    "id": "7870",
+    "name": "MALETA TRAVEL WORLD",
+    "category": "estuches",
+    "price": "Consultar",
+    "image": "/Estuches/7870.png",
+    "dimensions": "40 X 30 X 15",
+    "variants": [
+      {
+        "reference": "7870",
+        "name": "MALETA TRAVEL WORLD",
+        "dimensions": "40 X 30 X 15"
+      }
+    ]
+  },
+  {
+    "id": "7877",
+    "name": "MALETA NEGRA HERRAJES DORADOS",
+    "category": "estuches",
+    "price": "Consultar",
+    "image": "/Estuches/7877.png",
+    "dimensions": "50 X 35 X 18",
+    "variants": [
+      {
+        "reference": "7877",
+        "name": "MALETA NEGRA HERRAJES DORADOS",
+        "dimensions": "50 X 35 X 18"
+      }
+    ]
+  },
+  {
+    "id": "7909",
+    "name": "7909",
+    "category": "estuches",
+    "price": "Consultar",
+    "image": "/Estuches/7909.png",
+    "dimensions": "Consultar medidas",
+    "variants": []
+  },
+  {
+    "id": "7910",
+    "name": "7910",
+    "category": "estuches",
+    "price": "Consultar",
+    "image": "/Estuches/7910.png",
+    "dimensions": "Consultar medidas",
+    "variants": []
+  },
+  {
+    "id": "7915",
+    "name": "7915",
+    "category": "estuches",
+    "price": "Consultar",
+    "image": "/Estuches/7915.png",
+    "dimensions": "Consultar medidas",
+    "variants": []
+  },
+  {
+    "id": "7916",
+    "name": "7916",
+    "category": "estuches",
+    "price": "Consultar",
+    "image": "/Estuches/7916.png",
+    "dimensions": "Consultar medidas",
+    "variants": []
+  },
+  {
+    "id": "8500",
+    "name": "Kg. VIRUTA CELOFAN ( BALAS DE 50 KG. APROX. )",
+    "category": "embalajes",
+    "price": "Consultar",
+    "image": "/Embalajes/8500.png",
+    "dimensions": "80 X 40 X 40",
+    "variants": [
+      {
+        "reference": "8500",
+        "name": "Kg. VIRUTA CELOFAN ( BALAS DE 50 KG. APROX. )",
+        "dimensions": "80 X 40 X 40"
+      }
+    ]
+  },
+  {
+    "id": "8503",
+    "name": "Kg. VIRUTA DE PAPEL ( BALAS DE 10 KG. )",
+    "category": "embalajes",
+    "price": "Consultar",
+    "image": "/Embalajes/8503.png",
+    "dimensions": "60 x 40 x 40",
+    "variants": [
+      {
+        "reference": "8503",
+        "name": "Kg. VIRUTA DE PAPEL ( BALAS DE 10 KG. )",
+        "dimensions": "60 x 40 x 40"
+      }
+    ]
+  },
+  {
+    "id": "8700",
+    "name": "NAVIDEÑA 2 PISOS NACIONAL",
+    "category": "cestas-navidenas",
+    "price": "Consultar",
+    "image": "/Cestas Navideñas/8700.png",
+    "dimensions": "65 X 32 X 85",
+    "variants": [
+      {
+        "reference": "8700",
+        "name": "NAVIDEÑA 2 PISOS NACIONAL",
+        "dimensions": "65 X 32 X 85"
+      }
+    ]
+  },
+  {
+    "id": "8725",
+    "name": "NAVIDEÑA 3 PISOS PEQUEÑA NACIONAL",
+    "category": "cestas-navidenas",
+    "price": "Consultar",
+    "image": "/Cestas Navideñas/8725.png",
+    "dimensions": "58 X 27 X 88",
+    "variants": [
+      {
+        "reference": "8725",
+        "name": "NAVIDEÑA 3 PISOS PEQUEÑA NACIONAL",
+        "dimensions": "58 X 27 X 88"
+      }
+    ]
+  },
+  {
+    "id": "8750",
+    "name": "NAVIDEÑA 3 PISOS NACIONAL",
+    "category": "cestas-navidenas",
+    "price": "Consultar",
+    "image": "/Cestas Navideñas/8750.png",
+    "dimensions": "72 X 36 X 120",
+    "variants": [
+      {
+        "reference": "8750",
+        "name": "NAVIDEÑA 3 PISOS NACIONAL",
+        "dimensions": "72 X 36 X 120"
+      }
+    ]
+  },
+  {
+    "id": "9221",
+    "name": "BANDEJA FORJA",
+    "category": "forja",
+    "price": "Consultar",
+    "image": "/Forja/9221.png",
+    "dimensions": "40 X 30 X 8",
+    "variants": [
+      {
+        "reference": "9221",
+        "name": "BANDEJA FORJA",
+        "dimensions": "40 X 30 X 8"
+      }
+    ]
+  },
+  {
+    "id": "9430",
+    "name": "MACETERO 2 BOTELLAS",
+    "category": "oportunidades",
+    "price": "Consultar",
+    "image": "/Rincon Oportunidades/9430.png",
+    "dimensions": "29 X 13 X 36",
+    "variants": [
+      {
+        "reference": "9430",
+        "name": "MACETERO 2 BOTELLAS",
+        "dimensions": "29 X 13 X 36"
+      }
+    ]
+  },
+  {
+    "id": "9480",
+    "name": "BICICLETA FORJA",
+    "category": "forja",
+    "price": "Consultar",
+    "image": "/Forja/9480.png",
+    "dimensions": "80 X 24 X 45",
+    "variants": [
+      {
+        "reference": "9480",
+        "name": "BICICLETA FORJA",
+        "dimensions": "80 X 24 X 45"
+      }
+    ]
+  },
+  {
+    "id": "9481",
+    "name": "BICICLETA FORJA BLANCA",
+    "category": "forja",
+    "price": "Consultar",
+    "image": "/Forja/9481.png",
+    "dimensions": "80 X 24 X 45",
+    "variants": [
+      {
+        "reference": "9481",
+        "name": "BICICLETA FORJA BLANCA",
+        "dimensions": "80 X 24 X 45"
+      }
+    ]
+  },
+  {
+    "id": "9485",
+    "name": "TRINEO FORJA",
+    "category": "forja",
+    "price": "Consultar",
+    "image": "/Forja/9485.png",
+    "dimensions": "60 X 30 X 38",
+    "variants": [
+      {
+        "reference": "9485",
+        "name": "TRINEO FORJA",
+        "dimensions": "60 X 30 X 38"
+      }
+    ]
+  },
+  {
+    "id": "9493",
+    "name": "JAULA PLATA",
+    "category": "forja",
+    "price": "Consultar",
+    "image": "/Forja/9493.png",
+    "dimensions": "30 X 30 X 35",
+    "variants": [
+      {
+        "reference": "9493",
+        "name": "JAULA PLATA",
+        "dimensions": "30 X 30 X 35"
+      }
+    ]
+  },
+  {
+    "id": "BF15",
+    "name": "MARIPOSA DECORATIVA SET 6 UDS.",
+    "category": "embalajes",
+    "price": "Consultar",
+    "image": "/Embalajes/BF15.png",
+    "dimensions": "15 X 10",
+    "variants": [
+      {
+        "reference": "BF15",
+        "name": "MARIPOSA DECORATIVA SET 6 UDS.",
+        "dimensions": "15 X 10"
+      }
+    ]
+  },
+  {
+    "id": "CI80",
+    "name": "CELOFÁN INCOLORO 35 MICRAS/50 METROS/ 80 CM. ANCHO",
+    "category": "embalajes",
+    "price": "Consultar",
+    "image": "/Embalajes/CI80-90-100-120.jpg",
+    "dimensions": "",
+    "variants": [
+      {
+        "reference": "CI80",
+        "name": "CELOFÁN INCOLORO 35 MICRAS/50 METROS/ 80 CM. ANCHO",
+        "dimensions": ""
+      }
+    ]
+  },
+  {
+    "id": "LL50 DORADO",
+    "name": "LL50 DORADO",
+    "category": "embalajes",
+    "price": "Consultar",
+    "image": "/Embalajes/LL50 DORADO.png",
+    "dimensions": "Consultar medidas",
+    "variants": []
+  },
+  {
+    "id": "LL50 PLATA",
+    "name": "LL50 PLATA",
+    "category": "embalajes",
+    "price": "Consultar",
+    "image": "/Embalajes/LL50 PLATA.png",
+    "dimensions": "Consultar medidas",
+    "variants": []
+  },
+  {
+    "id": "LL50 VERDE",
+    "name": "LL50 VERDE",
+    "category": "embalajes",
+    "price": "Consultar",
+    "image": "/Embalajes/LL50 VERDE.png",
+    "dimensions": "Consultar medidas",
+    "variants": []
+  },
+  {
+    "id": "CI90",
+    "name": "CELOFÁN INCOLORO 35 MICRAS/50 METROS/ 90 CM. ANCHO",
+    "category": "embalajes",
+    "price": "Consultar",
+    "image": "/Embalajes/CI90.png",
+    "dimensions": "",
+    "variants": [
+      {
+        "reference": "CI90",
+        "name": "CELOFÁN INCOLORO 35 MICRAS/50 METROS/ 90 CM. ANCHO",
+        "dimensions": ""
+      }
+    ]
+  },
+  {
+    "id": "CI100",
+    "name": "CELOFÁN INCOLORO 35 MICRAS/100 METROS/100 CM. ANCHO",
+    "category": "embalajes",
+    "price": "Consultar",
+    "image": "/Embalajes/CI100.png",
+    "dimensions": "",
+    "variants": [
+      {
+        "reference": "CI100",
+        "name": "CELOFÁN INCOLORO 35 MICRAS/100 METROS/100 CM. ANCHO",
+        "dimensions": ""
+      }
+    ]
+  },
+  {
+    "id": "CI120",
+    "name": "CELOFÁN INCOLORO 35 MICRAS/100 METROS/60-120 CM. ANCHO",
+    "category": "embalajes",
+    "price": "Consultar",
+    "image": "/Embalajes/CI120.png",
+    "dimensions": "",
+    "variants": [
+      {
+        "reference": "CI120",
+        "name": "CELOFÁN INCOLORO 35 MICRAS/100 METROS/60-120 CM. ANCHO",
+        "dimensions": ""
+      }
+    ]
+  },
+  {
+    "id": "CRI37",
+    "name": "CAJA CARTÓN PLEGABLE CON IMAN 3MM",
+    "category": "baules",
+    "price": "Consultar",
+    "image": "/Baules/CRI37.png",
+    "dimensions": "37 X 30 X 12",
+    "variants": [
+      {
+        "reference": "CRI37",
+        "name": "CAJA CARTÓN PLEGABLE CON IMAN 3MM",
+        "dimensions": "37 X 30 X 12"
+      }
+    ]
+  },
+  {
+    "id": "LL50",
+    "name": "LAZO AUTOMÁTICO ROJO ( Consultar otros colores )",
+    "category": "embalajes",
+    "price": "Consultar",
+    "image": "/Embalajes/LL50.png",
+    "dimensions": "5",
+    "variants": [
+      {
+        "reference": "LL50",
+        "name": "LAZO AUTOMÁTICO ROJO ( Consultar otros colores )",
+        "dimensions": "5"
+      }
+    ]
+  }
+]
