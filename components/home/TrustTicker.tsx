@@ -1,14 +1,15 @@
 const ITEMS = [
   'Fabricación propia',
-  'Valencia',
+  'Valencia, España',
   'Desde 1969',
-  'Empresa española',
+  'Venta al por mayor',
+  'Exclusivo Empresas · B2B',
   'Fibras 100% sostenibles',
   'Stock permanente',
-  'Envío 24–48h',
-  'Venta al por mayor B2B',
+  'Mayoristas de mimbre',
   '108+ modelos en catálogo',
   'Personalización con tu marca',
+  'Envío 24–48h',
   'Control de calidad exhaustivo',
 ]
 

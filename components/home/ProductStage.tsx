@@ -1,45 +1,87 @@
 'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
-import { useState } from 'react'
 import { motion } from 'motion/react'
 import { getProduct } from '@/lib/catalog'
-import { encodeImagePath } from '@/lib/utils'
-import type { CatalogItem } from '@/lib/types'
+import { ChromaGrid } from './ChromaGrid'
+import type { ChromaItem } from './ChromaGrid'
 
-// Four products confirmed to exist in public/
-const STAGE_ITEMS = [
-  { id: '2012', category: 'Cestas Navideñas', slug: 'cestas-navidenas', span: 'hero'   },
-  { id: '7232', category: 'Baúles',           slug: 'baules',           span: 'wide'   },
-  { id: '4333', category: 'Bandejas',         slug: 'bandejas',         span: 'small'  },
-  { id: '7425', category: 'Cestas',           slug: 'cestas',           span: 'accent' },
+const ease = [0.16, 1, 0.3, 1] as const
+
+/* 9 products — one per visual row, 3×3 grid.
+   Palette: all warm gold/bark tones from our design system. */
+const STAGE_IDS: {
+  id: string
+  slug: string
+  category: string
+  borderColor: string
+  gradient: string
+}[] = [
+  {
+    id: '2012', slug: 'cestas-navidenas', category: 'Cestas Navideñas',
+    borderColor: '#B5843A',
+    gradient: 'linear-gradient(160deg, #2A1F10 0%, #1C1917 100%)',
+  },
+  {
+    id: '7232', slug: 'baules', category: 'Baúles',
+    borderColor: '#C4A882',
+    gradient: 'linear-gradient(200deg, #221A10 0%, #1C1917 100%)',
+  },
+  {
+    id: '7425', slug: 'cestas', category: 'Cestas',
+    borderColor: '#D4A657',
+    gradient: 'linear-gradient(145deg, #251C0E 0%, #1C1917 100%)',
+  },
+  {
+    id: '4333', slug: 'bandejas', category: 'Bandejas',
+    borderColor: '#B5843A',
+    gradient: 'linear-gradient(175deg, #201810 0%, #292524 100%)',
+  },
+  {
+    id: '2016', slug: 'cestas-navidenas', category: 'Cestas Navideñas',
+    borderColor: '#C4A882',
+    gradient: 'linear-gradient(220deg, #28200F 0%, #1C1917 100%)',
+  },
+  {
+    id: '4522', slug: 'cuevanos', category: 'Cuévanos',
+    borderColor: '#A07855',
+    gradient: 'linear-gradient(135deg, #1E160C 0%, #292524 100%)',
+  },
+  {
+    id: '7126', slug: 'baules', category: 'Baúles',
+    borderColor: '#D4C9B5',
+    gradient: 'linear-gradient(190deg, #1A1510 0%, #1C1917 100%)',
+  },
+  {
+    id: '4335', slug: 'forja', category: 'Forja',
+    borderColor: '#8A7060',
+    gradient: 'linear-gradient(155deg, #181310 0%, #0F0D0B 100%)',
+  },
+  {
+    id: '5213', slug: 'estuches', category: 'Estuches',
+    borderColor: '#B5843A',
+    gradient: 'linear-gradient(210deg, #221A0E 0%, #1C1917 100%)',
+  },
 ]
 
-type StageEntry = { item: CatalogItem; category: string; slug: string; span: string }
-
 export function ProductStage() {
-  const [hovered, setHovered] = useState<string | null>(null)
-
-  const products = STAGE_ITEMS
-    .map(({ id, category, slug, span }) => ({ item: getProduct(id), category, slug, span }))
-    .filter((p): p is StageEntry => p.item !== undefined)
-
-  const hero   = products.find(p => p.span === 'hero')
-  const wide   = products.find(p => p.span === 'wide')
-  const small  = products.find(p => p.span === 'small')
-  const accent = products.find(p => p.span === 'accent')
-
-  if (!hero || !wide) return null
+  const items: ChromaItem[] = STAGE_IDS
+    .map(({ id, slug, category, borderColor, gradient }) => {
+      const product = getProduct(id)
+      if (!product) return null
+      const name = product.name !== product.id ? product.name : `Ref. ${product.id}`
+      return { id, name, category, slug, image: product.image, borderColor, gradient }
+    })
+    .filter((i): i is ChromaItem => i !== null)
 
   return (
     <section className="bg-bark section-pad overflow-hidden relative">
 
-      {/* Ghost "108" — background design element */}
+      {/* Ghost "108" */}
       <p
-        className="absolute right-[-0.05em] top-1/2 -translate-y-1/2 font-display font-semibold
-                   text-cream leading-none pointer-events-none select-none"
-        style={{ fontSize: 'clamp(14rem, 30vw, 32rem)', opacity: 0.032 }}
+        className="absolute right-[-0.04em] top-1/2 -translate-y-1/2 font-display font-semibold
+                   text-cream leading-none pointer-events-none select-none hidden lg:block"
+        style={{ fontSize: 'clamp(14rem, 30vw, 32rem)', opacity: 0.028 }}
         aria-hidden="true"
       >
         108
@@ -47,202 +89,121 @@ export function ProductStage() {
 
       <div className="container-site relative z-10">
 
-        {/* Editorial headline — asimétrico V2 */}
-        <div className="relative mb-3">
-          <motion.h2
-            className="font-display italic-serif text-cream leading-none"
-            style={{ fontSize: 'clamp(2.8rem, 6.5vw, 6rem)' }}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          >
-            108<br />
-            <span className="text-cream/65">modelos.</span>
-          </motion.h2>
+        {/* ── Header ── */}
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] items-end gap-8 mb-10">
+          <div>
+            <motion.p
+              className="font-sans uppercase tracking-[0.28em] mb-4"
+              style={{ fontSize: '0.5rem', color: 'rgba(245,240,232,0.48)' }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ duration: 0.6, ease }}
+            >
+              Catálogo · Valencia, España
+            </motion.p>
 
-          {/* Texto secundario: anclado a la derecha del texto principal, no al borde */}
+            <div className="flex items-end gap-6 md:gap-10">
+              <motion.h2
+                className="font-display italic-serif text-cream leading-none"
+                style={{ fontSize: 'clamp(3rem, 7vw, 6.5rem)' }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.8, ease }}
+              >
+                108
+              </motion.h2>
+              <motion.div
+                className="pb-2 md:pb-3"
+                initial={{ opacity: 0, x: -10 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.7, delay: 0.18, ease }}
+              >
+                <p className="font-display italic-serif leading-tight"
+                   style={{ fontSize: 'clamp(1rem, 2vw, 1.8rem)', color: 'rgba(245,240,232,0.80)' }}>
+                  modelos.
+                </p>
+                <p className="font-display italic-serif leading-tight"
+                   style={{ fontSize: 'clamp(1rem, 2vw, 1.8rem)', color: 'rgba(245,240,232,0.58)' }}>
+                  Un solo proveedor.
+                </p>
+              </motion.div>
+            </div>
+          </div>
+
           <motion.p
-            className="font-display italic-serif text-cream/38 md:absolute md:bottom-1 md:left-[clamp(12rem,28vw,28rem)]"
-            style={{ fontSize: 'clamp(0.9rem, 1.8vw, 1.9rem)', marginTop: '0.5rem' }}
+            className="font-body text-right hidden md:block"
+            style={{ fontSize: '0.78rem', color: 'rgba(245,240,232,0.56)', maxWidth: '18rem', lineHeight: 1.7 }}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.8, delay: 0.25, ease: 'easeOut' }}
+            viewport={{ once: true, margin: '-40px' }}
+            transition={{ duration: 0.7, delay: 0.3, ease }}
           >
-            Un solo<br />proveedor.
+            Stock permanente.<br />
+            Diseño a medida.<br />
+            Escala real.
           </motion.p>
         </div>
 
         {/* Gold rule */}
         <motion.div
-          className="h-px bg-gold/25 mb-8 origin-left"
+          className="h-px bg-gold/22 mb-8 origin-left"
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 1, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+          viewport={{ once: true, margin: '-40px' }}
+          transition={{ duration: 1.1, delay: 0.1, ease }}
         />
 
-        {/* Editorial product grid */}
-        <div className="grid grid-cols-12 gap-2 md:gap-3 items-start">
+        {/* ── ChromaGrid 3×3 ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-40px' }}
+          transition={{ duration: 0.7, delay: 0.15, ease }}
+        >
+          <ChromaGrid items={items} columns={3} />
+        </motion.div>
 
-          {/* HERO — left 5 cols, tall portrait */}
-          <div className="col-span-12 md:col-span-5 row-span-2">
-            <StageCard
-              item={hero.item}
-              category={hero.category}
-              slug={hero.slug}
-              aspectRatio="3/4"
-              isHovered={hovered === hero.item.id}
-              onEnter={() => setHovered(hero.item.id)}
-              onLeave={() => setHovered(null)}
-              sizes="(max-width: 768px) 100vw, 42vw"
-            />
+        {/* ── Footer strip ── */}
+        <motion.div
+          className="flex items-center justify-between mt-10 pt-7 border-t border-border-dark"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: '-20px' }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <div className="hidden md:flex items-center gap-6">
+            <div>
+              <p className="font-display font-semibold text-cream/70 tabular-nums leading-none"
+                 style={{ fontSize: 'clamp(1.1rem, 1.8vw, 1.5rem)' }}>
+                10
+              </p>
+              <p className="font-sans text-[0.46rem] text-cream/36 tracking-[0.2em] uppercase mt-0.5">
+                categorías
+              </p>
+            </div>
+            <div className="w-px h-8 bg-border-dark" />
+            <p className="font-sans text-[0.56rem] text-cream/40 tracking-[0.2em] uppercase">
+              Valencia · España
+            </p>
           </div>
 
-          {/* WIDE — top right, 7 cols, landscape */}
-          <div className="col-span-12 md:col-span-7">
-            <StageCard
-              item={wide.item}
-              category={wide.category}
-              slug={wide.slug}
-              aspectRatio="16/9"
-              isHovered={hovered === wide.item.id}
-              onEnter={() => setHovered(wide.item.id)}
-              onLeave={() => setHovered(null)}
-              sizes="(max-width: 768px) 100vw, 58vw"
-            />
-          </div>
-
-          {/* Bottom row — right 7 cols split */}
-          <div className="col-span-12 md:col-span-7 grid grid-cols-2 gap-2 md:gap-3">
-
-            {/* SMALL — left of bottom row */}
-            {small && (
-              <div style={{ marginTop: '1.5rem' }}>
-                <StageCard
-                  item={small.item}
-                  category={small.category}
-                  slug={small.slug}
-                  aspectRatio="4/3"
-                  isHovered={hovered === small.item.id}
-                  onEnter={() => setHovered(small.item.id)}
-                  onLeave={() => setHovered(null)}
-                  sizes="(max-width: 768px) 50vw, 29vw"
-                />
-              </div>
-            )}
-
-            {/* ACCENT — right of bottom row, offset down */}
-            {accent && (
-              <div style={{ marginTop: '0.5rem' }}>
-                <StageCard
-                  item={accent.item}
-                  category={accent.category}
-                  slug={accent.slug}
-                  aspectRatio="5/4"
-                  isHovered={hovered === accent.item.id}
-                  onEnter={() => setHovered(accent.item.id)}
-                  onLeave={() => setHovered(null)}
-                  sizes="(max-width: 768px) 50vw, 29vw"
-                />
-              </div>
-            )}
-
-          </div>
-
-        </div>
-
-        {/* Footer */}
-        <div className="flex items-center justify-between mt-10 pt-7 border-t border-border-dark">
-          <p className="font-sans text-[0.58rem] text-cream/48 tracking-[0.22em] uppercase hidden md:block">
-            10 categorías &nbsp;·&nbsp; Valencia, España
-          </p>
           <Link
             href="/catalogo"
-            className="font-sans text-sm text-cream/58 hover:text-gold transition-colors duration-300 group ml-auto"
+            className="group ml-auto font-sans text-[0.68rem] font-medium tracking-[0.12em] uppercase
+                       px-7 py-3.5 squircle-sm transition-colors duration-300
+                       text-ink bg-gold hover:bg-gold-light"
           >
             Ver catálogo completo
-            <span className="inline-block ml-2 transition-transform duration-300 group-hover:translate-x-1.5" aria-hidden="true">→</span>
+            <span className="inline-block ml-2 transition-transform duration-300 group-hover:translate-x-1.5" aria-hidden="true">
+              →
+            </span>
           </Link>
-        </div>
+        </motion.div>
 
       </div>
     </section>
-  )
-}
-
-function StageCard({
-  item,
-  category,
-  slug,
-  aspectRatio,
-  isHovered,
-  onEnter,
-  onLeave,
-  sizes,
-}: {
-  item:        CatalogItem
-  category:    string
-  slug:        string
-  aspectRatio: string
-  isHovered:   boolean
-  onEnter:     () => void
-  onLeave:     () => void
-  sizes:       string
-}) {
-  return (
-    <Link
-      href={`/catalogo?categoria=${slug}`}
-      className="group cursor-none block"
-      onMouseEnter={onEnter}
-      onMouseLeave={onLeave}
-      data-cursor-expand
-    >
-      {/* Category label */}
-      <p className={`
-        font-sans text-[0.55rem] tracking-[0.22em] uppercase mb-2
-        transition-colors duration-300
-        ${isHovered ? 'text-gold' : 'text-cream/52'}
-      `}>
-        {category}
-      </p>
-
-      {/* Image container */}
-      <div
-        className="relative overflow-hidden squircle-sm"
-        style={{ aspectRatio, backgroundColor: 'var(--color-bark)' }}
-      >
-        <Image
-          src={encodeImagePath(item.image)}
-          alt={category}
-          fill
-          className={`
-            object-cover object-center
-            transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]
-            ${isHovered ? 'scale-105' : 'scale-100'}
-          `}
-          sizes={sizes}
-        />
-
-        {/* Gold top reveal line */}
-        <div
-          className="absolute top-0 left-0 right-0 h-[1.5px] bg-gold origin-left transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
-          style={{ transform: isHovered ? 'scaleX(1)' : 'scaleX(0)' }}
-        />
-
-        {/* Subtle vignette at bottom */}
-        <div className="absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-ink/40 to-transparent pointer-events-none" />
-      </div>
-
-      {/* Ref */}
-      <p className={`
-        font-body tabular-nums text-[0.58rem] tracking-[0.18em] uppercase mt-2.5
-        transition-colors duration-300
-        ${isHovered ? 'text-cream/70' : 'text-cream/48'}
-      `}>
-        Ref. {item.id}
-      </p>
-    </Link>
   )
 }

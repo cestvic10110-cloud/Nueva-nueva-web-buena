@@ -47,8 +47,17 @@ export function NavBar() {
       )}
     >
       <nav className="container-site h-16 flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2.5 group">
+        {/* Logo — scroll to top if already on home */}
+        <Link
+          href="/"
+          onClick={(e) => {
+            if (typeof window !== 'undefined' && window.location.pathname === '/') {
+              e.preventDefault()
+              window.scrollTo({ top: 0, behavior: 'smooth' })
+            }
+          }}
+          className="flex items-center gap-2.5 group"
+        >
           <Image
             src="/images/logoCesteria.png"
             alt=""

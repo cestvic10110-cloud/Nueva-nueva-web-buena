@@ -4,9 +4,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useRef } from 'react'
 import { motion, useScroll, useTransform, useReducedMotion } from 'motion/react'
-import { SectionLabel } from '@/components/shared/SectionLabel'
 
 const ease = [0.16, 1, 0.3, 1] as const
+
 
 export function OpeningManifest() {
   const containerRef = useRef<HTMLElement>(null)
@@ -17,8 +17,8 @@ export function OpeningManifest() {
     offset: ['start start', 'end start'],
   })
 
-  const imgY        = useTransform(scrollYProgress, [0, 1], reduced ? ['0%', '0%'] : ['0%', '-12%'])
-  const scrollDarken = useTransform(scrollYProgress, [0, 0.65], [0, 0.38])
+  const imgY         = useTransform(scrollYProgress, [0, 1], reduced ? ['0%', '0%'] : ['0%', '-14%'])
+  const scrollDarken = useTransform(scrollYProgress, [0, 0.65], [0, 0.42])
 
   return (
     <section
@@ -39,23 +39,19 @@ export function OpeningManifest() {
         />
       </motion.div>
 
-      {/* ── LAYER 2: Gradient zones ──
-          Far left edge bleeds lino/cream warmth (not pure black).
-          Main text zone: heavy dark for legibility.
-          Bottom anchor + top nav scrim.
-      ── */}
+      {/* ── LAYER 2: Gradient ── */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background: [
-            'linear-gradient(100deg, rgba(28,20,16,0.96) 0%, rgba(20,15,11,0.91) 28%, rgba(15,13,11,0.60) 52%, rgba(15,13,11,0.08) 72%, transparent 100%)',
-            'linear-gradient(to top, rgba(15,13,11,0.85) 0%, rgba(15,13,11,0.22) 30%, transparent 58%)',
-            'linear-gradient(to bottom, rgba(15,13,11,0.65) 0%, transparent 26%)',
+            'linear-gradient(105deg, rgba(22,16,12,0.97) 0%, rgba(18,13,10,0.92) 30%, rgba(15,13,11,0.62) 54%, rgba(15,13,11,0.10) 74%, transparent 100%)',
+            'linear-gradient(to top, rgba(15,13,11,0.90) 0%, rgba(15,13,11,0.28) 32%, transparent 60%)',
+            'linear-gradient(to bottom, rgba(15,13,11,0.70) 0%, transparent 28%)',
           ].join(', '),
         }}
       />
 
-      {/* ── LAYER 3: Scroll-driven extra darkening ── */}
+      {/* ── LAYER 3: Scroll darkening ── */}
       <motion.div
         className="absolute inset-0 bg-ink pointer-events-none"
         style={{ opacity: scrollDarken }}
@@ -70,37 +66,39 @@ export function OpeningManifest() {
         {/* Center block */}
         <div className="flex-1 flex flex-col justify-center">
 
-          {/* Vertical brand watermark — right edge, lg+ */}
+          {/* Vertical watermark */}
           <span
             className="absolute right-0 top-1/2 -translate-y-1/2 rotate-90
-                       font-sans text-[0.44rem] text-cream/12 tracking-[0.44em] uppercase
+                       font-sans text-[0.44rem] text-cream/10 tracking-[0.44em] uppercase
                        whitespace-nowrap hidden lg:block select-none"
             aria-hidden="true"
           >
-            Cestería Vicent · Est. 1969 · Valencia
+            Cestería Vicent · Est. 1969 · Aielo de Malferit · Valencia
           </span>
 
-          {/* Text column */}
-          <div className="w-full md:max-w-[54%] lg:max-w-[48%]">
+          <div className="w-full md:max-w-[58%] lg:max-w-[52%]">
 
-            {/* Label */}
-            <motion.div
+            {/* H1 semántico + eyebrow visual */}
+            <motion.h1
+              className="font-sans uppercase"
+              style={{
+                fontSize: '0.58rem',
+                letterSpacing: '0.28em',
+                color: 'rgba(245,240,232,0.52)',
+              }}
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1, duration: 0.5, ease }}
             >
-              <SectionLabel>Fabricante B2B · Desde 1969 · Valencia</SectionLabel>
-            </motion.div>
+              Fabricantes de Cestas de Mimbre al por Mayor · Desde 1969 · Valencia
+            </motion.h1>
 
-            {/* ── TÍTULO ASIMÉTRICO V2 ──
-                Línea 1: italic light, izquierda
-                Línea 2: upright semibold, desplazada +2.5rem derecha → tensión
-            ── */}
-            <h1 className="leading-none tracking-tight mt-5 mb-8" style={{ fontSize: 'clamp(3.2rem, 8.5vw, 8.5rem)' }}>
+            {/* Display text */}
+            <p className="leading-none tracking-tight mt-4 mb-8" style={{ fontSize: 'clamp(3.2rem, 8.5vw, 8.5rem)' }}>
               <motion.span
                 className="block font-display italic-serif text-cream"
                 style={{ lineHeight: 0.9 }}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.7, ease }}
               >
@@ -109,13 +107,13 @@ export function OpeningManifest() {
               <motion.span
                 className="block font-display font-semibold text-cream not-italic"
                 style={{ lineHeight: 0.92, marginLeft: 'clamp(1.5rem, 3vw, 2.5rem)', marginTop: '0.08em' }}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.52, duration: 0.7, ease }}
               >
                 la Presentación
               </motion.span>
-            </h1>
+            </p>
 
             {/* Gold separator */}
             <motion.div
@@ -126,14 +124,17 @@ export function OpeningManifest() {
               transition={{ delay: 0.95, duration: 0.8, ease }}
             />
 
+            {/* Body */}
             <motion.p
-              className="font-body text-cream/75 leading-relaxed mb-10"
-              style={{ fontSize: 'clamp(0.9rem, 1.35vw, 1.05rem)', maxWidth: '26rem' }}
+              className="font-body text-cream/72 leading-relaxed mb-10"
+              style={{ fontSize: 'clamp(0.9rem, 1.35vw, 1.05rem)', maxWidth: '28rem' }}
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.0, duration: 0.7, ease }}
             >
-              Fabricantes y mayoristas de cestería artesanal. Diseño, personalización y gran volumen exclusivo para marcas exigentes.
+              Medio siglo fabricando el contenedor perfecto para cada producto.
+              Artesanía escalable, diseño a medida y stock permanente —
+              exclusivo para marcas exigentes.
             </motion.p>
 
             {/* CTAs */}
@@ -146,17 +147,17 @@ export function OpeningManifest() {
               <Link
                 href="/contacto"
                 className="font-sans text-[0.7rem] font-medium text-ink bg-gold hover:bg-gold-light
-                           transition-colors duration-300 px-6 py-3.5 squircle-sm
+                           transition-colors duration-300 px-7 py-3.5 squircle-sm
                            tracking-[0.1em] uppercase"
               >
                 Solicitar presupuesto
               </Link>
               <Link
                 href="/catalogo"
-                className="font-sans text-[0.72rem] text-cream/65 hover:text-cream
-                           transition-colors duration-300 link-underline decoration-gold/40"
+                className="font-sans text-[0.72rem] text-cream/60 hover:text-gold
+                           transition-colors duration-300 tracking-[0.08em]"
               >
-                Ver catálogo →
+                Ver Catálogo Mayorista <span className="inline-block transition-transform duration-300 group-hover:translate-x-1.5">→</span>
               </Link>
             </motion.div>
 
@@ -165,56 +166,20 @@ export function OpeningManifest() {
 
         {/* ── Bottom strip ── */}
         <motion.div
-          className="pb-8 flex items-end justify-between"
+          className="pb-8 flex items-end justify-between gap-6"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.4, duration: 0.7 }}
+          transition={{ delay: 1.3, duration: 0.8 }}
         >
-          {/* Stats clustered — stagger vertical real, no justify-between */}
-          <div className="flex flex-col gap-0">
-            <div className="flex items-baseline gap-8">
-              {/* +50 — baseline 0 */}
-              <div>
-                <p className="font-display font-semibold text-cream/82 leading-none"
-                   style={{ fontSize: 'clamp(0.95rem, 1.7vw, 1.4rem)' }}>
-                  +50
-                </p>
-                <p className="font-sans text-[0.48rem] text-cream/48 tracking-[0.2em] uppercase mt-0.5">
-                  años
-                </p>
-              </div>
-              {/* 108 — inline, misma row */}
-              <div style={{ marginTop: '0.4rem' }}>
-                <p className="font-display font-semibold text-cream/82 leading-none"
-                   style={{ fontSize: 'clamp(0.95rem, 1.7vw, 1.4rem)' }}>
-                  108+
-                </p>
-                <p className="font-sans text-[0.48rem] text-cream/48 tracking-[0.2em] uppercase mt-0.5">
-                  modelos
-                </p>
-              </div>
-              {/* B2B — offset extra */}
-              <div style={{ marginTop: '0.8rem' }}>
-                <p className="font-display font-semibold text-gold/80 leading-none"
-                   style={{ fontSize: 'clamp(0.95rem, 1.7vw, 1.4rem)' }}>
-                  B2B
-                </p>
-                <p className="font-sans text-[0.48rem] text-cream/48 tracking-[0.2em] uppercase mt-0.5">
-                  exclusivo
-                </p>
-              </div>
-            </div>
-          </div>
-
           {/* Scroll cue */}
-          <div className="hidden md:flex flex-col items-center gap-1.5">
-            <span className="font-sans text-[0.44rem] text-cream/38 tracking-[0.32em] uppercase">
+          <div className="hidden md:flex flex-col items-center gap-2 pb-1">
+            <span className="font-sans text-[0.42rem] text-cream/32 tracking-[0.32em] uppercase">
               scroll
             </span>
             <motion.div
-              className="w-px h-8 bg-gradient-to-b from-gold/55 to-transparent"
-              animate={{ scaleY: [0.2, 1, 0.2], opacity: [0.3, 0.9, 0.3] }}
-              transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
+              className="w-px h-10 bg-gradient-to-b from-gold/50 to-transparent"
+              animate={{ scaleY: [0.15, 1, 0.15], opacity: [0.25, 0.85, 0.25] }}
+              transition={{ duration: 2.8, repeat: Infinity, ease: 'easeInOut' }}
               style={{ originY: 0 }}
             />
           </div>
@@ -224,9 +189,9 @@ export function OpeningManifest() {
 
       {/* Ghost "1969" */}
       <p
-        className="absolute bottom-[-0.1em] right-[-0.02em] font-display font-semibold
+        className="absolute bottom-[-0.08em] right-[-0.02em] font-display font-semibold
                    text-cream leading-none pointer-events-none select-none hidden md:block"
-        style={{ fontSize: 'clamp(7rem, 19vw, 25rem)', opacity: 0.032 }}
+        style={{ fontSize: 'clamp(7rem, 20vw, 26rem)', opacity: 0.028 }}
         aria-hidden="true"
       >
         1969
