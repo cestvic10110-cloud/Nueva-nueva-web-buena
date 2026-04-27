@@ -1,6 +1,14 @@
-import { readFileSync } from 'fs'
-import { join } from 'path'
+/**
+ * VERCEL DEPLOYMENT FIX:
+ * We cannot use 'fs.readFileSync' on public assets during runtime/build in Vercel
+ * because it triggers the bundling of the entire 'public' folder into the 
+ * Server Function, exceeding the 300MB limit.
+ */
 
+// import { readFileSync } from 'fs'
+// import { join } from 'path'
+
+/*
 function readDimensions(publicPath: string): { w: number; h: number } | null {
   try {
     const abs = join(process.cwd(), 'public', publicPath)
@@ -30,8 +38,17 @@ function readDimensions(publicPath: string): { w: number; h: number } | null {
     return null
   }
 }
+*/
 
+/**
+ * Returns true if the image should be treated as portrait (tall).
+ * Manual list to avoid massive bundle sizes in Vercel.
+ */
 export function isPortrait(publicPath: string): boolean {
-  const d = readDimensions(publicPath)
-  return d ? d.h > d.w : false
+  // Add IDs or paths here that are known to be vertical
+  const manualPortraits = [
+    'LL50', '8500', '8503'
+  ]
+  
+  return manualPortraits.some(id => publicPath.includes(id))
 }
