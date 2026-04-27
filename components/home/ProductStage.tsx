@@ -8,7 +8,7 @@ import type { ChromaItem } from './ChromaGrid'
 
 const ease = [0.16, 1, 0.3, 1] as const
 
-/* 9 products — one per visual row, 3×3 grid.
+/* 6 products — 3x2 grid.
    Palette: all warm gold/bark tones from our design system. */
 const STAGE_IDS: {
   id: string
@@ -23,44 +23,29 @@ const STAGE_IDS: {
     gradient: 'linear-gradient(160deg, #2A1F10 0%, #1C1917 100%)',
   },
   {
-    id: '7232', slug: 'baules', category: 'Baúles',
+    id: '2017', slug: 'cestas-navidenas', category: 'Cestas Navideñas',
     borderColor: '#C4A882',
     gradient: 'linear-gradient(200deg, #221A10 0%, #1C1917 100%)',
   },
   {
-    id: '7425', slug: 'cestas', category: 'Cestas',
+    id: '4338', slug: 'bandejas', category: 'Bandejas',
     borderColor: '#D4A657',
     gradient: 'linear-gradient(145deg, #251C0E 0%, #1C1917 100%)',
   },
   {
-    id: '4333', slug: 'bandejas', category: 'Bandejas',
+    id: '4523', slug: 'cuevanos', category: 'Cuévanos',
     borderColor: '#B5843A',
     gradient: 'linear-gradient(175deg, #201810 0%, #292524 100%)',
   },
   {
-    id: '2016', slug: 'cestas-navidenas', category: 'Cestas Navideñas',
+    id: '7262', slug: 'baules', category: 'Baúles',
     borderColor: '#C4A882',
     gradient: 'linear-gradient(220deg, #28200F 0%, #1C1917 100%)',
   },
   {
-    id: '4522', slug: 'cuevanos', category: 'Cuévanos',
+    id: '4788', slug: 'madera', category: 'Madera',
     borderColor: '#A07855',
     gradient: 'linear-gradient(135deg, #1E160C 0%, #292524 100%)',
-  },
-  {
-    id: '7126', slug: 'baules', category: 'Baúles',
-    borderColor: '#D4C9B5',
-    gradient: 'linear-gradient(190deg, #1A1510 0%, #1C1917 100%)',
-  },
-  {
-    id: '4335', slug: 'forja', category: 'Forja',
-    borderColor: '#8A7060',
-    gradient: 'linear-gradient(155deg, #181310 0%, #0F0D0B 100%)',
-  },
-  {
-    id: '5213', slug: 'estuches', category: 'Estuches',
-    borderColor: '#B5843A',
-    gradient: 'linear-gradient(210deg, #221A0E 0%, #1C1917 100%)',
   },
 ]
 
@@ -77,14 +62,14 @@ export function ProductStage() {
   return (
     <section className="bg-bark section-pad overflow-hidden relative">
 
-      {/* Ghost "108" */}
+      {/* Ghost "+130" */}
       <p
         className="absolute right-[-0.04em] top-1/2 -translate-y-1/2 font-display font-semibold
                    text-cream leading-none pointer-events-none select-none hidden lg:block"
         style={{ fontSize: 'clamp(14rem, 30vw, 32rem)', opacity: 0.028 }}
         aria-hidden="true"
       >
-        108
+        +130
       </p>
 
       <div className="container-site relative z-10">
@@ -112,7 +97,7 @@ export function ProductStage() {
                 viewport={{ once: true, margin: '-40px' }}
                 transition={{ duration: 0.8, ease }}
               >
-                108
+                +130
               </motion.h2>
               <motion.div
                 className="pb-2 md:pb-3"

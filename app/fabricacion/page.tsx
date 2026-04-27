@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 const METRICS = [
   { value: '1969', label: 'Año de fundación'  },
   { value: '+50',  label: 'Años de oficio'    },
-  { value: '108',  label: 'Modelos en stock'  },
+  { value: '+130', label: 'Modelos en stock'  },
   { value: 'B2B',  label: 'Exclusivo empresas'},
 ]
 

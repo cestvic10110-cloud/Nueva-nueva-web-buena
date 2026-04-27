@@ -55,17 +55,17 @@ export function ProductDetail({ item, related }: Props) {
           {/* ── LEFT: Image ── */}
           <div className="lg:sticky lg:top-24">
             <div
-              className="relative overflow-hidden rounded-2xl aspect-square"
-              style={{ backgroundColor: 'var(--color-sand)' }}
+              className="relative overflow-hidden rounded-2xl"
             >
               {!imgError ? (
                 <Image
-                  src={encodeImagePath(item.image)}
+                  src={encodeImagePath(selected?.image || item.image)}
                   alt={displayName}
-                  fill
+                  width={1200}
+                  height={1200}
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
                   priority
                   quality={90}
-                  className="object-cover object-center"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   onError={() => setImgError(true)}
                 />
@@ -217,7 +217,7 @@ export function ProductDetail({ item, related }: Props) {
                 className="font-sans tracking-[0.1em] leading-relaxed"
                 style={{ fontSize: '0.6rem', color: 'var(--color-text-secondary)' }}
               >
-                Servicio exclusivo <span style={{ color: 'var(--color-gold)' }}>B2B</span> · Pedidos mínimos por lote ·
+                Servicio exclusivo <span style={{ color: 'var(--color-gold)' }}>B2B</span> ·
                 Precio bajo consulta según volumen
               </p>
             </div>

@@ -8,26 +8,26 @@ const PANELS = [
   {
     index: '01',
     title: 'Raíces y Materiales: Fibras naturales y sostenibles',
-    body: 'El mimbre llega en haces desde las riberas del Júcar. Cada fibra se selecciona a mano — grosor, flexibilidad, color.',
-    image: '/images/mimbre.png',
+    body: 'Seleccionamos las mejores fibras naturales de cultivo sostenible. Cada vara de mimbre es escogida a mano atendiendo a su grosor, flexibilidad y color para garantizar la máxima calidad.',
+    image: '/fotos-web/fotomimbre.png',
   },
   {
     index: '02',
-    title: 'Medio siglo de oficio: Capacidad industrial con alma artesana',
-    body: 'Más de cincuenta años perfeccionando el mismo gesto. La habilidad del artesano no tiene sustituto industrial.',
-    image: '/images/cesta-construccion.png',
+    title: 'Medio siglo de historia: Excelencia técnica y visión atemporal',
+    body: 'Cinco décadas de evolución constante y perfeccionamiento. Nuestra trayectoria define un estándar de calidad superior, donde cada pieza es el resultado de un conocimiento profundo y una estética sofisticada.',
+    image: '/fotos-web/fotodesliza2.png',
   },
   {
     index: '03',
     title: 'El Acabado',
     body: 'Cada pieza pasa por revisión manual. Tintes naturales, barnices al agua, refuerzos de estructura — nada sale sin firma.',
-    image: '/images/cestas-mimbre.png',
+    image: '/fotos-web/fotoacabado85.png',
   },
   {
     index: '04',
     title: 'El Resultado',
-    body: 'Un contenedor artesanal listo para elevar su producto. Desde el taller de Aielo de Malferit hasta el lineal de su empresa.',
-    image: '/images/cestas-camion.png',
+    body: 'Un contenedor exclusivo diseñado para elevar su producto. Desde el taller de Aielo de Malferit hasta el lineal de su empresa.',
+    image: '/fotos-web/pasd.png',
   },
 ] as const
 
@@ -52,10 +52,14 @@ function CraftMobile() {
         {PANELS.map((panel) => (
           <div
             key={panel.index}
-            className="snap-start flex-shrink-0 relative rounded-2xl overflow-hidden"
+            className="snap-start flex-shrink-0 relative rounded-2xl overflow-hidden bg-bark"
             style={{ width: '80vw', aspectRatio: '3/4' }}
           >
-            <Image src={panel.image} alt={panel.title} fill className="object-cover object-center" sizes="80vw" />
+            {panel.uncropped ? (
+              <img src={panel.image} alt={panel.title} className="w-full h-full object-contain" />
+            ) : (
+              <Image src={panel.image} alt={panel.title} fill className="object-cover object-center" sizes="80vw" />
+            )}
             <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(15,13,11,0.92) 0%, rgba(15,13,11,0.2) 50%, transparent 75%)' }} />
             <div className="absolute bottom-0 left-0 right-0 p-5">
               <p className="font-sans uppercase tracking-[0.2em] mb-2"
@@ -113,7 +117,7 @@ function CraftDesktop() {
       ref={sectionRef}
       className="hidden md:block"
       style={{ height: '500vh' }}
-      aria-label="El proceso artesanal de Cestería Vicent"
+      aria-label="El proceso de creación de Cestería Vicent"
     >
       <div className="sticky top-0 h-screen overflow-hidden bg-ink">
 
@@ -129,15 +133,25 @@ function CraftDesktop() {
               style={{ width: '100vw' }}
             >
               {/* Foto full-bleed */}
-              <Image
-                src={panel.image}
-                alt={panel.title}
-                fill
-                className="object-cover object-center"
-                sizes="100vw"
-                quality={88}
-                priority={i === 0}
-              />
+              {panel.uncropped ? (
+                <div className="flex items-center justify-center h-full w-full bg-soil">
+                  <img
+                    src={panel.image}
+                    alt={panel.title}
+                    className="max-w-full max-h-full object-contain"
+                  />
+                </div>
+              ) : (
+                <Image
+                  src={panel.image}
+                  alt={panel.title}
+                  fill
+                  className="object-cover object-center"
+                  sizes="100vw"
+                  quality={88}
+                  priority={i === 0}
+                />
+              )}
 
               {/* Gradiente */}
               <div
@@ -206,7 +220,7 @@ function CraftDesktop() {
         <div className="absolute top-10 right-14 hidden lg:block pointer-events-none">
           <p className="font-sans uppercase tracking-[0.3em]"
             style={{ fontSize: '0.46rem', color: 'var(--color-cream)', opacity: 0.22 }}>
-            El Proceso Artesanal
+            El Proceso de Creación
           </p>
         </div>
 

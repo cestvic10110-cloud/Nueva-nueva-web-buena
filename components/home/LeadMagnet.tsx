@@ -7,15 +7,31 @@ const ease = [0.16, 1, 0.3, 1] as const
 
 export function LeadMagnet() {
   const [email, setEmail] = useState('')
+  const [company, setCompany] = useState('')
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     if (!email || !email.includes('@')) return
+    
     setStatus('loading')
-    // Simulate async — replace with real API call
-    await new Promise((r) => setTimeout(r, 900))
-    setStatus('success')
+
+    try {
+      const response = await fetch('/api/send-catalog', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, company }),
+      })
+
+      if (response.ok) {
+        setStatus('success')
+      } else {
+        setStatus('error')
+      }
+    } catch (error) {
+      console.error('Error sending email:', error)
+      setStatus('error')
+    }
   }
 
   return (
@@ -71,13 +87,14 @@ export function LeadMagnet() {
               className="font-body text-cream/62 leading-relaxed mb-8"
               style={{ fontSize: 'clamp(0.875rem, 1.15vw, 1rem)', maxWidth: '32rem' }}
             >
-              Descargue nuestras tarifas de venta al por mayor 2026 y descubra soluciones de presentación sostenibles.
+              Descargue nuestro catálogo de venta al por mayor 2026 y descubra soluciones de presentación sostenibles.
             </p>
 
             <ul className="space-y-3">
               {[
-                'Precios de tarifa por volumen 2026',
+                'Precios especiales por volumen 2026',
                 'Referencias completas con dimensiones',
+                'Personalización a medida en todo el catálogo',
                 'Novedades y colección navideña',
                 'Acceso directo a su gestor comercial',
               ].map((item) => (
@@ -141,8 +158,8 @@ export function LeadMagnet() {
                       className="font-body leading-relaxed"
                       style={{ fontSize: '0.875rem', color: 'rgba(245,240,232,0.58)' }}
                     >
-                      Revise su bandeja de entrada.<br />
-                      Si no lo recibe en 5 min, compruebe spam.
+                      Hemos recibido su solicitud.<br />
+                      Le enviaremos el catálogo y la lista de precios a la mayor brevedad posible.
                     </p>
                   </motion.div>
                 ) : (
@@ -202,6 +219,8 @@ export function LeadMagnet() {
                       <input
                         id="lead-company"
                         type="text"
+                        value={company}
+                        onChange={(e) => setCompany(e.target.value)}
                         placeholder="Nombre de su empresa"
                         autoComplete="organization"
                         className="w-full bg-transparent font-body text-cream placeholder-cream/25
@@ -212,13 +231,13 @@ export function LeadMagnet() {
 
                     <button
                       type="submit"
-                      disabled={status === 'loading'}
+                      disabled={status === 'loading' || !email || !email.includes('@')}
                       className="w-full font-sans text-[0.72rem] font-medium text-ink bg-gold
-                                 hover:bg-gold-light disabled:opacity-60
-                                 transition-colors duration-300 px-8 py-4 squircle-sm
+                                 hover:bg-gold-light disabled:opacity-30 disabled:cursor-not-allowed
+                                 transition-all duration-300 px-8 py-4 squircle-sm
                                  tracking-[0.12em] uppercase cursor-pointer"
                     >
-                      {status === 'loading' ? 'Enviando…' : 'Recibir catálogo gratuito'}
+                      {status === 'loading' ? 'Enviando…' : status === 'error' ? 'Reintentar envío' : 'Recibir catálogo gratuito'}
                     </button>
 
                     <p

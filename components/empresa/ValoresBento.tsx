@@ -13,8 +13,8 @@ const VALUES = [
   },
   {
     num: '02',
-    title: 'Taller propio',
-    body: 'Acabados, personalizaciones y arreglos en nuestro taller de Aielo de Malferit.',
+    title: 'Trabajo artesanal',
+    body: 'Fabricamos productos a mano y realizamos acabados personalizados en nuestro taller de Aielo de Malferit.',
     large: false,
   },
   {

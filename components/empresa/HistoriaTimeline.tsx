@@ -10,28 +10,28 @@ const ERAS = [
     year: '1969',
     title: 'Los inicios.',
     body: 'Un taller familiar en Aielo de Malferit que comenzó con el oficio más antiguo: trenzar mimbre a mano. El conocimiento se transmitía de generación en generación, pieza a pieza.',
-    image: '/images/mimbre.png',
+    image: '/FotosWebPersonas/fotoiaio2.png',
     imageAlt: 'Materia prima: fibras de mimbre del Júcar',
   },
   {
     year: '1985',
     title: 'Expansión B2B.',
     body: 'Ampliación de instalaciones y orientación exclusiva al mercado profesional. Las empresas de alimentación y distribución descubren el valor diferencial del mimbre artesanal valenciano.',
-    image: '/images/cesta-construccion.png',
+    image: '/FotosWebPersonas/Fototreballant.png',
     imageAlt: 'Artesano construyendo una cesta en el taller',
   },
   {
     year: '2000',
     title: 'Modernización.',
     body: 'Nuevas técnicas de producción sin renunciar a la esencia artesanal. Incorporamos capacidad para grandes volúmenes manteniendo el nivel de acabado que nos diferencia.',
-    image: '/images/workshop.jpg',
+    image: '/FotosWebPersonas/Fototaller.png',
     imageAlt: 'Taller modernizado de Cestería Vicent',
   },
   {
     year: 'Hoy',
     title: 'Referentes.',
     body: 'Proveedor de las empresas más exigentes de España. Capacidad industrial con el acabado que solo da cincuenta años de oficio. Stock permanente, personalización y entrega garantizada.',
-    image: '/images/soluciones-mimbre.jpg',
+    image: '/FotosWebPersonas/nave%20ia.jpeg',
     imageAlt: 'Soluciones artesanales de Cestería Vicent',
   },
 ]
@@ -124,15 +124,26 @@ export function HistoriaTimeline() {
               {/* Photo */}
               <div
                 className="relative overflow-hidden rounded-2xl"
-                style={{ aspectRatio: '16/9', backgroundColor: 'var(--color-sand)' }}
+                style={{ 
+                  aspectRatio: era.year === '1969' ? 'auto' : '16/9', 
+                  backgroundColor: 'var(--color-sand)' 
+                }}
               >
-                <Image
-                  src={era.image}
-                  alt={era.imageAlt}
-                  fill
-                  className="object-cover object-center"
-                  sizes="(max-width: 768px) 100vw, 60vw"
-                />
+                {era.year === '1969' ? (
+                  <img
+                    src={era.image}
+                    alt={era.imageAlt}
+                    className="w-full h-auto block"
+                  />
+                ) : (
+                  <Image
+                    src={era.image}
+                    alt={era.imageAlt}
+                    fill
+                    className="object-cover object-center"
+                    sizes="(max-width: 768px) 100vw, 60vw"
+                  />
+                )}
               </div>
             </motion.div>
 

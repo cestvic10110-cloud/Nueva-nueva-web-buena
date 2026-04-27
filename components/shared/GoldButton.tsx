@@ -24,7 +24,7 @@ export function GoldButton({
 }: GoldButtonProps) {
   const base = cn(
     'inline-flex items-center justify-center font-sans font-medium tracking-wide',
-    'transition-all duration-300 cursor-none squircle select-none',
+    'transition-all duration-300 squircle select-none',
     'focus-visible:outline-2 focus-visible:outline-gold focus-visible:outline-offset-2',
     size === 'sm' && 'text-xs px-4 py-2 gap-1.5',
     size === 'md' && 'text-sm px-6 py-3 gap-2',

@@ -20,42 +20,42 @@ const INDEX_CATEGORIES: IndexCategory[] = [
     num: '01',
     label: 'Cestas Navideñas',
     desc: 'Para el lote perfecto',
-    image: '/fotos-web/lote-navidad.png',
+    image: '/Cestas Navideñas/2012.png',
   },
   {
     slug: 'bandejas',
     num: '02',
     label: 'Bandejas',
     desc: 'Presentación premium para hostelería y gourmet',
-    image: '/images/FotoCatalogo.png',
+    image: '/Bandejas/4331.png',
   },
   {
     slug: 'baules',
     num: '03',
     label: 'Baúles',
     desc: 'Gran formato para regalos corporativos exclusivos',
-    image: '/images/cuevanos-home.jpg',
+    image: '/Baules/7280.png',
   },
   {
     slug: 'cestas',
     num: '04',
     label: 'Cestas',
-    desc: 'Mimbre artesanal tradicional',
-    image: '/images/soluciones-mimbre.jpg',
+    desc: 'Mimbre natural premium',
+    image: '/Cestas/7424.png',
   },
   {
     slug: 'cuevanos',
     num: '05',
     label: 'Cuévanos',
     desc: 'Capacidad y resistencia',
-    image: '/images/christmas-hamper.jpg',
+    image: '/Forja/4550.png',
   },
   {
     slug: 'forja',
     num: '06',
     label: 'Forja & Madera',
     desc: 'Materiales complementarios',
-    image: '/images/workshop.jpg',
+    image: '/Forja/9480.png',
   },
 ]
 
@@ -116,7 +116,7 @@ export function MaterialIndex() {
                     src={INDEX_CATEGORIES[active].image}
                     alt={INDEX_CATEGORIES[active].label}
                     fill
-                    className="object-cover object-center"
+                    className="object-contain object-center p-4 md:p-8"
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </motion.div>
@@ -133,12 +133,24 @@ export function MaterialIndex() {
               <ul>
                 {INDEX_CATEGORIES.map((cat, i) => (
                   <li key={cat.slug}>
-                    <Link
-                      href={`/catalogo?categoria=${cat.slug}`}
+                    <div
                       className="group flex items-baseline gap-4 py-4 border-b border-border-dark/35 last:border-0
-                                 transition-colors duration-200"
-                      onMouseEnter={() => setActive(i)}
-                      onFocus={() => setActive(i)}
+                                 transition-colors duration-200 cursor-pointer"
+                      onClick={(e) => {
+                        e.preventDefault()
+                        if (!sectionRef.current) return
+                        const rect = sectionRef.current.getBoundingClientRect()
+                        const sectionTop = rect.top + window.scrollY
+                        const sectionHeight = sectionRef.current.offsetHeight
+                        const viewportHeight = window.innerHeight
+                        const scrollableDistance = sectionHeight - viewportHeight
+                        const targetScroll = sectionTop + (i / (INDEX_CATEGORIES.length - 1)) * scrollableDistance
+                        
+                        window.scrollTo({
+                          top: targetScroll,
+                          behavior: 'smooth'
+                        })
+                      }}
                     >
                       {/* Number */}
                       <span className="font-body tabular-nums text-[0.6rem] tracking-[0.15em] text-cream/55 flex-shrink-0 w-8">
@@ -170,18 +182,21 @@ export function MaterialIndex() {
                         </p>
                       </div>
 
-                      {/* Arrow */}
-                      <span
-                        className="font-sans text-xs text-gold transition-all duration-300 flex-shrink-0"
+                      {/* Arrow/Link to catalog - only visible when active */}
+                      <Link
+                        href={`/catalogo?categoria=${cat.slug}`}
+                        className="font-sans text-xs text-gold transition-all duration-300 flex-shrink-0 hover:scale-125"
                         style={{
                           opacity: active === i ? 1 : 0,
                           transform: active === i ? 'translateX(0)' : 'translateX(-8px)',
+                          pointerEvents: active === i ? 'auto' : 'none'
                         }}
-                        aria-hidden="true"
+                        onClick={(e) => e.stopPropagation()}
+                        aria-label={`Ver ${cat.label} en el catálogo`}
                       >
                         →
-                      </span>
-                    </Link>
+                      </Link>
+                    </div>
                   </li>
                 ))}
               </ul>

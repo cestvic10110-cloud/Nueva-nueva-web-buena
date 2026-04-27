@@ -58,13 +58,14 @@
 
 html {
   scroll-behavior: smooth;
-  cursor: none; /* replaced by CustomCursor on desktop */
   color-scheme: dark;
+  cursor: auto !important;
 }
 
-@media (pointer: coarse) {
-  html { cursor: auto; }
+body {
+  cursor: auto !important;
 }
+
 
 body {
   background-color: #0F0D0B;
@@ -227,29 +228,6 @@ body {
   .marquee-track { animation: none; }
 }
 
-/* ─────────────────────────────────────────────────────────
-   CUSTOM CURSOR
-   ───────────────────────────────────────────────────────── */
-.custom-cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 20px;
-  height: 20px;
-  border: 1.5px solid #B5843A;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: var(--z-cursor);
-  transform: translate(-50%, -50%);
-  mix-blend-mode: difference;
-  transition: width 200ms ease, height 200ms ease, background-color 200ms ease;
-}
-
-.custom-cursor.expanded {
-  width: 56px;
-  height: 56px;
-  background-color: color-mix(in srgb, #B5843A 15%, transparent);
-}
 
 /* ─────────────────────────────────────────────────────────
    PRODUCT CARD IMAGE HOVER
@@ -301,11 +279,6 @@ body {
   outline-offset: 3px;
 }
 
-a, button { cursor: none; }
-
-@media (pointer: coarse) {
-  a, button { cursor: auto; }
-}
 
 /* ─────────────────────────────────────────────────────���───
    VIEW TRANSITIONS — CSS-driven, no React component needed

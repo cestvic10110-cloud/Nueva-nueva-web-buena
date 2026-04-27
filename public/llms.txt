@@ -16,7 +16,7 @@ Cestería Vicent, S.L. es un fabricante español especializado en cestas, bandej
 
 ## Catálogo — Categorías principales
 
-Más de 108 referencias activas distribuidas en las siguientes categorías:
+Más de 130 referencias activas distribuidas en las siguientes categorías:
 
 | Categoría            | Descripción                                                  |
 |----------------------|--------------------------------------------------------------|
@@ -33,11 +33,11 @@ Más de 108 referencias activas distribuidas en las siguientes categorías:
 
 ## Sectores que atendemos
 
-- **Retail y gran distribución** — Stock permanente, EDI, precio escalonado por volumen
+- **Retail y gran distribución** — Stock permanente, precio escalonado por volumen
 - **Hostelería de lujo y contract** — Presentadores, amenities, elementos de sala; diseño exclusivo
 - **Gourmet y alimentación premium** — Bandejas y cestas para productos de alta gama
 - **Regalo corporativo y lotes navideños** — Baúles y cestas personalizadas por lote
-- **Interiorismo y escaparatismo** — Piezas únicas, dimensiones a medida, series cortas desde 50 uds.
+- **Interiorismo y escaparatismo** — Piezas únicas, dimensiones a medida.
 - **Instituciones y eventos** — Presentaciones institucionales y actos de representación
 
 ## Propuesta de valor
@@ -46,7 +46,7 @@ Más de 108 referencias activas distribuidas en las siguientes categorías:
 - Más de 50 años de oficio artesanal ininterrumpido
 - Stock permanente de referencias activas con reposición garantizada
 - Personalización: dimensiones, acabados, materiales, serigrafía
-- Servicio B2B exclusivo: pedidos mínimos por lote, precio bajo consulta según volumen
+- Servicio B2B exclusivo: precio bajo consulta según volumen
 - Distribución desde Valencia a Madrid, Barcelona y toda España; exportación a Europa
 
 ## Estructura de la web

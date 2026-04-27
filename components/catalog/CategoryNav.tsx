@@ -5,6 +5,7 @@ import { useSearchParams } from 'next/navigation'
 import { useRef } from 'react'
 import { motion } from 'motion/react'
 import { CATEGORIES } from '@/lib/constants'
+import { CatalogSearch } from './CatalogSearch'
 
 const ALL = { slug: '', labelPlural: 'Todo' }
 const NAV_ITEMS = [ALL, ...CATEGORIES]

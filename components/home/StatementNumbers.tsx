@@ -21,9 +21,9 @@ export function StatementNumbers() {
 
   useEffect(() => {
     if (!isInView) return
-    if (reduced) { c50.set(50); c108.set(108); c10.set(10); return }
+    if (reduced) { c50.set(50); c108.set(130); c10.set(10); return }
     const a  = animate(c50,  50,  { duration: 1.8, ease })
-    const b  = animate(c108, 108, { duration: 2.0, ease, delay: 0.1 })
+    const b  = animate(c108, 130, { duration: 2.0, ease, delay: 0.1 })
     const cc = animate(c10,  10,  { duration: 1.1, ease, delay: 0.22 })
     return () => { a.stop(); b.stop(); cc.stop() }
   }, [isInView, reduced, c50, c108, c10])
@@ -100,7 +100,7 @@ export function StatementNumbers() {
               </div>
             </motion.div>
 
-            {/* 108+ — desplazado 0.75rem a la derecha */}
+            {/* 130+ — desplazado 0.75rem a la derecha */}
             <motion.div
               className="flex items-start justify-between py-7 border-b"
               style={{ borderColor: 'var(--color-sand)', paddingLeft: '0.75rem' }}
@@ -131,7 +131,6 @@ export function StatementNumbers() {
               </div>
             </motion.div>
 
-            {/* 24h — desplazado 1.5rem a la derecha */}
             <motion.div
               className="flex items-start justify-between pt-7"
               style={{ paddingLeft: '1.5rem' }}
@@ -144,12 +143,12 @@ export function StatementNumbers() {
                 className="font-display font-semibold leading-none"
                 style={{ fontSize: 'clamp(3.5rem, 8vw, 7rem)', lineHeight: 0.88, color: 'var(--color-text-primary)' }}
               >
-                24h
+                B2B
               </span>
               <div className="text-right self-end mb-1">
                 <p className="font-sans uppercase tracking-[0.16em] leading-snug"
                    style={{ fontSize: '0.58rem', color: 'var(--color-text-secondary)' }}>
-                  respuesta<br />garantizada
+                  Servicio<br />Exclusivo
                 </p>
               </div>
             </motion.div>

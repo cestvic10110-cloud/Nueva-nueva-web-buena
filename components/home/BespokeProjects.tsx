@@ -7,15 +7,15 @@ const SECTORS = [
   {
     num: '01',
     title: 'Interiorismo & Diseño',
-    body: 'Piezas únicas adaptadas al proyecto. Dimensiones, acabados y materiales definidos junto al estudio. Desde una unidad de muestra hasta series cortas.',
-    points: ['Prototipos en 10–15 días', 'Acabados personalizados', 'Series desde 50 uds.'],
+    body: 'Piezas únicas adaptadas al proyecto. Dimensiones, acabados y materiales definidos junto al estudio. Desde muestras individuales hasta series personalizadas.',
+    points: ['Prototipos ágiles', 'Acabados personalizados', 'Series con volumen flexible'],
     href: '/contacto',
   },
   {
     num: '02',
     title: 'Retail & Gran Distribución',
-    body: 'Personalice nuestros capazos y cestas con la identidad y el logotipo de su marca para campañas premium. Stock permanente de más de 108 referencias con reposición garantizada. EDI y pedido mínimo negociable para cadenas y centrales de compra.',
-    points: ['Stock disponible 24 h', 'Logística integrada', 'Precio escalonado por volumen'],
+    body: 'Adaptamos nuestros capazos y cestas a la estética de su firma para campañas de alta gama. Stock permanente con amplia variedad de referencias y reposición garantizada.',
+    points: ['Envíos rápidos', 'Logística integrada', 'Precio escalonado por volumen'],
     href: '/contacto',
   },
   {
@@ -156,7 +156,7 @@ export function BespokeProjects() {
               className="font-body mt-1.5"
               style={{ fontSize: '0.72rem', color: 'var(--color-text-dim)' }}
             >
-              Cestería en Valencia — distribuimos a Madrid, Barcelona y toda España.
+              Cestería en Valencia — distribuimos a toda España.
             </p>
           </div>
           <Link

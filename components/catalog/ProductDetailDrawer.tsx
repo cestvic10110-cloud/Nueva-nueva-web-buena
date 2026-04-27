@@ -78,57 +78,61 @@ export function ProductDetailDrawer({ item, onClose }: Props) {
             transition={{ duration: 0.45, ease }}
           >
 
-            {/* Image top block */}
-            <div className="relative flex-shrink-0" style={{ aspectRatio: '4/3', backgroundColor: 'var(--color-sand)' }}>
-              {!imgError ? (
-                <Image
-                  src={encodeImagePath(item.image)}
-                  alt={item.name}
-                  fill
-                  className="object-cover object-center"
-                  sizes="480px"
-                  onError={() => setImgError(true)}
-                />
-              ) : (
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <p className="font-display font-semibold text-stroke-gold"
-                     style={{ fontSize: '3rem' }}>
-                    {item.id}
-                  </p>
+            {/* Close button (Fixed) */}
+            <button
+              type="button"
+              onClick={onClose}
+              className="absolute top-4 right-4 w-9 h-9 flex items-center justify-center
+                         rounded-full transition-colors duration-200 cursor-pointer z-10"
+              style={{ backgroundColor: 'rgba(15,13,11,0.55)', color: '#F5F0E8' }}
+              aria-label="Cerrar detalle"
+            >
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+              </svg>
+            </button>
+
+            {/* Scrollable content (Image + Info) */}
+            <div className="flex-1 overflow-y-auto" style={{ scrollbarWidth: 'thin' }}>
+              
+              {/* Image top block */}
+              <div className="relative flex-shrink-0">
+                {!imgError ? (
+                  <Image
+                    src={encodeImagePath(selectedVariant?.image || item.image)}
+                    alt={item.name}
+                    width={800}
+                    height={800}
+                    style={{ width: '100%', height: 'auto', display: 'block' }}
+                    sizes="480px"
+                    onError={() => setImgError(true)}
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <p className="font-display font-semibold text-stroke-gold"
+                       style={{ fontSize: '3rem' }}>
+                      {item.id}
+                    </p>
+                  </div>
+                )}
+
+                {/* Category chip */}
+                <div className="absolute bottom-4 left-4">
+                  <span
+                    className="font-sans uppercase tracking-[0.2em] px-2.5 py-1 rounded"
+                    style={{
+                      fontSize: '0.46rem',
+                      backgroundColor: 'rgba(15,13,11,0.62)',
+                      color: 'var(--color-gold)',
+                    }}
+                  >
+                    {categoryMeta?.labelPlural ?? item.category}
+                  </span>
                 </div>
-              )}
-
-              {/* Close button */}
-              <button
-                type="button"
-                onClick={onClose}
-                className="absolute top-4 right-4 w-9 h-9 flex items-center justify-center
-                           rounded-full transition-colors duration-200 cursor-pointer"
-                style={{ backgroundColor: 'rgba(15,13,11,0.55)', color: '#F5F0E8' }}
-                aria-label="Cerrar detalle"
-              >
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                  <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-                </svg>
-              </button>
-
-              {/* Category chip */}
-              <div className="absolute bottom-4 left-4">
-                <span
-                  className="font-sans uppercase tracking-[0.2em] px-2.5 py-1 rounded"
-                  style={{
-                    fontSize: '0.46rem',
-                    backgroundColor: 'rgba(15,13,11,0.62)',
-                    color: 'var(--color-gold)',
-                  }}
-                >
-                  {categoryMeta?.labelPlural ?? item.category}
-                </span>
               </div>
-            </div>
 
-            {/* Scrollable content */}
-            <div className="flex-1 overflow-y-auto px-6 py-6" style={{ scrollbarWidth: 'thin' }}>
+              {/* Information block */}
+              <div className="px-6 py-6">
 
               {/* Title */}
               <div className="mb-1">
@@ -231,6 +235,7 @@ export function ProductDetailDrawer({ item, onClose }: Props) {
                 </p>
               )}
 
+              </div>
             </div>
 
             {/* Fixed bottom CTAs */}

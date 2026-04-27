@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { ScrollReveal } from '@/components/shared/ScrollReveal'
 import type { CategoryMeta } from '@/lib/types'
+import { CatalogSearch } from './CatalogSearch'
 
 interface Props {
   meta: CategoryMeta | null
@@ -29,16 +30,8 @@ export function CatalogHeader({ meta, count }: Props) {
           </ScrollReveal>
 
           <ScrollReveal delay={80}>
-            <div className="text-right flex-shrink-0">
-              <p
-                className="font-display font-semibold text-gold leading-none tabular-nums"
-                style={{ fontSize: 'clamp(1.8rem, 3.5vw, 3.5rem)' }}
-              >
-                {count}
-              </p>
-              <p className="font-sans text-[0.55rem] text-cream/48 tracking-[0.2em] uppercase mt-1">
-                referencias
-              </p>
+            <div className="flex-shrink-0 mb-2">
+              <CatalogSearch />
             </div>
           </ScrollReveal>
         </div>

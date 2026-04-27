@@ -7,22 +7,34 @@ import type { CategorySlug } from '@/lib/types'
 import { CatalogHeader } from '@/components/catalog/CatalogHeader'
 import { CategoryNav } from '@/components/catalog/CategoryNav'
 import { ProductGrid } from '@/components/catalog/ProductGrid'
+import { OpportunityBanner } from '@/components/catalog/OpportunityBanner'
 
 export const metadata: Metadata = {
   title: 'Catálogo B2B',
-  description: '108 modelos de cestas, baúles, bandejas y embalajes artesanales. Fabricante B2B desde Valencia, 1969.',
+  description: '+130 modelos de cestas, baúles, bandejas y embalajes artesanales. Fabricante B2B desde Valencia, 1969.',
 }
 
 export default async function CatalogPage({
   searchParams,
 }: {
-  searchParams: Promise<{ categoria?: string }>
+  searchParams: Promise<{ categoria?: string; q?: string }>
 }) {
-  const { categoria } = await searchParams
+  const { categoria, q } = await searchParams
   const slug = CATEGORIES.find((c) => c.slug === categoria)?.slug as CategorySlug | undefined
 
-  const items = slug ? getByCategory(slug) : getCatalog()
+  let items = slug ? getByCategory(slug) : getCatalog().filter(it => it.category !== 'oportunidades')
+
+  if (q) {
+    const term = q.toLowerCase()
+    items = items.filter(
+      (it) =>
+        it.name.toLowerCase().includes(term) ||
+        it.id.toLowerCase().includes(term)
+    )
+  }
+
   const meta = slug ? (CATEGORY_MAP[slug] ?? null) : null
+  const showOpportunityBanner = !slug // Show on main page and search results, but not inside categories
 
   /* Detect portrait images server-side — runs on Node, never sent to client */
   const portraitIds = new Set(
@@ -38,6 +50,7 @@ export default async function CatalogPage({
         <CategoryNav />
       </Suspense>
       <ProductGrid items={items} portraitIds={portraitIds} />
+      {showOpportunityBanner && <OpportunityBanner />}
     </>
   )
 }

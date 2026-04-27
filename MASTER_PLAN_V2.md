@@ -150,7 +150,7 @@ La home tiene **7 secciones** en este orden exacto, cada una con un propósito n
         "Envases artesanales para empresas exigentes."
         [SOLICITAR PRESUPUESTO]   [Ver catálogo →]
 
-[108 modelos]  [+50 años]  [B2B]           [scroll ↓]
+[+130 modelos] [+50 años]  [B2B]           [scroll ↓]
 ```
 
 ---
@@ -162,7 +162,7 @@ La home tiene **7 secciones** en este orden exacto, cada una con un propósito n
 **Layout V2:**
 ```
                     ┌─────────────────────────────────────┐
-                    │  +50            108+          24h   │
+                    │  +50            +130          24h   │
                     │  años     ·    modelos    ·  respuesta│
                     │                                      │
   "Medio siglo     │  Los números flotan juntos en la     │
@@ -506,7 +506,7 @@ SOBRE FONDO SOIL/BARK (secciones dark medias):
     <Number>+50</Number>
   </div>
   <div style={{ paddingLeft: '3.5rem' }}>  <!-- offset horizontal -->
-    <Number>108+</Number>
+    <Number>+130</Number>
   </div>
   <div style={{ paddingLeft: '7rem' }}>    <!-- offset acumulado -->
     <Number>24h</Number>

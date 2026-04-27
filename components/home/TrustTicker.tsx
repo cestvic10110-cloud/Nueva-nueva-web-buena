@@ -7,9 +7,8 @@ const ITEMS = [
   'Fibras 100% sostenibles',
   'Stock permanente',
   'Mayoristas de mimbre',
-  '108+ modelos en catálogo',
-  'Personalización con tu marca',
-  'Envío 24–48h',
+  '+130 modelos en catálogo',
+  'Envíos rápidos',
   'Control de calidad exhaustivo',
 ]
 

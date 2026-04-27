@@ -1624,7 +1624,7 @@
     "name": "ESTUCHE BICI",
     "category": "estuches",
     "price": "Consultar",
-    "image": "/Estuches/7862.png",
+    "image": "/Estuches/7863.png",
     "dimensions": "40 X 30 X 15",
     "variants": [
       {
@@ -1729,7 +1729,7 @@
     "name": "Kg. VIRUTA DE PAPEL ( BALAS DE 10 KG. )",
     "category": "embalajes",
     "price": "Consultar",
-    "image": "/Embalajes/8503.png",
+    "image": "/Embalajes/birutapapel.png",
     "dimensions": "60 x 40 x 40",
     "variants": [
       {
@@ -1890,98 +1890,42 @@
     ]
   },
   {
-    "id": "CI80",
-    "name": "CELOFÁN INCOLORO 35 MICRAS/50 METROS/ 80 CM. ANCHO",
+    "id": "CI",
+    "name": "CELOFÁN INCOLORO 35 MICRAS",
     "category": "embalajes",
     "price": "Consultar",
     "image": "/Embalajes/CI80-90-100-120.jpg",
-    "dimensions": "",
+    "dimensions": "Varias medidas disponibles",
     "variants": [
       {
         "reference": "CI80",
-        "name": "CELOFÁN INCOLORO 35 MICRAS/50 METROS/ 80 CM. ANCHO",
-        "dimensions": ""
-      }
-    ]
-  },
-  {
-    "id": "LL50 DORADO",
-    "name": "LL50 DORADO",
-    "category": "embalajes",
-    "price": "Consultar",
-    "image": "/Embalajes/LL50 DORADO.png",
-    "dimensions": "Consultar medidas",
-    "variants": []
-  },
-  {
-    "id": "LL50 PLATA",
-    "name": "LL50 PLATA",
-    "category": "embalajes",
-    "price": "Consultar",
-    "image": "/Embalajes/LL50 PLATA.png",
-    "dimensions": "Consultar medidas",
-    "variants": []
-  },
-  {
-    "id": "LL50 VERDE",
-    "name": "LL50 VERDE",
-    "category": "embalajes",
-    "price": "Consultar",
-    "image": "/Embalajes/LL50 VERDE.png",
-    "dimensions": "Consultar medidas",
-    "variants": []
-  },
-  {
-    "id": "CI90",
-    "name": "CELOFÁN INCOLORO 35 MICRAS/50 METROS/ 90 CM. ANCHO",
-    "category": "embalajes",
-    "price": "Consultar",
-    "image": "/Embalajes/CI90.png",
-    "dimensions": "",
-    "variants": [
+        "name": "50 METROS / 80 CM. ANCHO",
+        "dimensions": "50m x 80cm"
+      },
       {
         "reference": "CI90",
-        "name": "CELOFÁN INCOLORO 35 MICRAS/50 METROS/ 90 CM. ANCHO",
-        "dimensions": ""
-      }
-    ]
-  },
-  {
-    "id": "CI100",
-    "name": "CELOFÁN INCOLORO 35 MICRAS/100 METROS/100 CM. ANCHO",
-    "category": "embalajes",
-    "price": "Consultar",
-    "image": "/Embalajes/CI100.png",
-    "dimensions": "",
-    "variants": [
+        "name": "50 METROS / 90 CM. ANCHO",
+        "dimensions": "50m x 90cm"
+      },
       {
         "reference": "CI100",
-        "name": "CELOFÁN INCOLORO 35 MICRAS/100 METROS/100 CM. ANCHO",
-        "dimensions": ""
-      }
-    ]
-  },
-  {
-    "id": "CI120",
-    "name": "CELOFÁN INCOLORO 35 MICRAS/100 METROS/60-120 CM. ANCHO",
-    "category": "embalajes",
-    "price": "Consultar",
-    "image": "/Embalajes/CI120.png",
-    "dimensions": "",
-    "variants": [
+        "name": "100 METROS / 100 CM. ANCHO",
+        "dimensions": "100m x 100cm"
+      },
       {
         "reference": "CI120",
-        "name": "CELOFÁN INCOLORO 35 MICRAS/100 METROS/60-120 CM. ANCHO",
-        "dimensions": ""
+        "name": "100 METROS / 60-120 CM. ANCHO",
+        "dimensions": "100m x 60-120cm"
       }
     ]
   },
+
   {
     "id": "CRI37",
     "name": "CAJA CARTÓN PLEGABLE CON IMAN 3MM",
-    "category": "baules",
+    "category": "embalajes",
     "price": "Consultar",
-    "image": "/Baules/CRI37.png",
+    "image": "/Embalajes/CRI37.jpeg",
     "dimensions": "37 X 30 X 12",
     "variants": [
       {
@@ -1993,16 +1937,35 @@
   },
   {
     "id": "LL50",
-    "name": "LAZO AUTOMÁTICO ROJO ( Consultar otros colores )",
+    "name": "LAZO AUTOMÁTICO",
     "category": "embalajes",
     "price": "Consultar",
-    "image": "/Embalajes/LL50.png",
-    "dimensions": "5",
+    "image": "/Embalajes/lazorojo.png",
+    "dimensions": "Ancho: 5 cm",
     "variants": [
       {
-        "reference": "LL50",
-        "name": "LAZO AUTOMÁTICO ROJO ( Consultar otros colores )",
-        "dimensions": "5"
+        "reference": "LL50-ROJO",
+        "name": "ROJO",
+        "dimensions": "5 cm",
+        "image": "/Embalajes/lazorojo.png"
+      },
+      {
+        "reference": "LL50-DORADO",
+        "name": "DORADO",
+        "dimensions": "5 cm",
+        "image": "/Embalajes/LL50 DORADO.png"
+      },
+      {
+        "reference": "LL50-PLATA",
+        "name": "PLATA",
+        "dimensions": "5 cm",
+        "image": "/Embalajes/LL50 PLATA.png"
+      },
+      {
+        "reference": "LL50-VERDE",
+        "name": "VERDE",
+        "dimensions": "5 cm",
+        "image": "/Embalajes/LL50 VERDE.png"
       }
     ]
   }

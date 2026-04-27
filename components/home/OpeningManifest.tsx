@@ -30,7 +30,7 @@ export function OpeningManifest() {
       <motion.div className="absolute inset-0 scale-110" style={{ y: imgY }}>
         <Image
           src="/images/hero.png"
-          alt="Taller artesanal de Cestería Vicent, Valencia"
+          alt="Taller de Cestería Vicent, Valencia"
           fill
           priority
           quality={90}
@@ -133,7 +133,7 @@ export function OpeningManifest() {
               transition={{ delay: 1.0, duration: 0.7, ease }}
             >
               Medio siglo fabricando el contenedor perfecto para cada producto.
-              Artesanía escalable, diseño a medida y stock permanente —
+              Calidad de alta gama, diseño a medida y stock permanente —
               exclusivo para marcas exigentes.
             </motion.p>
 

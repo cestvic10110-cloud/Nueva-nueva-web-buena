@@ -1,0 +1,37 @@
+import { Resend } from 'resend';
+import { NextResponse } from 'next/server';
+
+const resend = new Resend(process.env.RESEND_API_KEY);
+
+export async function POST(request: Request) {
+  try {
+    const { email, company } = await request.json();
+
+    if (!email) {
+      return NextResponse.json({ error: 'Email is required' }, { status: 400 });
+    }
+
+    // Send notification email to the shop
+    const data = await resend.emails.send({
+      from: 'Web Cesteria <web@cesteriavicent.es>',
+      to: ['shop@cesteriavicent.es'],
+      subject: `enviar catalogo - ${email}`,
+      html: `
+        <div style="font-family: sans-serif; color: #333; line-height: 1.6;">
+          <h2 style="color: #b5843a;">Nueva solicitud de catálogo</h2>
+          <p>Se ha recibido una nueva solicitud desde el formulario de la web.</p>
+          <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;" />
+          <p><strong>Acción requerida:</strong> Enviar catalogo y lista</p>
+          <p><strong>Email del cliente:</strong> <a href="mailto:${email}">${email}</a></p>
+          <p><strong>Empresa:</strong> ${company || 'No proporcionada'}</p>
+          <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;" />
+          <p style="font-size: 12px; color: #999;">Este es un mensaje automático enviado desde el formulario de la página de inicio.</p>
+        </div>
+      `,
+    });
+
+    return NextResponse.json(data);
+  } catch (error) {
+    return NextResponse.json({ error: (error as Error).message }, { status: 500 });
+  }
+}

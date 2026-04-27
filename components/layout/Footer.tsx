@@ -87,7 +87,7 @@ export function Footer() {
             </p>
             <p className="font-body text-xs text-cream/48 leading-relaxed mb-6">
               Fabricante español de referencia para empresas de alimentación, retail y hostelería de lujo.
-              Stock permanente, personalización y envío 24–48 h.
+              Stock permanente, personalización y envíos rápidos.
             </p>
             <address className="not-italic space-y-1.5">
               <p className="font-body text-xs text-cream/42 leading-relaxed">

@@ -23,8 +23,8 @@ const SECTORS: Sector[] = [
     num: '01',
     title: 'Lotes de Navidad B2B',
     headline: 'El proveedor de confianza para la campaña más exigente del año.',
-    body: 'La campaña navideña no admite errores de suministro. En Cestería Vicent llevamos décadas siendo el proveedor silencioso detrás de las campañas más grandes: conocemos los plazos de cierre de compras, los volúmenes que se disparan en octubre y la presión que siente cualquier Director de Compras cuando el stock no llega a tiempo. Nuestro inventario permanente y nuestra capacidad de producción propia en Valencia garantizan que su pedido esté listo, con la consistencia de unidad que su marca necesita. Personalizamos con serigrafía, etiquetado corporativo y acabados exclusivos para convertir cada cesta en una extensión de su identidad.',
-    services: ['Stock garantizado desde septiembre', 'Entrega escalonada en lotes', 'Personalización con logotipo', 'Precios escalonados por volumen'],
+    body: 'La campaña navideña no admite errores de suministro. En Cestería Vicent llevamos décadas siendo el proveedor silencioso detrás de las campañas más grandes: conocemos los plazos de cierre de compras, los volúmenes que se disparan en octubre y la presión que siente cualquier Director de Compras cuando el stock no llega a tiempo. Nuestro inventario permanente y nuestra capacidad de producción propia en Valencia garantizan que su pedido esté listo, con la consistencia de unidad que su marca necesita. Personalizamos los acabados para convertir cada cesta en una extensión de su identidad.',
+    services: ['Stock garantizado desde septiembre', 'Entrega escalonada en lotes', 'Personalización exclusiva', 'Precios escalonados por volumen'],
     image: '/fotos-web/lote-navidad.png',
     imageAlt: 'Cestas navideñas artesanales para lotes B2B',
   },
@@ -33,8 +33,8 @@ const SECTORS: Sector[] = [
     num: '02',
     title: 'Retail & Gran Distribución',
     headline: 'Suministro continuo para cadenas que no pueden permitirse roturas de stock.',
-    body: 'Las cadenas de gran distribución necesitan un proveedor que piense en escala industrial sin sacrificar el acabado. Somos ese proveedor. Gestionamos pedidos recurrentes para centrales de compra, coordinamos entregas a almacenes logísticos en toda la península y mantenemos referencias de rotación permanente con reposición garantizada en 24–48 horas para artículos en stock. Nuestros capazos y cestas de mimbre, personalizados con la identidad visual de su cadena, elevan el valor percibido de cualquier producto gourmet o promoción estacional en el lineal.',
-    services: ['108+ referencias en stock permanente', 'EDI y pedido mínimo negociable', 'Personalización con marca propia', 'Logística a centros de distribución'],
+    body: 'Las cadenas de gran distribución necesitan un proveedor que piense en escala industrial sin sacrificar el acabado. Somos ese proveedor. Gestionamos pedidos recurrentes para centrales de compra, coordinamos entregas a almacenes logísticos en toda la península y mantenemos referencias de rotación permanente con reposición garantizada con envíos rápidos para artículos en stock. Nuestros capazos y cestas de mimbre, personalizados con la identidad visual de su cadena, elevan el valor percibido de cualquier producto gourmet o promoción estacional en el lineal.',
+    services: ['+130 referencias en stock', 'Personalización con marca propia', 'Logística a centros de distribución'],
     image: '/fotos-web/supermercados.png',
     imageAlt: 'Cestas de mimbre para retail y gran distribución',
   },
@@ -44,7 +44,7 @@ const SECTORS: Sector[] = [
     title: 'Gourmet Premium',
     headline: 'La presentación artesanal que su producto de alta gama está esperando.',
     body: 'Una botella de aceite de oliva virgen extra o un vino de autor no merecen una caja de cartón. Las cestas artesanales de Cestería Vicent son el contenedor que añade valor narrativo al producto: hablan de origen, de proceso manual, de atención al detalle. Trabajamos con productores de delicatessen, bodegas, cárnicas de alta gama y distribuidores especializados que entienden que la presentación forma parte del producto. Los acabados naturales —mimbre sin tratar, barniz al agua, madera local— transmiten exactamente los valores que su marca gourmet necesita comunicar.',
-    services: ['Acabados naturales certificados', 'Asesoramiento en modelo óptimo', 'Series cortas desde 100 uds.', 'Materiales de primera calidad'],
+    services: ['Acabados naturales certificados', 'Asesoramiento en modelo óptimo', 'Materiales de primera calidad'],
     image: '/fotos-web/empresas-gourmet.png',
     imageAlt: 'Cestas artesanales para empresas gourmet premium',
   },
@@ -53,8 +53,8 @@ const SECTORS: Sector[] = [
     num: '04',
     title: 'Regalo Corporativo',
     headline: 'El regalo que diferencia a las empresas que cuidan cada detalle.',
-    body: 'Regalar bien es una decisión estratégica. Las cestas artesanales de mimbre comunican, en el mismo acto de entrega, que quien las envía valora la artesanía, el origen y lo duradero sobre lo desechable. Trabajamos con departamentos de RRHH, agencias de eventos y responsables de comunicación que necesitan escalar un regalo con carácter sin perder calidad unitaria. Personalizamos cada pedido con el logotipo de su empresa, colores corporativos, etiquetado individual y packaging interior; desde cincuenta unidades hasta varios miles, con los mismos estándares de acabado en toda la serie.',
-    services: ['Personalización corporativa completa', 'Desde 50 unidades', 'Etiquetado individual por destinatario', 'Asesoramiento en selección y presentación'],
+    body: 'Regalar bien es una decisión estratégica. Las cestas artesanales de mimbre comunican, en el mismo acto de entrega, que quien las envía valora la artesanía, el origen y lo duradero sobre lo desechable. Trabajamos con departamentos de RRHH, agencias de eventos y responsables de comunicación que necesitan escalar un regalo con carácter sin perder calidad unitaria. Personalizamos cada pedido para adaptarlo a su imagen corporativa, manteniendo los mismos estándares de acabado en toda la serie.',
+    services: ['Personalización corporativa completa', 'Asesoramiento en selección y presentación'],
     image: '/fotos-web/regalo-corporativo.png',
     imageAlt: 'Cestas artesanales para regalo corporativo empresarial',
   },
@@ -65,7 +65,7 @@ const SECTORS: Sector[] = [
     headline: 'El detalle artesanal que define la experiencia de sus huéspedes.',
     body: 'Los hoteles de cuatro y cinco estrellas, los restaurantes de alta cocina y los venues de eventos premium comparten una exigencia: cada elemento del espacio debe hablar el mismo idioma estético. Desarrollamos piezas de sala, presentadores de amenities, cestas de bienvenida y elementos decorativos diseñados en colaboración con el equipo de F&B o de interiorismo del establecimiento. No producimos de catálogo para este sector —diseñamos junto al cliente. La durabilidad para uso intensivo diario y la coherencia entre piezas de la misma serie están garantizadas desde el proceso de producción. Trabajamos con grupos hoteleros que necesitan uniformidad en todos sus establecimientos.',
     services: ['Diseño exclusivo por establecimiento', 'Durabilidad para uso profesional intensivo', 'Coherencia en series de múltiples piezas', 'Reposición programada por temporada'],
-    image: '/images/christmas-hamper.jpg',
+    image: '/fotos-web/Fotohotel.png',
     imageAlt: 'Cestas artesanales para hostelería y hoteles de lujo',
   },
   {
@@ -73,9 +73,9 @@ const SECTORS: Sector[] = [
     num: '06',
     title: 'Interiorismo y Escaparatismo',
     headline: 'Piezas únicas que convierten cualquier espacio en una declaración de intenciones.',
-    body: 'Los estudios de interiorismo y los departamentos de visual merchandising recurren a Cestería Vicent cuando necesitan algo que los catálogos estándar no ofrecen. Dimensiones fuera de escala, combinaciones de materiales inéditas, acabados específicos para una paleta de colores de marca: lo desarrollamos en nuestro taller de Aielo de Malferit con un tiempo de muestra de 10 a 15 días laborables. Diseñamos para escaparates de moda y cosmética, para instalaciones de retail en campañas de temporada y para proyectos de interiorismo residencial y contract que necesitan piezas con carácter artesanal certificado. Series desde 50 unidades; prototipo único si el proyecto lo requiere.',
-    services: ['Prototipos en 10–15 días laborables', 'Dimensiones y acabados a medida', 'Series desde 50 unidades', 'Material sostenible certificado'],
-    image: '/images/cuevanos-home.jpg',
+    body: 'Los estudios de interiorismo y los departamentos de visual merchandising recurren a Cestería Vicent cuando necesitan algo que los catálogos estándar no ofrecen. Dimensiones fuera de escala, combinaciones de materiales inéditas, acabados específicos para una paleta de colores de marca: lo desarrollamos en nuestro taller de Aielo de Malferit con un tiempo de muestra de 10 a 15 días laborables. Diseñamos para escaparates de moda y cosmética, para instalaciones de retail en campañas de temporada y para proyectos de interiorismo residencial y contract que necesitan piezas con carácter artesanal certificado. El prototipo único está disponible si el proyecto lo requiere.',
+    services: ['Prototipos en 10–15 días laborables', 'Dimensiones y acabados a medida', 'Material sostenible certificado'],
+    image: '/fotos-web/Escaparate.png',
     imageAlt: 'Cestas artesanales para interiorismo y escaparatismo',
   },
 ]
@@ -196,7 +196,7 @@ export function SectoresList() {
                 <motion.div
                   className="relative overflow-hidden rounded-2xl"
                   style={{
-                    aspectRatio: i % 2 === 0 ? '4/3' : '16/9',
+                    aspectRatio: (sector.key === 'hosteleria' || sector.key === 'interiorismo') ? 'auto' : (i % 2 === 0 ? '4/3' : '16/9'),
                     backgroundColor: 'var(--color-sand)',
                   }}
                   initial={{ opacity: 0, scale: 0.97 }}
@@ -204,13 +204,21 @@ export function SectoresList() {
                   viewport={{ once: true, margin: '-40px' }}
                   transition={{ duration: 0.8, delay: 0.18, ease }}
                 >
-                  <Image
-                    src={sector.image}
-                    alt={sector.imageAlt}
-                    fill
-                    className="object-cover object-center"
-                    sizes="(max-width: 768px) 100vw, 58vw"
-                  />
+                  {(sector.key === 'hosteleria' || sector.key === 'interiorismo') ? (
+                    <img
+                      src={sector.image}
+                      alt={sector.imageAlt}
+                      className="w-full h-auto block"
+                    />
+                  ) : (
+                    <Image
+                      src={sector.image}
+                      alt={sector.imageAlt}
+                      fill
+                      className="object-cover object-center"
+                      sizes="(max-width: 768px) 100vw, 58vw"
+                    />
+                  )}
                   {/* Gold top accent */}
                   <div
                     className="absolute top-0 left-0 right-0 h-px"

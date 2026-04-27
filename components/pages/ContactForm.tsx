@@ -19,31 +19,34 @@ const EMPTY: Fields = { empresa: '', email: '', telefono: '', producto: '', cant
 
 export function ContactForm() {
   const [fields, setFields] = useState<Fields>(EMPTY)
-  const [sent,   setSent]   = useState(false)
+  const [sent,    setSent]    = useState(false)
+  const [sending, setSending] = useState(false)
+  const [error,   setError]   = useState<string | null>(null)
 
   const set = (k: keyof Fields) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
     setFields(prev => ({ ...prev, [k]: e.target.value }))
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
+    setSending(true)
+    setError(null)
 
-    const lines = [
-      `Hola, me llamo ${fields.empresa}.`,
-      '',
-      `Solicito presupuesto para:`,
-      `• Producto: ${fields.producto || '(sin especificar)'}`,
-      `• Cantidad estimada: ${fields.cantidad || '(sin especificar)'}`,
-      '',
-      `Mis datos de contacto:`,
-      `• Email: ${fields.email}`,
-      fields.telefono ? `• Teléfono: ${fields.telefono}` : '',
-      '',
-      fields.mensaje ? `Detalles adicionales:\n${fields.mensaje}` : '',
-    ].filter(Boolean).join('\n')
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(fields),
+      })
 
-    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines)}`
-    window.open(url, '_blank', 'noopener,noreferrer')
-    setSent(true)
+      if (!res.ok) throw new Error('Error al enviar el mensaje')
+      
+      setSent(true)
+    } catch (err) {
+      setError('Hubo un problema al enviar su solicitud. Por favor, inténtelo de nuevo o contacte por WhatsApp.')
+      console.error(err)
+    } finally {
+      setSending(false)
+    }
   }
 
   const inputBase = `
@@ -60,13 +63,11 @@ export function ContactForm() {
           className="font-display italic-serif text-cream leading-tight"
           style={{ fontSize: 'clamp(1.8rem, 3.5vw, 3rem)' }}
         >
-          WhatsApp abierto.<br />Le esperamos.
+          Mensaje enviado.<br />Gracias por contactar.
         </h3>
         <p className="font-body text-cream/62 leading-relaxed" style={{ maxWidth: '28rem' }}>
-          Si el mensaje no se abrió automáticamente, puede contactarnos directamente al{' '}
-          <a href={`tel:+${WHATSAPP_NUMBER}`} className="text-gold hover:text-gold-light transition-colors">
-            +34 679 28 61 78
-          </a>.
+          Hemos recibido su solicitud correctamente. Un agente de nuestro equipo revisará 
+          la información y le contactará en menos de 24 horas laborables.
         </p>
         <button
           onClick={() => { setSent(false); setFields(EMPTY) }}
@@ -184,17 +185,26 @@ export function ContactForm() {
       <div className="pt-2">
         <button
           type="submit"
-          disabled={!fields.empresa || !fields.email}
+          disabled={!fields.empresa || !fields.email || sending}
           className="w-full sm:w-auto font-sans text-[0.7rem] font-medium text-ink
                      bg-gold hover:bg-gold-light disabled:opacity-40 disabled:cursor-not-allowed
                      transition-colors duration-300 px-8 py-3.5 squircle-sm
-                     tracking-[0.1em] uppercase"
+                     tracking-[0.1em] uppercase min-w-[180px]"
         >
-          Abrir en WhatsApp →
+          {sending ? 'Enviando…' : 'Enviar mensaje →'}
         </button>
-        <p className="font-body text-[0.62rem] text-cream/38 mt-3 leading-relaxed">
-          Se abrirá WhatsApp con su consulta pre-redactada. Respondemos en menos de 24 h.
-        </p>
+        
+        {error && (
+          <p className="font-body text-[0.75rem] text-red-400 mt-3">
+            {error}
+          </p>
+        )}
+
+        {!error && (
+          <p className="font-body text-[0.62rem] text-cream/38 mt-3 leading-relaxed">
+            Su mensaje se enviará directamente a nuestro equipo comercial. Respondemos en menos de 24 h.
+          </p>
+        )}
       </div>
 
     </form>

@@ -19,47 +19,23 @@ interface Props {
   std-m — col-span-3 (full-width on mobile)
 */
 
-type SlotType = 'hero' | 'wide' | 'std'
-
-interface Slot {
-  colClass: string
-  aspect: string
-  sizes: string
-}
-
-const SLOTS: Record<SlotType, Slot> = {
-  hero: {
-    colClass: 'col-span-3 md:col-span-4',
-    aspect:   '3/4',
-    sizes:    '(max-width:768px) 50vw, 66vw',
-  },
-  wide: {
-    colClass: 'col-span-6 md:col-span-4',
-    aspect:   '16/9',
-    sizes:    '(max-width:768px) 100vw, 66vw',
+const SLOTS = {
+  tall: {
+    colClass: 'col-span-3 md:col-span-2 md:row-span-2',
+    aspect:   '1/2',
+    sizes:    '(max-width:768px) 50vw, 33vw',
   },
   std: {
     colClass: 'col-span-3 md:col-span-2',
-    aspect:   '4/3',
+    aspect:   '1/1',
     sizes:    '(max-width:768px) 50vw, 33vw',
   },
 }
 
-function buildSlots(items: CatalogItem[], portraitIds: Set<string>): Slot[] {
-  /*
-    Pattern of desired slot types per group-of-8 (before portrait check):
-    [hero, std, std, std, std, std, wide, std]
-
-    Rule: if position wants 'hero' but image is NOT portrait → downgrade to 'std'
-  */
-  const DESIRED: SlotType[] = ['hero', 'std', 'std', 'std', 'std', 'std', 'wide', 'std']
-
-  return items.map((item, i) => {
-    const desired = DESIRED[i % DESIRED.length]
-    if (desired === 'hero' && !portraitIds.has(item.id)) {
-      return SLOTS.std
-    }
-    return SLOTS[desired]
+function buildSlots(items: CatalogItem[], portraitIds: Set<string>) {
+  return items.map((item) => {
+    const isP = portraitIds.has(item.id)
+    return isP ? SLOTS.tall : SLOTS.std
   })
 }
 
@@ -98,7 +74,7 @@ export function ProductGrid({ items, portraitIds }: Props) {
           </p>
 
           {/* Editorial grid — 6 cols */}
-          <div className="grid grid-cols-6 gap-3 md:gap-4">
+          <div className="mt-4 grid grid-cols-6 gap-10 md:gap-20 grid-flow-dense">
             {items.map((item, i) => {
               const slot = slots[i]
               const staggerDelay = (i % 4) * 0.07

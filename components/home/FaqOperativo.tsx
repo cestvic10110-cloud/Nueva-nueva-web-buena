@@ -8,20 +8,16 @@ const ease = [0.16, 1, 0.3, 1] as const
 
 const FAQS = [
   {
-    q: '¿Cuál es el pedido mínimo para ventas al por mayor?',
-    a: 'El pedido mínimo varía según la referencia: para cestas y baúles, desde 50 unidades por modelo; para embalajes y bandejas, desde 100 unidades. Somos fabricantes directos en Valencia, lo que nos permite ofrecer precios escalonados competitivos desde lotes pequeños hasta pedidos de varios miles de unidades. Consulte nuestra tarifa 2026 para condiciones exactas por referencia.',
-  },
-  {
     q: '¿Ofrecen personalización corporativa en las cestas?',
-    a: 'Sí. Ofrecemos personalización mediante serigrafía, estampación en caliente, etiquetado corporativo y acabados exclusivos adaptados a su identidad de marca. Trabajamos con interioristas, cadenas de retail y grupos de hostelería que necesitan piezas únicas. El tiempo de muestra es de 10 a 15 días; las series personalizadas desde 50 unidades. Contáctenos con su briefing para recibir propuesta sin compromiso.',
+    a: 'Sí. En Cestería Vicent ofrecemos personalización corporativa adaptada a la identidad de su marca. El nivel de personalización dependerá del volumen del pedido, pudiendo desarrollar soluciones más completas en producciones de mayor cantidad. Trabajamos con empresas que buscan una presentación cuidada y diferenciadora. Solicite su propuesta sin compromiso.',
   },
   {
     q: '¿Cuáles son los tiempos de entrega para grandes volúmenes?',
-    a: 'Para pedidos de stock estándar (referencias disponibles en almacén), el plazo es de 24 a 48 horas en península. Para pedidos a medida o volúmenes superiores a 5.000 unidades, trabajamos con entregas escalonadas en 3 a 6 semanas según complejidad. Disponemos de stock permanente de más de 108 referencias para garantizar reposición continuada a nuestros clientes B2B.',
+    a: 'Ofrecemos plazos de entrega ágiles en pedidos de stock. Para grandes volúmenes, adaptamos los tiempos según las necesidades del cliente, organizando la producción y las entregas de forma planificada para asegurar la continuidad del suministro. Solicite información personalizada.',
   },
   {
     q: '¿Fabricáis en España? ¿Cuál es el origen de los materiales?',
-    a: 'Fabricamos íntegramente en nuestro taller de Aielo de Malferit, Valencia, desde 1969. El mimbre proviene de riberas locales del Júcar y de proveedores europeos certificados. Todos nuestros materiales son fibras naturales 100% sostenibles, sin tratamientos químicos agresivos. Esto nos diferencia de distribuidores de producto importado y nos permite ofrecer trazabilidad completa del origen.',
+    a: 'Sí. Fabricamos en nuestro propio taller en Valencia desde 1969. El mimbre que utilizamos procede principalmente de Cuenca (España) y Chile, seleccionando cuidadosamente cada materia prima para garantizar calidad y continuidad de suministro. Esto nos permite ofrecer un producto fiable y con trazabilidad para nuestros clientes.',
   },
   {
     q: '¿Trabajáis únicamente con grandes cuentas o también con pymes?',

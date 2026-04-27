@@ -12,17 +12,17 @@ const DECADES = [
   {
     year: '1985',
     title: 'Expansión B2B.',
-    body: 'Ampliación de instalaciones y orientación exclusiva al mercado profesional. Las empresas descubren el valor del mimbre artesanal.',
+    body: 'Ampliación de instalaciones y orientación exclusiva al mercado profesional. Las empresas descubren el valor del mimbre de alta calidad.',
   },
   {
     year: '2000',
     title: 'Modernización.',
-    body: 'Nuevas técnicas de producción sin renunciar a la esencia artesanal. Capacidad de respuesta para grandes volúmenes.',
+    body: 'Nuevas técnicas de producción sin renunciar a la esencia de nuestra marca. Capacidad de respuesta para grandes volúmenes.',
   },
   {
     year: 'Hoy',
     title: 'Referentes.',
-    body: 'Proveedor de las empresas más exigentes de España. Capacidad industrial con el acabado que solo da el oficio.',
+    body: 'Proveedor de las empresas más exigentes de España. Gran capacidad productiva con el acabado de máxima calidad que nos define.',
   },
 ]
 

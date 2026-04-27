@@ -64,15 +64,7 @@ export function ChromaGrid({ items, columns = 3 }: Props) {
               src={encodeImagePath(item.image)}
               alt={item.name}
               loading="lazy"
-              className="chroma-img-gray"
-            />
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={encodeImagePath(item.image)}
-              alt=""
-              aria-hidden="true"
-              loading="lazy"
-              className="chroma-img-color"
+              className="chroma-img"
             />
           </div>
           <footer className="chroma-info">

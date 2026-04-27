@@ -76,7 +76,7 @@ export function B2BSectors() {
             <Link
               key={sector.key}
               href={sector.href}
-              className="group relative overflow-hidden squircle cursor-none block"
+              className="group relative overflow-hidden squircle block"
               style={{ aspectRatio: '4/3' }}
               onMouseEnter={() => setHovered(sector.key)}
               onMouseLeave={() => setHovered(null)}

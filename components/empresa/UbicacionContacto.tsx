@@ -27,7 +27,7 @@ const CONTACT_ROWS = [
    Replace src with the verified Google Maps embed URL once the
    business listing is claimed. */
 const MAP_SRC =
-  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3082.3!2d-0.5835!3d38.8195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd61b2e7e3a4e5c3%3A0x0!2sAielo+de+Malferit%2C+Valencia!5e0!3m2!1ses!2ses!4v1'
+  'https://maps.google.com/maps?q=Cesteria%20Vicent,%20Leonardo%20Carreres%2024,%20Aielo%20de%20Malferit&t=&z=16&ie=UTF8&iwloc=&output=embed'
 
 export function UbicacionContacto() {
   return (
@@ -59,8 +59,8 @@ export function UbicacionContacto() {
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.7, ease }}
             >
-              Nuestra<br />
-              <span style={{ color: 'var(--color-rattan)' }}>Fábrica.</span>
+              Nuestro<br />
+              <span style={{ color: 'var(--color-rattan)' }}>Taller.</span>
             </motion.h2>
 
             {/* Gold divider */}
@@ -101,7 +101,7 @@ export function UbicacionContacto() {
 
             {/* Cómo llegar link */}
             <motion.a
-              href="https://maps.google.com/?q=Aielo+de+Malferit+Valencia+España"
+              href="https://maps.google.com/?q=Cesteria+Vicent,+Aielo+de+Malferit"
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex items-center gap-2.5 mt-10 font-sans uppercase
@@ -158,7 +158,7 @@ export function UbicacionContacto() {
                 style={{
                   display: 'block',
                   border: 0,
-                  filter: 'grayscale(0.55) contrast(0.88) sepia(0.12)',
+                  filter: 'grayscale(0.1) contrast(0.95) sepia(0.05)',
                 }}
                 allowFullScreen
                 loading="lazy"

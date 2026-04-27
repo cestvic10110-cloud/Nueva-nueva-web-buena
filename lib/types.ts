@@ -2,6 +2,7 @@ export interface ProductVariant {
   reference: string
   name: string
   dimensions: string
+  image?: string
 }
 
 export interface CatalogItem {

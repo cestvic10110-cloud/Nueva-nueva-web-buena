@@ -27,10 +27,7 @@ export function ProductCard({ item, index, onSelect, aspectRatio = '4/3', sizes 
       aria-label={`Ver detalle: ${displayName ?? `Ref. ${item.id}`}`}
     >
       {/* Image container */}
-      <div
-        className="relative overflow-hidden rounded-xl mb-3"
-        style={{ backgroundColor: 'var(--color-sand)' }}
-      >
+      <div className="relative overflow-hidden">
         <div className="relative" style={{ aspectRatio }}>
 
           {!imgError ? (
@@ -38,9 +35,9 @@ export function ProductCard({ item, index, onSelect, aspectRatio = '4/3', sizes 
               src={encodeImagePath(item.image)}
               alt={displayName ?? `Ref. ${item.id}`}
               fill
-              className="object-cover object-center
+              className="object-contain object-center
                          transition-transform duration-600 ease-[cubic-bezier(0.16,1,0.3,1)]
-                         group-hover:scale-[1.06]"
+                         group-hover:scale-[1.05]"
               sizes={sizes}
               onError={() => setImgError(true)}
             />
@@ -83,8 +80,8 @@ export function ProductCard({ item, index, onSelect, aspectRatio = '4/3', sizes 
         </div>
       </div>
 
-      {/* Meta — WCAG AA on bg-lino */}
-      <div className="px-0.5">
+      {/* Meta */}
+      <div className="mt-4">
         <p
           className="font-sans uppercase tracking-[0.2em] mb-1"
           style={{ fontSize: '0.5rem', color: 'var(--color-text-dim)' }}

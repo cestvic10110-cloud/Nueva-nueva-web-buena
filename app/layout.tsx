@@ -3,7 +3,6 @@ import { Cormorant_Garamond, DM_Sans, Jost } from 'next/font/google'
 import './globals.css'
 import { NavBar } from '@/components/layout/NavBar'
 import { Footer } from '@/components/layout/Footer'
-import { CustomCursor } from '@/components/layout/CustomCursor'
 import { safeJsonLd } from '@/lib/jsonld'
 import { CookieBanner } from '@/components/shared/CookieBanner'
 
@@ -80,7 +79,7 @@ export default function RootLayout({
               url: 'https://cesteriavicent.es',
               logo: 'https://cesteriavicent.es/icon.svg',
               foundingDate: '1969',
-              description: 'Fabricante de cestas de mimbre al por mayor. Más de 50 años de tradición artesanal al servicio de empresas. Exclusivo B2B desde Valencia, España.',
+              description: 'Fabricante de cestas de mimbre al por mayor. Más de 50 años de trayectoria al servicio de empresas. Exclusivo B2B desde Valencia, España.',
               address: {
                 '@type': 'PostalAddress',
                 streetAddress: 'C/ Leonardo Carreres, 24',
@@ -97,7 +96,6 @@ export default function RootLayout({
           }}
         />
 
-        <CustomCursor />
         <NavBar />
         <main id="main-content" className="flex-1">{children}</main>
         <Footer />
