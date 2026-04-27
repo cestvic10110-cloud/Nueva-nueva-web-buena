@@ -4,7 +4,15 @@ import { useRef, useState } from 'react'
 import Image from 'next/image'
 import { motion, useScroll, useTransform, useMotionValueEvent, useReducedMotion, AnimatePresence } from 'motion/react'
 
-const PANELS = [
+interface CraftPanel {
+  readonly index: string
+  readonly title: string
+  readonly body: string
+  readonly image: string
+  readonly uncropped?: boolean
+}
+
+const PANELS: readonly CraftPanel[] = [
   {
     index: '01',
     title: 'Raíces y Materiales: Fibras naturales y sostenibles',
@@ -29,7 +37,7 @@ const PANELS = [
     body: 'Un contenedor exclusivo diseñado para elevar su producto. Desde el taller de Aielo de Malferit hasta el lineal de su empresa.',
     image: '/fotos-web/pasd.png',
   },
-] as const
+]
 
 const ease = [0.16, 1, 0.3, 1] as const
 
