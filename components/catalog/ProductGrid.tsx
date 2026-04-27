@@ -13,20 +13,18 @@ interface Props {
 
 /*
   Slot types:
-  hero  — col-span-4 (of 6), portrait 3:4   → ONLY for portrait images
-  wide  — col-span-4,        landscape 16:9  → all images, at position 6 of each group
-  std   — col-span-2,        landscape 4:3   → all images
-  std-m — col-span-3 (full-width on mobile)
+  tall — col-span-1 on mobile, col-span-2 on desktop
+  std  — col-span-1 on mobile, col-span-2 on desktop
 */
 
 const SLOTS = {
   tall: {
-    colClass: 'col-span-3 md:col-span-2 md:row-span-2',
+    colClass: 'col-span-1 md:col-span-2 md:row-span-2',
     aspect:   '1/2',
     sizes:    '(max-width:768px) 50vw, 33vw',
   },
   std: {
-    colClass: 'col-span-3 md:col-span-2',
+    colClass: 'col-span-1 md:col-span-2',
     aspect:   '1/1',
     sizes:    '(max-width:768px) 50vw, 33vw',
   },
@@ -74,7 +72,7 @@ export function ProductGrid({ items, portraitIds }: Props) {
           </p>
 
           {/* Editorial grid — 6 cols */}
-          <div className="mt-4 grid grid-cols-6 gap-10 md:gap-20 grid-flow-dense">
+          <div className="mt-4 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-8 lg:gap-10 grid-flow-dense">
             {items.map((item, i) => {
               const slot = slots[i]
               const staggerDelay = (i % 4) * 0.07

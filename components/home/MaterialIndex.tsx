@@ -102,7 +102,7 @@ export function MaterialIndex() {
           <div className="flex-1 flex flex-col md:flex-row overflow-hidden">
 
             {/* Left: dominant image 50% */}
-            <div className="relative w-full md:w-1/2 h-[40vmin] md:h-full flex-shrink-0 overflow-hidden">
+            <div className="relative w-full md:w-1/2 h-[50vh] md:h-full flex-shrink-0 overflow-hidden">
               <AnimatePresence mode="sync">
                 <motion.div
                   key={active}
@@ -116,7 +116,7 @@ export function MaterialIndex() {
                     src={INDEX_CATEGORIES[active].image}
                     alt={INDEX_CATEGORIES[active].label}
                     fill
-                    className="object-contain object-center p-4 md:p-8"
+                    className="object-contain object-center p-2 md:p-8"
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </motion.div>

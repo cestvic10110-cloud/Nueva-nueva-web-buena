@@ -28,6 +28,12 @@ const jost = Jost({
   display: 'swap',
 })
 
+// Add viewport meta for mobile devices
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+};
+
 export const metadata: Metadata = {
   title: {
     default: 'Cestería Vicent | Fabricante de Cestas de Mimbre al por Mayor en Valencia',
