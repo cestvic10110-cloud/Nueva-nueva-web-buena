@@ -23,16 +23,23 @@ export function LeadMagnet() {
         body: JSON.stringify({ email, company }),
       })
 
+      const data = await response.json()
+
       if (response.ok) {
         setStatus('success')
       } else {
+        console.error('Server error:', data.error)
+        setErrorMsg(data.error || 'Error al enviar')
         setStatus('error')
       }
     } catch (error) {
       console.error('Error sending email:', error)
+      setErrorMsg('Error de conexión')
       setStatus('error')
     }
   }
+
+  const [errorMsg, setErrorMsg] = useState<string>('')
 
   return (
     <section className="bg-soil section-pad overflow-hidden relative">
@@ -237,7 +244,7 @@ export function LeadMagnet() {
                                  transition-all duration-300 px-8 py-4 squircle-sm
                                  tracking-[0.12em] uppercase cursor-pointer"
                     >
-                      {status === 'loading' ? 'Enviando…' : status === 'error' ? 'Reintentar envío' : 'Recibir catálogo gratuito'}
+                      {status === 'loading' ? 'Enviando…' : status === 'error' ? `Error: ${errorMsg}` : 'Recibir catálogo gratuito'}
                     </button>
 
                     <p
