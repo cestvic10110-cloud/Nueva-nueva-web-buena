@@ -9,7 +9,9 @@ export async function POST(request: Request) {
   }
   const resend = new Resend(apiKey);
   try {
-    const { email, company } = await request.json();
+    const body = await request.json();
+    const { email, company } = body;
+    console.log('API Request received:', body);
 
     if (!email) {
       return NextResponse.json({ error: 'Email is required' }, { status: 400 });
@@ -33,6 +35,8 @@ export async function POST(request: Request) {
         </div>
       `,
     });
+
+    console.log('Resend Response Data:', data);
 
     if (data.error) {
       console.error('Resend error:', data.error);
