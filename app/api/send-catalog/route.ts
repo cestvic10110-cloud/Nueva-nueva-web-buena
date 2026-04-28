@@ -19,8 +19,8 @@ export async function POST(request: Request) {
 
     // Send notification email to the shop
     const data = await resend.emails.send({
-      from: 'Web Cesteria <web@cesteriavicent.es>',
-      to: ['shop@cesteriavicent.es'],
+      from: 'Web Cesteria <onboarding@resend.dev>',
+      to: ['shop@cesteriavicent.es', 'cestvic10110@gmail.com'],
       subject: `enviar catalogo - ${email}`,
       html: `
         <div style="font-family: sans-serif; color: #333; line-height: 1.6;">
