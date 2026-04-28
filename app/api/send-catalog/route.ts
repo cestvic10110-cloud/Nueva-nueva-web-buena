@@ -2,7 +2,12 @@ import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
 
 export async function POST(request: Request) {
-  const resend = new Resend(process.env.RESEND_API_KEY);
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    console.error('RESEND_API_KEY is missing in environment variables');
+    return NextResponse.json({ error: 'Server configuration error' }, { status: 500 });
+  }
+  const resend = new Resend(apiKey);
   try {
     const { email, company } = await request.json();
 
@@ -29,8 +34,14 @@ export async function POST(request: Request) {
       `,
     });
 
+    if (data.error) {
+      console.error('Resend error:', data.error);
+      return NextResponse.json({ error: data.error.message }, { status: 400 });
+    }
+
     return NextResponse.json(data);
   } catch (error) {
+    console.error('API Route Error:', error);
     return NextResponse.json({ error: (error as Error).message }, { status: 500 });
   }
 }
