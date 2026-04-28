@@ -20,7 +20,7 @@ export async function POST(request: Request) {
     // Send email to the shop
     const data = await resend.emails.send({
       from: 'Web Cestería <onboarding@resend.dev>',
-      to: ['cesteriavicent@cesteriavicent.es', 'cestvic10110@gmail.com'],
+      to: ['cestvic10110@gmail.com'],
       subject: `Nueva consulta web: ${empresa}`,
       html: `
         <div style="font-family: sans-serif; color: #333; line-height: 1.6; max-width: 600px; margin: 0 auto; border: 1px solid #eee; padding: 20px; border-radius: 8px;">
