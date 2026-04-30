@@ -88,14 +88,19 @@ export function ProductCard({ item, index, onSelect, aspectRatio = '4/3', sizes 
         >
           {categoryMeta?.labelPlural ?? item.category}
         </p>
-        {displayName && (
-          <p
-            className="font-body leading-snug mb-0.5 line-clamp-1"
-            style={{ fontSize: '0.78rem', color: 'var(--color-text-primary)' }}
-          >
-            {displayName}
-          </p>
-        )}
+        
+        {/* Name section with fixed height to maintain alignment */}
+        <div style={{ height: '1.2rem', marginBottom: '0.2rem' }}>
+          {displayName && (
+            <p
+              className="font-body leading-snug line-clamp-1"
+              style={{ fontSize: '0.78rem', color: 'var(--color-text-primary)' }}
+            >
+              {displayName}
+            </p>
+          )}
+        </div>
+
         <p
           className="font-body tabular-nums"
           style={{ fontSize: '0.65rem', color: 'var(--color-text-secondary)' }}

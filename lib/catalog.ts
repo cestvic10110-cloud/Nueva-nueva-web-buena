@@ -1,7 +1,7 @@
 import rawCatalog from '../_backup_web_completa/catalogo.json'
 import type { CatalogItem, CategorySlug } from './types'
 
-const EXCLUDED_IDS = ['4332', '4533', '4554', '5214', '7220', '7240', '7241', '7246', '7264', '7275', '7464', '7863', '7870']
+const EXCLUDED_IDS = ['4332', '4533', '4554', '5214', '7119', '7220', '7240', '7241', '7246', '7264', '7275', '7464', '7863', '7870']
 const catalog = (rawCatalog as CatalogItem[]).filter(item => !EXCLUDED_IDS.includes(item.id))
 
 export function getCatalog(): CatalogItem[] {

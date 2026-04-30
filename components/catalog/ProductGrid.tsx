@@ -8,38 +8,11 @@ import type { CatalogItem } from '@/lib/types'
 
 interface Props {
   items: CatalogItem[]
-  portraitIds: Set<string>
-}
-
-/*
-  Slot types:
-  tall — col-span-1 on mobile, col-span-2 on desktop
-  std  — col-span-1 on mobile, col-span-2 on desktop
-*/
-
-const SLOTS = {
-  tall: {
-    colClass: 'col-span-1 md:col-span-2 md:row-span-2',
-    aspect:   '1/2',
-    sizes:    '(max-width:768px) 50vw, 33vw',
-  },
-  std: {
-    colClass: 'col-span-1 md:col-span-2',
-    aspect:   '1/1',
-    sizes:    '(max-width:768px) 50vw, 33vw',
-  },
-}
-
-function buildSlots(items: CatalogItem[], portraitIds: Set<string>) {
-  return items.map((item) => {
-    const isP = portraitIds.has(item.id)
-    return isP ? SLOTS.tall : SLOTS.std
-  })
 }
 
 const ease = [0.16, 1, 0.3, 1] as const
 
-export function ProductGrid({ items, portraitIds }: Props) {
+export function ProductGrid({ items }: Props) {
   const [selectedItem, setSelectedItem] = useState<CatalogItem | null>(null)
 
   if (items.length === 0) {
@@ -57,8 +30,6 @@ export function ProductGrid({ items, portraitIds }: Props) {
     )
   }
 
-  const slots = buildSlots(items, portraitIds)
-
   return (
     <>
       <section className="light-section grain-light" style={{ paddingTop: '2.5rem', paddingBottom: '5rem' }}>
@@ -71,16 +42,15 @@ export function ProductGrid({ items, portraitIds }: Props) {
             {items.length} referencias
           </p>
 
-          {/* Editorial grid — 6 cols */}
-          <div className="mt-4 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-8 lg:gap-10 grid-flow-dense">
+          {/* Standard uniform grid */}
+          <div className="mt-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8 lg:gap-10">
             {items.map((item, i) => {
-              const slot = slots[i]
               const staggerDelay = (i % 4) * 0.07
 
               return (
                 <motion.div
                   key={item.id}
-                  className={slot.colClass}
+                  className="col-span-1"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-60px', amount: 0.1 }}
@@ -90,8 +60,8 @@ export function ProductGrid({ items, portraitIds }: Props) {
                     item={item}
                     index={i}
                     onSelect={setSelectedItem}
-                    aspectRatio={slot.aspect}
-                    sizes={slot.sizes}
+                    aspectRatio="1/1"
+                    sizes="(max-width:768px) 50vw, (max-width:1024px) 33vw, 25vw"
                   />
                 </motion.div>
               )
