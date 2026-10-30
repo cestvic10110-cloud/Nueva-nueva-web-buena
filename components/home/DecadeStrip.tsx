@@ -1,7 +1,4 @@
-'use client'
-
-import { useRef } from 'react'
-import { motion, useInView } from 'motion/react'
+import { ScrollReveal } from '@/components/shared/ScrollReveal'
 
 const DECADES = [
   {
@@ -26,95 +23,49 @@ const DECADES = [
   },
 ]
 
-const ease = [0.16, 1, 0.3, 1] as const
-
-function EraRow({ era, index }: { era: typeof DECADES[0]; index: number }) {
-  const ref = useRef<HTMLDivElement>(null)
-  const inView = useInView(ref, { once: true, margin: '-80px' })
-
-  return (
-    <motion.div
-      ref={ref}
-      className="grid grid-cols-[auto_1px_1fr] gap-x-8 md:gap-x-14 items-start py-10 md:py-12 border-b"
-      style={{ borderColor: 'var(--color-sand)' }}
-      initial={{ opacity: 0, y: 28 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.75, delay: index * 0.08, ease }}
-    >
-      {/* Año — grande, outline gold */}
-      <div className="flex flex-col items-start" style={{ minWidth: 'clamp(5rem, 12vw, 10rem)' }}>
-        <span
-          className="font-display font-semibold tabular-nums text-stroke-gold leading-none select-none"
-          style={{ fontSize: 'clamp(2.8rem, 6vw, 5.5rem)' }}
-        >
-          {era.year}
-        </span>
-      </div>
-
-      {/* Línea vertical divisora */}
-      <div className="self-stretch mt-1" style={{ backgroundColor: 'var(--color-sand)' }} />
-
-      {/* Contenido */}
-      <div className="pt-1">
-        <div className="flex items-center gap-3 mb-3">
-          <div className="h-px w-6 flex-shrink-0" style={{ backgroundColor: 'var(--color-gold)' }} />
-          <p
-            className="font-display font-semibold leading-tight"
-            style={{ fontSize: 'clamp(1.25rem, 2.5vw, 2rem)', color: 'var(--color-text-primary)' }}
-          >
-            {era.title}
-          </p>
-        </div>
-        <p
-          className="font-body leading-relaxed"
-          style={{
-            fontSize: 'clamp(0.9rem, 1.4vw, 1rem)',
-            color: 'var(--color-text-secondary)',
-            maxWidth: '38rem',
-          }}
-        >
-          {era.body}
-        </p>
-      </div>
-    </motion.div>
-  )
-}
-
 export function DecadeStrip() {
   return (
-    <section className="light-section grain-light section-pad overflow-hidden">
+    <section className="bg-paper section-y">
       <div className="container-site">
 
-        {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-4">
-          <motion.p
-            className="font-display italic-serif leading-tight"
-            style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)', color: 'var(--color-text-primary)' }}
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.7, ease }}
-          >
-            Un oficio que dura.
-          </motion.p>
-          <motion.p
-            className="font-sans uppercase tracking-[0.2em]"
-            style={{ fontSize: '0.58rem', color: 'var(--color-text-dim)' }}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.7, delay: 0.15, ease }}
-          >
-            Cestería Vicent · Aielo de Malferit
-          </motion.p>
-        </div>
+        <ScrollReveal className="text-center mb-14 md:mb-20">
+          <p className="eyebrow">Cestería Vicent · Aielo de Malferit</p>
+          <h2 className="headline mt-5" style={{ fontSize: 'clamp(2.5rem, 5.5vw, 4.75rem)' }}>
+            Un oficio <em>que dura.</em>
+          </h2>
+        </ScrollReveal>
 
-        {/* Timeline rows */}
-        <div>
+        {/* Línea temporal: horizontal en escritorio, vertical en móvil */}
+        <ol className="relative grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8">
+          <span
+            className="hidden md:block absolute left-0 right-0 top-[0.375rem] h-px bg-sand"
+            aria-hidden="true"
+          />
           {DECADES.map((era, i) => (
-            <EraRow key={era.year} era={era} index={i} />
+            <ScrollReveal as="li" key={era.year} delay={i * 80} className="relative pl-8 md:pl-0">
+              {/* Marca */}
+              <span
+                className="absolute left-0 top-1 md:relative md:top-auto block w-3 h-3 rounded-full bg-paper border-2 border-gold-deep"
+                aria-hidden="true"
+              />
+              {i < DECADES.length - 1 && (
+                <span className="md:hidden absolute left-[0.34rem] top-5 -bottom-10 w-px bg-sand" aria-hidden="true" />
+              )}
+              <p
+                className="md:mt-6 font-display font-semibold lining-nums tabular-nums leading-none text-gold-deep"
+                style={{ fontSize: 'clamp(2.5rem, 4vw, 3.5rem)' }}
+              >
+                {era.year}
+              </p>
+              <h3 className="mt-4 font-sans text-[1.0625rem] font-semibold text-text-primary">
+                {era.title}
+              </h3>
+              <p className="mt-2 font-body font-normal text-[0.9375rem] leading-relaxed text-text-secondary">
+                {era.body}
+              </p>
+            </ScrollReveal>
           ))}
-        </div>
+        </ol>
 
       </div>
     </section>

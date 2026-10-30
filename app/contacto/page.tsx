@@ -95,9 +95,7 @@ export default function ContactoPage() {
                   href={`https://wa.me/${COMPANY.whatsapp.replace(/[^0-9]/g, '')}?text=${encodeURIComponent('Hola, me gustaría solicitar información sobre sus cestas artesanales.')}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 font-sans text-[0.68rem] font-medium
-                             text-ink bg-gold hover:bg-gold-light transition-colors duration-300
-                             px-5 py-2.5 squircle-sm tracking-[0.1em] uppercase"
+                  className="btn btn-light btn-sm"
                 >
                   Abrir WhatsApp
                 </a>

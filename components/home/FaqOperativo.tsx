@@ -26,12 +26,10 @@ const FAQS = [
 ]
 
 export function FaqOperativo() {
-  const [open, setOpen] = useState<number | null>(null)
-
-  const toggle = (i: number) => setOpen(open === i ? null : i)
+  const [open, setOpen] = useState<number | null>(0)
 
   return (
-    <section className="light-section grain-light section-pad">
+    <section className="bg-cream section-y">
 
       {/* JSON-LD FAQ schema para AEO */}
       <script
@@ -49,106 +47,73 @@ export function FaqOperativo() {
         }}
       />
 
-      <div className="container-site">
+      <div className="container-site grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] gap-12 lg:gap-20 items-start">
 
-        {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-14 md:mb-18">
-          <ScrollReveal>
-            <p
-              className="font-sans uppercase tracking-[0.3em] mb-3"
-              style={{ fontSize: '0.5rem', color: 'var(--color-text-dim)' }}
-            >
-              Preguntas Frecuentes
-            </p>
-            <h2
-              className="font-display italic-serif leading-[0.92]"
-              style={{ fontSize: 'clamp(2rem, 4vw, 4rem)', color: 'var(--color-text-primary)' }}
-            >
-              Lo que necesita<br />
-              <span style={{ color: 'var(--color-rattan)' }}>saber antes de comprar.</span>
-            </h2>
-          </ScrollReveal>
+        <ScrollReveal className="lg:sticky lg:top-28">
+          <p className="eyebrow">Preguntas Frecuentes</p>
+          <h2 className="headline mt-5" style={{ fontSize: 'clamp(2.25rem, 4.5vw, 4rem)' }}>
+            Lo que necesita
+            <br />
+            <em>saber antes de comprar.</em>
+          </h2>
+          <p className="lede mt-6" style={{ maxWidth: '26rem' }}>
+            Respuestas directas a las dudas más habituales de compradores profesionales y responsables de compras.
+          </p>
+        </ScrollReveal>
 
-          <ScrollReveal delay={100}>
-            <p
-              className="font-body leading-relaxed md:max-w-[22rem]"
-              style={{ fontSize: '0.875rem', color: 'var(--color-text-secondary)' }}
-            >
-              Respuestas directas a las dudas más habituales de compradores profesionales y responsables de compras.
-            </p>
-          </ScrollReveal>
-        </div>
-
-        {/* Accordion */}
-        <div role="list">
-          {FAQS.map((faq, i) => (
-            <ScrollReveal key={i} delay={i * 40}>
-              <div
-                role="listitem"
-                className="border-b"
-                style={{ borderColor: 'var(--color-sand)' }}
-              >
-                <button
-                  type="button"
-                  aria-expanded={open === i}
-                  aria-controls={`faq-answer-${i}`}
-                  id={`faq-question-${i}`}
-                  onClick={() => toggle(i)}
-                  className="w-full flex items-start justify-between gap-6 py-6 text-left
-                             cursor-pointer group"
-                >
-                  <span
-                    className="font-display leading-snug transition-colors duration-300"
-                    style={{
-                      fontSize: 'clamp(1rem, 1.6vw, 1.3rem)',
-                      color: open === i ? 'var(--color-text-primary)' : 'var(--color-text-secondary)',
-                    }}
+        <ScrollReveal delay={80}>
+          <div className="card px-6 md:px-9" role="list">
+            {FAQS.map((faq, i) => {
+              const isOpen = open === i
+              return (
+                <div key={faq.q} role="listitem" className="border-b border-sand/70 last:border-0">
+                  <button
+                    type="button"
+                    aria-expanded={isOpen}
+                    aria-controls={`faq-answer-${i}`}
+                    id={`faq-question-${i}`}
+                    onClick={() => setOpen(isOpen ? null : i)}
+                    className="w-full flex items-center justify-between gap-6 py-6 text-left cursor-pointer"
                   >
-                    {faq.q}
-                  </span>
-
-                  {/* Icon */}
-                  <span
-                    className="flex-shrink-0 mt-1 transition-transform duration-300 text-gold/70 group-hover:text-gold"
-                    style={{ transform: open === i ? 'rotate(45deg)' : 'rotate(0deg)' }}
-                    aria-hidden="true"
-                  >
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                      <path d="M8 2v12M2 8h12" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-                    </svg>
-                  </span>
-                </button>
-
-                <AnimatePresence initial={false}>
-                  {open === i && (
-                    <motion.div
-                      id={`faq-answer-${i}`}
-                      role="region"
-                      aria-labelledby={`faq-question-${i}`}
-                      key="answer"
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.38, ease }}
-                      style={{ overflow: 'hidden' }}
+                    <span className="font-sans text-[1.0625rem] font-medium leading-snug text-text-primary">
+                      {faq.q}
+                    </span>
+                    <span
+                      className="flex-shrink-0 w-8 h-8 rounded-full bg-cream flex items-center justify-center
+                                 text-text-primary transition-transform duration-300"
+                      style={{ transform: isOpen ? 'rotate(45deg)' : 'rotate(0deg)' }}
+                      aria-hidden="true"
                     >
-                      <p
-                        className="font-body leading-relaxed pb-7"
-                        style={{
-                          fontSize: 'clamp(0.875rem, 1.15vw, 1rem)',
-                          color: 'var(--color-text-secondary)',
-                          maxWidth: '62rem',
-                        }}
+                      <svg width="12" height="12" viewBox="0 0 16 16" fill="none">
+                        <path d="M8 2v12M2 8h12" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+                      </svg>
+                    </span>
+                  </button>
+
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div
+                        id={`faq-answer-${i}`}
+                        role="region"
+                        aria-labelledby={`faq-question-${i}`}
+                        key="answer"
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.35, ease }}
+                        style={{ overflow: 'hidden' }}
                       >
-                        {faq.a}
-                      </p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            </ScrollReveal>
-          ))}
-        </div>
+                        <p className="font-body font-normal text-[0.9375rem] leading-relaxed text-text-secondary pb-7 pr-10">
+                          {faq.a}
+                        </p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              )
+            })}
+          </div>
+        </ScrollReveal>
 
       </div>
     </section>

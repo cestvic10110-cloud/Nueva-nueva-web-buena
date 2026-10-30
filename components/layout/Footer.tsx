@@ -38,8 +38,7 @@ const COL_SOPORTE = [
 
 function ColHeading({ children }: { children: React.ReactNode }) {
   return (
-    <p className="font-sans uppercase tracking-[0.22em] mb-5 pb-3 border-b border-border-dark"
-       style={{ fontSize: '0.5rem', color: 'var(--color-gold)' }}>
+    <p className="eyebrow mb-5 pb-3 border-b border-border-dark">
       {children}
     </p>
   )
@@ -50,7 +49,7 @@ function ColLink({ href, children }: { href: string; children: React.ReactNode }
     <li>
       <Link
         href={href}
-        className="font-body text-xs text-cream/58 hover:text-cream/90 transition-colors duration-200 leading-relaxed"
+        className="font-sans text-[0.8125rem] text-cream/60 hover:text-cream transition-colors duration-200 leading-relaxed"
       >
         {children}
       </Link>
@@ -62,7 +61,7 @@ export function Footer() {
   return (
     <footer
       style={{ viewTransitionName: 'site-footer' }}
-      className="bg-ink border-t border-border-dark"
+      className="on-dark bg-ink border-t border-border-dark"
     >
       {/* Mega columns */}
       <div className="container-site pt-16 pb-12">
@@ -164,8 +163,7 @@ export function Footer() {
           <p className="font-body text-xs text-cream/38">
             © {new Date().getFullYear()} {COMPANY.name} · NIF {COMPANY.nif}
           </p>
-          <p className="font-sans uppercase tracking-[0.18em] text-cream/28"
-             style={{ fontSize: '0.48rem' }}>
+          <p className="font-sans text-[0.75rem] text-cream/45">
             Servicio exclusivo B2B · No atendemos a particulares
           </p>
         </div>

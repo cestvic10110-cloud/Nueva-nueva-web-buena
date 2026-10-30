@@ -87,9 +87,7 @@ export function CookieBanner() {
                 {/* Primary */}
                 <button
                   onClick={accept}
-                  className="font-sans text-[0.65rem] font-medium tracking-[0.12em] uppercase
-                             px-5 py-2.5 squircle-sm transition-colors duration-300
-                             text-ink bg-gold hover:bg-gold-light flex-shrink-0"
+                  className="btn btn-primary btn-sm flex-shrink-0 cursor-pointer"
                 >
                   Aceptar todas
                 </button>
@@ -97,12 +95,8 @@ export function CookieBanner() {
                 {/* Secondary */}
                 <button
                   onClick={reject}
-                  className="font-sans text-[0.65rem] font-medium tracking-[0.12em] uppercase
-                             px-5 py-2.5 squircle-sm transition-colors duration-300 flex-shrink-0"
-                  style={{
-                    border: '1px solid var(--color-border-light)',
-                    color: 'var(--color-text-secondary)',
-                  }}
+                  className="btn btn-outline btn-sm flex-shrink-0 cursor-pointer"
+                  style={{ color: 'var(--color-text-secondary)' }}
                 >
                   Rechazar
                 </button>

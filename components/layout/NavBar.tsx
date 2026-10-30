@@ -66,8 +66,8 @@ export function NavBar() {
             className="h-8 w-auto object-contain brightness-0 invert opacity-95
                        transition-opacity duration-300 group-hover:opacity-100"
           />
-          <span className="font-display text-cream text-lg tracking-[0.2em] uppercase
-                           group-hover:text-gold transition-colors duration-300">
+          <span className="font-display text-cream text-base sm:text-lg tracking-[0.16em] sm:tracking-[0.2em] uppercase whitespace-nowrap
+                           group-hover:text-gold-light transition-colors duration-300">
             Cestería Vicent
           </span>
         </Link>
@@ -88,13 +88,12 @@ export function NavBar() {
 
         {/* CTA */}
         <div className="flex items-center gap-4">
-          <Link
-            href="/contacto"
-            className="nav-text-cta hidden md:inline-flex font-sans text-[0.7rem] font-medium text-cream/80
-                       hover:text-gold transition-colors duration-300 tracking-[0.14em] uppercase"
-          >
-            Solicitar Presupuesto
-          </Link>
+          {/* Envoltorio: .btn fija display y pisaría a `hidden` */}
+          <div className="hidden md:block">
+            <Link href="/contacto" className="btn btn-light btn-sm">
+              Solicitar Presupuesto
+            </Link>
+          </div>
 
           {/* Mobile hamburger */}
           <button

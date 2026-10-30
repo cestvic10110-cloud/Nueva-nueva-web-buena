@@ -58,10 +58,7 @@ export default function FabricacionPage() {
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-12 lg:gap-24 items-end">
 
             <div>
-              <p
-                className="font-sans uppercase tracking-[0.3em] mb-5"
-                style={{ fontSize: '0.5rem', color: 'var(--color-text-dim)' }}
-              >
+              <p className="eyebrow mb-5">
                 Cestería Vicent · Aielo de Malferit
               </p>
               <h2
@@ -74,20 +71,11 @@ export default function FabricacionPage() {
             </div>
 
             <div className="flex flex-col gap-4 items-start lg:items-end">
-              <Link
-                href="/contacto"
-                className="font-sans text-[0.72rem] font-medium text-ink bg-gold hover:bg-gold-light
-                           transition-colors duration-300 px-8 py-4 squircle-sm
-                           tracking-[0.12em] uppercase whitespace-nowrap"
-              >
+              <Link href="/contacto" className="btn btn-primary">
                 Solicitar presupuesto
               </Link>
-              <Link
-                href="/catalogo"
-                className="font-body text-sm hover:text-gold transition-colors duration-200 link-underline"
-                style={{ color: 'var(--color-text-secondary)' }}
-              >
-                Ver catálogo →
+              <Link href="/catalogo" className="link-arrow">
+                Ver catálogo <span className="arrow" aria-hidden="true">→</span>
               </Link>
             </div>
 

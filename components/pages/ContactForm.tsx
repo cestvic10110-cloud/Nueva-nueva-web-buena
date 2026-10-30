@@ -186,10 +186,8 @@ export function ContactForm() {
         <button
           type="submit"
           disabled={!fields.empresa || !fields.email || sending}
-          className="w-full sm:w-auto font-sans text-[0.7rem] font-medium text-ink
-                     bg-gold hover:bg-gold-light disabled:opacity-40 disabled:cursor-not-allowed
-                     transition-colors duration-300 px-8 py-3.5 squircle-sm
-                     tracking-[0.1em] uppercase min-w-[180px]"
+          className="btn btn-light w-full sm:w-auto min-w-[180px] cursor-pointer
+                     disabled:opacity-40 disabled:cursor-not-allowed"
         >
           {sending ? 'Enviando…' : 'Enviar mensaje →'}
         </button>

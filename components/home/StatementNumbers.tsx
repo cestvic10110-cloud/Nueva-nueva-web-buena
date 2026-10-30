@@ -3,158 +3,68 @@
 import { useEffect, useRef } from 'react'
 import { motion, useInView, useMotionValue, useTransform, animate, useReducedMotion } from 'motion/react'
 import { ScrollReveal } from '@/components/shared/ScrollReveal'
+import { TrustFacts } from './TrustTicker'
 
 const ease = [0.16, 1, 0.3, 1] as const
 
-export function StatementNumbers() {
-  const sectionRef = useRef<HTMLElement>(null)
-  const reduced    = useReducedMotion()
-  const isInView   = useInView(sectionRef, { once: true, margin: '-60px' })
-
-  const c50  = useMotionValue(0)
-  const c108 = useMotionValue(0)
-  const c10  = useMotionValue(0)
-
-  const d50  = useTransform(c50,  (v) => Math.round(v).toString())
-  const d108 = useTransform(c108, (v) => Math.round(v).toString())
-  const d10  = useTransform(c10,  (v) => Math.round(v).toString())
+function Counter({ to, start }: { to: number; start: boolean }) {
+  const reduced = useReducedMotion()
+  const value = useMotionValue(0)
+  const display = useTransform(value, (v) => Math.round(v).toString())
 
   useEffect(() => {
-    if (!isInView) return
-    if (reduced) { c50.set(50); c108.set(130); c10.set(10); return }
-    const a  = animate(c50,  50,  { duration: 1.8, ease })
-    const b  = animate(c108, 130, { duration: 2.0, ease, delay: 0.1 })
-    const cc = animate(c10,  10,  { duration: 1.1, ease, delay: 0.22 })
-    return () => { a.stop(); b.stop(); cc.stop() }
-  }, [isInView, reduced, c50, c108, c10])
+    if (!start) return
+    if (reduced) { value.set(to); return }
+    const a = animate(value, to, { duration: 1.8, ease })
+    return () => a.stop()
+  }, [start, reduced, to, value])
+
+  return <motion.span>{display}</motion.span>
+}
+
+export function StatementNumbers() {
+  const statsRef = useRef<HTMLDivElement>(null)
+  const inView = useInView(statsRef, { once: true, margin: '-80px' })
+
+  const stats = [
+    { value: <>+<Counter to={50} start={inView} /></>, label: 'años de oficio' },
+    { value: <><Counter to={130} start={inView} />+</>, label: 'modelos en catálogo' },
+    { value: 'B2B', label: 'Servicio Exclusivo' },
+  ]
 
   return (
-    <section ref={sectionRef} className="light-section grain-light section-pad">
+    <section className="bg-paper section-y border-t border-sand/60">
       <div className="container-site">
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-16 lg:gap-24 items-end">
+        <ScrollReveal className="text-center">
+          <p className="eyebrow">Valencia, España · Exclusivo B2B</p>
+          <h2 className="headline mt-5 mx-auto" style={{ fontSize: 'clamp(2.25rem, 5vw, 4.25rem)', maxWidth: '22ch' }}>
+            Medio siglo fabricando el contenedor perfecto <em>para su producto.</em>
+          </h2>
+        </ScrollReveal>
 
-          {/* ── LEFT: Frase editorial ── */}
-          <div>
-            <ScrollReveal>
+        {/* Cifras */}
+        <div
+          ref={statsRef}
+          className="mt-16 md:mt-20 grid grid-cols-1 sm:grid-cols-3 sm:divide-x divide-sand"
+        >
+          {stats.map((s, i) => (
+            <ScrollReveal key={s.label} delay={i * 80} className="py-6 sm:py-2 text-center">
               <p
-                className="font-display italic-serif leading-[0.92] tracking-tight"
-                style={{
-                  fontSize: 'clamp(1.8rem, 3.5vw, 3.2rem)',
-                  color: 'var(--color-text-primary)',
-                }}
+                className="font-display font-semibold lining-nums tabular-nums leading-none text-text-primary"
+                style={{ fontSize: 'clamp(3.5rem, 7vw, 6rem)' }}
               >
-                Medio siglo fabricando<br />
-                el contenedor perfecto<br />
-                para su producto.
+                {s.value}
               </p>
+              <p className="mt-3 font-sans text-[0.9375rem] text-text-secondary">{s.label}</p>
             </ScrollReveal>
-
-            <ScrollReveal delay={120}>
-              <div className="mt-8 flex items-center gap-3">
-                <div className="h-px opacity-60" style={{ width: '3rem', backgroundColor: 'var(--color-gold)' }} />
-                <p
-                  className="font-sans uppercase tracking-[0.2em]"
-                  style={{ fontSize: '0.58rem', color: 'var(--color-text-secondary)' }}
-                >
-                  Valencia, España · Exclusivo B2B
-                </p>
-              </div>
-            </ScrollReveal>
-          </div>
-
-          {/* ── RIGHT: Tres números con stagger vertical real ──
-              Cada fila está desplazada +0.75rem a la derecha vs la anterior.
-              No es un grid uniforme — la asimetría es deliberada.
-          ── */}
-          <div className="flex flex-col gap-0">
-
-            {/* +50 — baseline 0 */}
-            <motion.div
-              className="flex items-start justify-between pb-7 border-b"
-              style={{ borderColor: 'var(--color-sand)' }}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-60px' }}
-              transition={{ duration: 0.7, ease }}
-            >
-              <div className="flex items-start leading-none gap-1">
-                <span
-                  className="font-display font-light"
-                  style={{ fontSize: 'clamp(1.2rem, 3vw, 2.2rem)', marginTop: '0.15em', color: 'var(--color-gold)', lineHeight: 1 }}
-                >
-                  +
-                </span>
-                <motion.span
-                  className="font-display font-semibold tabular-nums text-stroke-gold"
-                  style={{ fontSize: 'clamp(3.5rem, 8vw, 7rem)', lineHeight: 0.88 }}
-                >
-                  {d50}
-                </motion.span>
-              </div>
-              <div className="text-right self-end mb-1">
-                <p className="font-sans uppercase tracking-[0.16em] leading-snug"
-                   style={{ fontSize: '0.58rem', color: 'var(--color-text-secondary)' }}>
-                  años<br />de oficio
-                </p>
-              </div>
-            </motion.div>
-
-            {/* 130+ — desplazado 0.75rem a la derecha */}
-            <motion.div
-              className="flex items-start justify-between py-7 border-b"
-              style={{ borderColor: 'var(--color-sand)', paddingLeft: '0.75rem' }}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-60px' }}
-              transition={{ duration: 0.7, delay: 0.1, ease }}
-            >
-              <div className="flex items-end leading-none gap-1">
-                <motion.span
-                  className="font-display font-semibold tabular-nums"
-                  style={{ fontSize: 'clamp(3.5rem, 8vw, 7rem)', lineHeight: 0.88, color: 'var(--color-text-primary)' }}
-                >
-                  {d108}
-                </motion.span>
-                <span
-                  className="font-display font-light"
-                  style={{ fontSize: 'clamp(1.2rem, 3vw, 2.2rem)', marginBottom: '0.3em', color: 'var(--color-gold)' }}
-                >
-                  +
-                </span>
-              </div>
-              <div className="text-right self-end mb-1">
-                <p className="font-sans uppercase tracking-[0.16em] leading-snug"
-                   style={{ fontSize: '0.58rem', color: 'var(--color-text-secondary)' }}>
-                  modelos<br />en catálogo
-                </p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="flex items-start justify-between pt-7"
-              style={{ paddingLeft: '1.5rem' }}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-60px' }}
-              transition={{ duration: 0.7, delay: 0.22, ease }}
-            >
-              <span
-                className="font-display font-semibold leading-none"
-                style={{ fontSize: 'clamp(3.5rem, 8vw, 7rem)', lineHeight: 0.88, color: 'var(--color-text-primary)' }}
-              >
-                B2B
-              </span>
-              <div className="text-right self-end mb-1">
-                <p className="font-sans uppercase tracking-[0.16em] leading-snug"
-                   style={{ fontSize: '0.58rem', color: 'var(--color-text-secondary)' }}>
-                  Servicio<br />Exclusivo
-                </p>
-              </div>
-            </motion.div>
-
-          </div>
+          ))}
         </div>
+
+        {/* Garantías */}
+        <ScrollReveal className="mt-16 md:mt-20 card p-8 md:p-10">
+          <TrustFacts />
+        </ScrollReveal>
 
       </div>
     </section>
