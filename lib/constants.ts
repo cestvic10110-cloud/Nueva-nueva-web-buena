@@ -70,6 +70,9 @@ export const CATEGORY_MAP = Object.fromEntries(
 /** Host canónico: el dominio sin www redirige aquí. Úsese en sitemap, robots, canonicals y JSON-LD. */
 export const SITE_URL = 'https://www.cesteriavicent.es'
 
+/** Landing de campaña: cestas navideñas al por mayor (enlazada desde catálogo, inicio, sectores y pie). */
+export const NAVIDAD_LANDING_PATH = '/cestas-navidenas-al-por-mayor'
+
 export const COMPANY = {
   name: 'Cestería Vicent, S.L.',
   shortName: 'Cestería Vicent',
