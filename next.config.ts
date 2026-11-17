@@ -15,7 +15,7 @@ const nextConfig: NextConfig = {
     viewTransition: true,
   },
   images: {
-    qualities: [75, 90],
+    qualities: [75, 85, 90],
     // Las imágenes optimizadas no cambian entre deploys: caché de 1 año en navegador/CDN
     minimumCacheTTL: 31536000,
   },

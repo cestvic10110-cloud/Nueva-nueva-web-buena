@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { COMPANY } from '@/lib/constants'
+import { COMPANY, NAVIDAD_LANDING_PATH } from '@/lib/constants'
 
 const COL_CATALOGO = [
   { href: '/catalogo',                            label: 'Mayoristas de Mimbre'     },
@@ -18,7 +18,7 @@ const COL_CATALOGO = [
 
 const COL_SECTORES = [
   { href: '/sectores#gourmet',      label: 'Alimentación & Gourmet'  },
-  { href: '/sectores#navidad',      label: 'Lotes de Navidad B2B'    },
+  { href: NAVIDAD_LANDING_PATH,     label: 'Lotes de Navidad B2B'    },
   { href: '/sectores#hosteleria',   label: 'Hostelería'               },
   { href: '/sectores#retail',       label: 'Retail & Distribución'    },
   { href: '/sectores#interiorismo', label: 'Interiorismo & Diseño'    },

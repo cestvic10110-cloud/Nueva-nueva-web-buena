@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { ScrollReveal } from '@/components/shared/ScrollReveal'
+import { NAVIDAD_LANDING_PATH } from '@/lib/constants'
 
 const SECTORS = [
   {
@@ -54,7 +55,10 @@ export function B2BSectors() {
         <ul className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
           {SECTORS.map((sector, i) => (
             <ScrollReveal as="li" key={sector.key} delay={(i % 2) * 80}>
-              <Link href="/sectores" className="group card block overflow-hidden h-full">
+              <Link
+                href={sector.key === 'navidad' ? NAVIDAD_LANDING_PATH : '/sectores'}
+                className="group card block overflow-hidden h-full"
+              >
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <Image
                     src={sector.image}

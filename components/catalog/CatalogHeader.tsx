@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { ScrollReveal } from '@/components/shared/ScrollReveal'
 import type { CategoryMeta } from '@/lib/types'
+import { NAVIDAD_LANDING_PATH } from '@/lib/constants'
 import { CatalogSearch } from './CatalogSearch'
 
 interface Props {
@@ -79,6 +80,30 @@ export function CatalogHeader({ meta, count }: Props) {
             </div>
           </ScrollReveal>
         </div>
+
+        {/* Franja hacia la landing de campaña */}
+        {meta?.slug === 'cestas-navidenas' && (
+          <ScrollReveal className="mt-10">
+            <Link
+              href={NAVIDAD_LANDING_PATH}
+              className="on-dark group flex flex-col sm:flex-row sm:items-center justify-between gap-4
+                         rounded-[1.5rem] border border-gold/30 bg-white/[0.04] px-6 py-5 md:px-8
+                         transition-colors duration-300 hover:bg-white/[0.07]"
+            >
+              <div>
+                <p className="font-display font-semibold text-cream leading-tight" style={{ fontSize: 'clamp(1.25rem, 2vw, 1.6rem)' }}>
+                  ¿Prepara lotes de Navidad?
+                </p>
+                <p className="mt-1 font-sans text-[0.875rem] text-cream/65">
+                  Condiciones de campaña, personalización y preguntas frecuentes para profesionales.
+                </p>
+              </div>
+              <span className="link-arrow flex-shrink-0">
+                Cestas navideñas al por mayor <span className="arrow" aria-hidden="true">→</span>
+              </span>
+            </Link>
+          </ScrollReveal>
+        )}
 
       </div>
     </section>

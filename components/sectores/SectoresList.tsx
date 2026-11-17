@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'motion/react'
+import { NAVIDAD_LANDING_PATH } from '@/lib/constants'
 
 const ease = [0.16, 1, 0.3, 1] as const
 
@@ -136,6 +137,11 @@ export function SectoresList() {
                     Consultar solución
                     <span className="transition-transform duration-300 group-hover:translate-x-1.5" aria-hidden="true">→</span>
                   </Link>
+                  {sector.key === 'navidad' && (
+                    <Link href={NAVIDAD_LANDING_PATH} className="link-arrow mt-5 flex">
+                      Ver cestas navideñas al por mayor <span className="arrow" aria-hidden="true">→</span>
+                    </Link>
+                  )}
                 </motion.div>
 
               </div>

@@ -48,7 +48,7 @@ const CAMPAIGN = [
 const MORE_PACKAGING = [
   { slug: 'bandejas',  image: '/Bandejas/4331.png' },
   { slug: 'baules',    image: '/Baules/7280.png' },
-  { slug: 'estuches',  image: '/Estuches/5213.png' },
+  { slug: 'estuches',  image: '/Estuches/7859.png' },
   { slug: 'embalajes', image: '/Embalajes/8500.png' },
   { slug: 'madera',    image: '/Madera/4788.png' },
 ] as const

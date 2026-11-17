@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next'
-import { CATEGORIES, SITE_URL } from '@/lib/constants'
+import { CATEGORIES, NAVIDAD_LANDING_PATH, SITE_URL } from '@/lib/constants'
 import { getCatalog, hasRealName } from '@/lib/catalog'
 
 // Fechas reales de última modificación (no `new Date()`, que cambia en cada deploy).
@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/fabricacion`, lastModified: SITE_UPDATED },
     { url: `${SITE_URL}/sectores`,    lastModified: SITE_UPDATED },
     { url: `${SITE_URL}/contacto`,    lastModified: SITE_UPDATED },
+    { url: `${SITE_URL}${NAVIDAD_LANDING_PATH}`, lastModified: SITE_UPDATED },
   ]
 
   // Cada categoría tiene título, descripción y canonical propios (ver app/catalogo/page.tsx)
