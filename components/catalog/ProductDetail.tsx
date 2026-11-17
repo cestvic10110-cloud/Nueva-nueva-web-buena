@@ -271,7 +271,7 @@ export function ProductDetail({ item, related }: Props) {
 
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 md:gap-6">
               {related.map((r, i) => (
-                <ProductCard key={r.id} item={r} index={i} onSelect={() => {}} />
+                <ProductCard key={r.id} item={r} index={i} />
               ))}
             </div>
           </div>

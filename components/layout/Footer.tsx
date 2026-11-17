@@ -17,8 +17,8 @@ const COL_CATALOGO = [
 ]
 
 const COL_SECTORES = [
-  { href: '/sectores#alimentacion', label: 'Alimentación & Gourmet'  },
-  { href: '/sectores#navidenas',    label: 'Lotes de Navidad B2B'    },
+  { href: '/sectores#gourmet',      label: 'Alimentación & Gourmet'  },
+  { href: '/sectores#navidad',      label: 'Lotes de Navidad B2B'    },
   { href: '/sectores#hosteleria',   label: 'Hostelería'               },
   { href: '/sectores#retail',       label: 'Retail & Distribución'    },
   { href: '/sectores#interiorismo', label: 'Interiorismo & Diseño'    },
@@ -128,7 +128,7 @@ export function Footer() {
 
             <div className="space-y-3 pt-6 border-t border-border-dark">
               <a
-                href={`tel:${COMPANY.phone}`}
+                href={`tel:${COMPANY.phoneE164}`}
                 className="flex items-center gap-2.5 font-body text-xs text-cream/65
                            hover:text-gold transition-colors duration-200 group"
               >

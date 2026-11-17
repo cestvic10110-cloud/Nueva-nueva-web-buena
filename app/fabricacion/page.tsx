@@ -6,8 +6,9 @@ import { ValoresBento }      from '@/components/empresa/ValoresBento'
 import { UbicacionContacto } from '@/components/empresa/UbicacionContacto'
 
 export const metadata: Metadata = {
-  title: 'Empresa y Fabricación',
-  description: 'Fabricante de cestas de mimbre desde 1969 en Valencia. Tradición artesanal con capacidad industrial para el mercado B2B.',
+  title: 'Taller de Cestería en Valencia desde 1969',
+  description: 'Fabricante de cestas de mimbre desde 1969 en Aielo de Malferit (Valencia). Tradición artesanal con capacidad industrial para el mercado B2B.',
+  alternates: { canonical: '/fabricacion' },
 }
 
 const METRICS = [

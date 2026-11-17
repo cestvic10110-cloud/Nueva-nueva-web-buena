@@ -6,8 +6,8 @@ const SECTORS = [
   {
     num: '01',
     title: 'Interiorismo & Diseño',
-    body: 'Piezas únicas adaptadas al proyecto. Dimensiones, acabados y materiales definidos junto al estudio. Desde muestras individuales hasta series personalizadas.',
-    points: ['Prototipos ágiles', 'Acabados personalizados', 'Series con volumen flexible'],
+    body: 'Piezas a medida adaptadas al proyecto. Dimensiones, acabados y materiales definidos junto al estudio y fabricados en serie, siempre por volumen.',
+    points: ['Diseño a medida del proyecto', 'Acabados personalizados', 'Series por volumen'],
   },
   {
     num: '02',

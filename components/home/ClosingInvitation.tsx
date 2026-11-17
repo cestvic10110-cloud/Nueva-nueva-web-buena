@@ -21,7 +21,7 @@ export function ClosingInvitation() {
             Solicitar presupuesto
           </Link>
           <a
-            href={`tel:${COMPANY.phone}`}
+            href={`tel:${COMPANY.phoneE164}`}
             className="font-sans text-base font-medium text-text-primary hover:text-gold-deep transition-colors duration-200"
           >
             {COMPANY.phone}

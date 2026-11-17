@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
-import { getCatalog, getProduct, getByCategory } from '@/lib/catalog'
-import { CATEGORY_MAP } from '@/lib/constants'
+import { getCatalog, getProduct, getByCategory, hasRealName, toTitleCase } from '@/lib/catalog'
+import { CATEGORY_MAP, SITE_URL } from '@/lib/constants'
 import { ProductDetail } from '@/components/catalog/ProductDetail'
 import { safeJsonLd } from '@/lib/jsonld'
 
@@ -19,11 +19,26 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!item) return {}
 
   const cat = CATEGORY_MAP[item.category]
-  const name = item.name !== item.id ? item.name : `Referencia ${item.id}`
+  const canonical = `/catalogo/${item.id}`
+
+  // Referencias sin nombre: ficha casi vacía, fuera del índice (siguen accesibles)
+  if (!hasRealName(item)) {
+    return {
+      title: `Referencia ${item.id}`,
+      alternates: { canonical },
+      robots: { index: false, follow: true },
+    }
+  }
+
+  const name = toTitleCase(item.name)
+  const sizes = item.variants.length > 1 ? `${item.variants.length} medidas, ` : ''
 
   return {
-    title: `${name} — Ref. ${item.id}`,
-    description: `${name}. ${cat?.description ?? ''} Fabricante B2B desde Valencia. Solicite presupuesto.`,
+    title: `${name} al por Mayor · Ref. ${item.id}`,
+    description:
+      `${name} (Ref. ${item.id}), ${sizes}de la categoría ${cat?.labelPlural ?? item.category}. ` +
+      'Venta exclusiva al por mayor desde nuestro taller en Valencia; precio según volumen.',
+    alternates: { canonical },
   }
 }
 
@@ -38,46 +53,50 @@ export default async function ProductPage({ params }: Props) {
     .slice(0, 4)
 
   const cat = CATEGORY_MAP[item.category]
-  const displayName = item.name !== item.id ? item.name : `Referencia ${item.id}`
+  const displayName = hasRealName(item) ? toTitleCase(item.name) : `Referencia ${item.id}`
+  const url = `${SITE_URL}/catalogo/${item.id}`
+  const orgRef = { '@id': `${SITE_URL}/#organization` }
 
   const productSchema = {
     '@context': 'https://schema.org',
     '@type': 'Product',
+    '@id': `${url}#product`,
+    url,
     name: displayName,
     sku: item.id,
-    description: `${displayName}. ${cat?.description ?? ''} Fabricante B2B exclusivo desde Valencia, España.`,
-    image: `https://cesteriavicent.es${item.image}`,
+    description: `${displayName}. ${cat?.description ?? ''} Fabricante B2B exclusivo desde Valencia, España. Venta solo al por mayor.`,
+    image: `${SITE_URL}${encodeURI(item.image)}`,
     category: cat?.labelPlural ?? item.category,
-    brand: {
-      '@type': 'Brand',
-      name: 'Cestería Vicent',
-    },
-    manufacturer: {
-      '@type': 'Organization',
-      name: 'Cestería Vicent, S.L.',
-      url: 'https://cesteriavicent.es',
-    },
+    brand: { '@type': 'Brand', name: 'Cestería Vicent' },
+    manufacturer: orgRef,
+    // B2B: precio bajo presupuesto según volumen, por eso no se declara precio ni disponibilidad
     offers: {
       '@type': 'Offer',
-      availability: 'https://schema.org/InStock',
-      priceCurrency: 'EUR',
-      priceSpecification: {
-        '@type': 'PriceSpecification',
-        description: 'Precio bajo consulta según volumen de pedido',
-      },
-      seller: {
-        '@type': 'Organization',
-        name: 'Cestería Vicent, S.L.',
-      },
+      url,
+      seller: orgRef,
+      eligibleCustomerType: 'https://schema.org/Business',
     },
     ...(item.variants.length > 0 && {
       hasVariant: item.variants.map((v) => ({
-        '@type': 'ProductModel',
+        '@type': 'Product',
         name: v.name || v.reference,
         sku: v.reference,
-        description: v.dimensions,
+        ...(v.dimensions && { size: v.dimensions }),
       })),
     }),
+  }
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Inicio', item: SITE_URL },
+      { '@type': 'ListItem', position: 2, name: 'Catálogo', item: `${SITE_URL}/catalogo` },
+      ...(cat
+        ? [{ '@type': 'ListItem', position: 3, name: cat.labelPlural, item: `${SITE_URL}/catalogo?categoria=${cat.slug}` }]
+        : []),
+      { '@type': 'ListItem', position: cat ? 4 : 3, name: displayName, item: url },
+    ],
   }
 
   return (
@@ -85,6 +104,10 @@ export default async function ProductPage({ params }: Props) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: safeJsonLd(productSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(breadcrumbSchema) }}
       />
       <ProductDetail item={item} related={related} />
     </>

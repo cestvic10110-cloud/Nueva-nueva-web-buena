@@ -5,8 +5,9 @@ import { SectoresList }   from '@/components/sectores/SectoresList'
 import { SectorJumpNav }  from '@/components/sectores/SectorJumpNav'
 
 export const metadata: Metadata = {
-  title: 'Sectores B2B — Lotes de Navidad, Retail, Gourmet, Hostelería e Interiorismo',
-  description: 'Fabricante de cestas artesanales para retail, lotes navideños B2B, gourmet premium, regalo corporativo, hostelería de lujo e interiorismo. Proveedor exclusivo B2B desde Valencia, 1969.',
+  title: 'Cestas por Sector: Lotes, Gourmet y Hostelería',
+  description: 'Cestas de mimbre al por mayor para lotes de Navidad, retail, gourmet, regalo corporativo, hostelería e interiorismo. Fabricante B2B desde Valencia, 1969.',
+  alternates: { canonical: '/sectores' },
 }
 
 export default function SectoresPage() {

@@ -35,10 +35,7 @@ export function ProductGrid({ items }: Props) {
       <section className="light-section grain-light" style={{ paddingTop: '2.5rem', paddingBottom: '5rem' }}>
         <div className="container-site">
 
-          <p
-            className="font-sans uppercase tracking-[0.22em] mb-6"
-            style={{ fontSize: '0.5rem', color: 'var(--color-text-dim)' }}
-          >
+          <p className="eyebrow mb-6">
             {items.length} referencias
           </p>
 

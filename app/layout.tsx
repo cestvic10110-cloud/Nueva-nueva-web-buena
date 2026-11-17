@@ -5,6 +5,62 @@ import { NavBar } from '@/components/layout/NavBar'
 import { Footer } from '@/components/layout/Footer'
 import { safeJsonLd } from '@/lib/jsonld'
 import { CookieBanner } from '@/components/shared/CookieBanner'
+import { COMPANY, SITE_URL } from '@/lib/constants'
+
+const ORG_ID = `${SITE_URL}/#organization`
+
+const SITE_JSONLD = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': ['Organization', 'LocalBusiness'],
+      '@id': ORG_ID,
+      name: COMPANY.shortName,
+      legalName: COMPANY.name,
+      url: SITE_URL,
+      logo: { '@type': 'ImageObject', url: `${SITE_URL}/images/logoCesteria.png` },
+      image: `${SITE_URL}/images/hero.png`,
+      foundingDate: String(COMPANY.founded),
+      taxID: COMPANY.nif,
+      description: 'Fabricante de cestas de mimbre al por mayor. Más de 50 años de trayectoria al servicio de empresas. Exclusivo B2B desde Valencia, España.',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: COMPANY.address,
+        postalCode: COMPANY.postalCode,
+        addressLocality: COMPANY.city,
+        addressRegion: COMPANY.province,
+        addressCountry: 'ES',
+      },
+      telephone: COMPANY.phoneE164,
+      email: COMPANY.email,
+      openingHoursSpecification: [
+        {
+          '@type': 'OpeningHoursSpecification',
+          dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+          opens: '09:00',
+          closes: '19:00',
+        },
+      ],
+      areaServed: { '@type': 'Country', name: 'España' },
+      contactPoint: {
+        '@type': 'ContactPoint',
+        contactType: 'sales',
+        telephone: COMPANY.phoneE164,
+        email: COMPANY.email,
+        areaServed: 'ES',
+        availableLanguage: 'es',
+      },
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: COMPANY.shortName,
+      inLanguage: 'es-ES',
+      publisher: { '@id': ORG_ID },
+    },
+  ],
+}
 
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
@@ -35,8 +91,9 @@ export const viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Cestería Vicent | Fabricante de Cestas de Mimbre al por Mayor en Valencia',
+    default: 'Fabricante de Cestas de Mimbre al por Mayor | Cestería Vicent',
     template: '%s | Cestería Vicent',
   },
   description:
@@ -52,6 +109,10 @@ export const metadata: Metadata = {
     siteName: 'Cestería Vicent',
     locale: 'es_ES',
     type: 'website',
+    images: [{ url: '/images/hero.png', alt: 'Cestas de mimbre de Cestería Vicent' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
   },
 }
 
@@ -74,32 +135,10 @@ export default function RootLayout({
           Saltar al contenido principal
         </a>
 
-        {/* Organization JSON-LD */}
+        {/* Organization + WebSite JSON-LD */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: safeJsonLd({
-              '@context': 'https://schema.org',
-              '@type': ['Organization', 'LocalBusiness'],
-              name: 'Cestería Vicent, S.L.',
-              url: 'https://cesteriavicent.es',
-              logo: 'https://cesteriavicent.es/icon.svg',
-              foundingDate: '1969',
-              description: 'Fabricante de cestas de mimbre al por mayor. Más de 50 años de trayectoria al servicio de empresas. Exclusivo B2B desde Valencia, España.',
-              address: {
-                '@type': 'PostalAddress',
-                streetAddress: 'C/ Leonardo Carreres, 24',
-                postalCode: '46812',
-                addressLocality: 'Aielo de Malferit',
-                addressRegion: 'Valencia',
-                addressCountry: 'ES',
-              },
-              telephone: '+34679286178',
-              email: 'cesteriavicent@cesteriavicent.es',
-              openingHours: 'Mo-Fr 09:00-19:00',
-              priceRange: 'B2B',
-            }),
-          }}
+          dangerouslySetInnerHTML={{ __html: safeJsonLd(SITE_JSONLD) }}
         />
 
         <NavBar />

@@ -1,25 +1,34 @@
 import type { MetadataRoute } from 'next'
-import { CATEGORIES } from '@/lib/constants'
+import { CATEGORIES, SITE_URL } from '@/lib/constants'
+import { getCatalog, hasRealName } from '@/lib/catalog'
 
-const BASE = 'https://cesteriavicent.es'
+// Fechas reales de última modificación (no `new Date()`, que cambia en cada deploy).
+// Actualícense cuando cambie el contenido correspondiente.
+const SITE_UPDATED = new Date('2026-11-17')
+const CATALOG_UPDATED = new Date('2026-04-19')
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date()
-
   const staticRoutes: MetadataRoute.Sitemap = [
-    { url: BASE,                    lastModified: now, changeFrequency: 'monthly',  priority: 1    },
-    { url: `${BASE}/catalogo`,      lastModified: now, changeFrequency: 'weekly',   priority: 0.9  },
-    { url: `${BASE}/fabricacion`,   lastModified: now, changeFrequency: 'yearly',   priority: 0.7  },
-    { url: `${BASE}/sectores`,      lastModified: now, changeFrequency: 'yearly',   priority: 0.7  },
-    { url: `${BASE}/contacto`,      lastModified: now, changeFrequency: 'yearly',   priority: 0.8  },
+    { url: SITE_URL,                  lastModified: SITE_UPDATED },
+    { url: `${SITE_URL}/catalogo`,    lastModified: CATALOG_UPDATED },
+    { url: `${SITE_URL}/fabricacion`, lastModified: SITE_UPDATED },
+    { url: `${SITE_URL}/sectores`,    lastModified: SITE_UPDATED },
+    { url: `${SITE_URL}/contacto`,    lastModified: SITE_UPDATED },
   ]
 
+  // Cada categoría tiene título, descripción y canonical propios (ver app/catalogo/page.tsx)
   const categoryRoutes: MetadataRoute.Sitemap = CATEGORIES.map((cat) => ({
-    url: `${BASE}/catalogo?categoria=${cat.slug}`,
-    lastModified: now,
-    changeFrequency: 'weekly' as const,
-    priority: 0.75,
+    url: `${SITE_URL}/catalogo?categoria=${cat.slug}`,
+    lastModified: CATALOG_UPDATED,
   }))
 
-  return [...staticRoutes, ...categoryRoutes]
+  // Las referencias sin nombre real son noindex: no se listan
+  const productRoutes: MetadataRoute.Sitemap = getCatalog()
+    .filter(hasRealName)
+    .map((item) => ({
+      url: `${SITE_URL}/catalogo/${item.id}`,
+      lastModified: CATALOG_UPDATED,
+    }))
+
+  return [...staticRoutes, ...categoryRoutes, ...productRoutes]
 }

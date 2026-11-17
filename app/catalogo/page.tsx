@@ -8,9 +8,29 @@ import { CategoryNav } from '@/components/catalog/CategoryNav'
 import { ProductGrid } from '@/components/catalog/ProductGrid'
 import { OpportunityBanner } from '@/components/catalog/OpportunityBanner'
 
-export const metadata: Metadata = {
-  title: 'Catálogo B2B',
-  description: '+130 modelos de cestas, baúles, bandejas y embalajes artesanales. Fabricante B2B desde Valencia, 1969.',
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: Promise<{ categoria?: string }>
+}): Promise<Metadata> {
+  const { categoria } = await searchParams
+  const meta = CATEGORIES.find((c) => c.slug === categoria)
+
+  if (!meta) {
+    return {
+      title: 'Catálogo de Cestas de Mimbre al por Mayor',
+      description: '+130 modelos de cestas, baúles, bandejas y embalajes artesanales. Fabricante B2B desde Valencia, 1969. Venta solo al por mayor.',
+      alternates: { canonical: '/catalogo' },
+    }
+  }
+
+  return {
+    title: meta.slug === 'oportunidades'
+      ? 'Rincón de Oportunidades: Stock al por Mayor'
+      : `${meta.labelPlural} de Mimbre al por Mayor`,
+    description: `${meta.description} ${meta.labelPlural} de fabricación propia en Valencia desde 1969. Venta exclusiva a empresas, precio según volumen.`,
+    alternates: { canonical: `/catalogo?categoria=${meta.slug}` },
+  }
 }
 
 export default async function CatalogPage({

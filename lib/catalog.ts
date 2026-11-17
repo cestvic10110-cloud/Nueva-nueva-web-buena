@@ -8,6 +8,26 @@ export function getCatalog(): CatalogItem[] {
   return catalog
 }
 
+/** Algunas referencias no tienen nombre (el nombre es el propio número): son fichas casi vacías. */
+export function hasRealName(item: CatalogItem): boolean {
+  return Boolean(item.name) && item.name !== item.id
+}
+
+const LOWERCASE_WORDS = new Set(['de', 'del', 'la', 'las', 'el', 'los', 'con', 'y', 'para', 'en', 'a', 'sin'])
+
+/** "BAÚL MADERA CORREAS" → "Baúl Madera Correas" (los nombres del catálogo vienen en mayúsculas). */
+export function toTitleCase(name: string): string {
+  return name
+    .toLowerCase()
+    .split(' ')
+    .map((word, i) =>
+      i > 0 && LOWERCASE_WORDS.has(word)
+        ? word
+        : word.replace(/(^|[/-])(\p{L})/gu, (_, sep: string, ch: string) => sep + ch.toUpperCase())
+    )
+    .join(' ')
+}
+
 export function getByCategory(slug: CategorySlug): CatalogItem[] {
   return catalog.filter((item) => item.category === slug)
 }

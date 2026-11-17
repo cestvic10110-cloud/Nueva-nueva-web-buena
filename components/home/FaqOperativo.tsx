@@ -1,8 +1,9 @@
 'use client'
 
 import { useState } from 'react'
-import { motion, AnimatePresence } from 'motion/react'
+import { motion } from 'motion/react'
 import { ScrollReveal } from '@/components/shared/ScrollReveal'
+import { safeJsonLd } from '@/lib/jsonld'
 
 const ease = [0.16, 1, 0.3, 1] as const
 
@@ -16,12 +17,12 @@ const FAQS = [
     a: 'Ofrecemos plazos de entrega ágiles en pedidos de stock. Para grandes volúmenes, adaptamos los tiempos según las necesidades del cliente, organizando la producción y las entregas de forma planificada para asegurar la continuidad del suministro. Solicite información personalizada.',
   },
   {
-    q: '¿Fabricáis en España? ¿Cuál es el origen de los materiales?',
+    q: '¿Fabrican en España? ¿Cuál es el origen de los materiales?',
     a: 'Sí. Fabricamos en nuestro propio taller en Valencia desde 1969. El mimbre que utilizamos procede principalmente de Cuenca (España) y Chile, seleccionando cuidadosamente cada materia prima para garantizar calidad y continuidad de suministro. Esto nos permite ofrecer un producto fiable y con trazabilidad para nuestros clientes.',
   },
   {
-    q: '¿Trabajáis únicamente con grandes cuentas o también con pymes?',
-    a: 'Trabajamos exclusivamente con empresas (B2B), tanto pymes como grandes cuentas. No vendemos a particulares. Desde una pequeña empresa gourmet que necesita cestas de temporada hasta una cadena de distribución con pedidos anuales de decenas de miles de unidades: adaptamos condiciones, plazos y logística al volumen real de cada cliente.',
+    q: '¿Trabajan únicamente con grandes cuentas o también con pymes?',
+    a: 'Trabajamos exclusivamente con empresas (B2B), tanto pymes como grandes cuentas. No vendemos a particulares: vendemos siempre por cantidades, nunca unidades sueltas, y no enviamos muestras. Desde una pequeña empresa gourmet que necesita cestas de temporada hasta una cadena de distribución con pedidos anuales de decenas de miles de unidades: adaptamos condiciones, plazos y logística al volumen real de cada cliente.',
   },
 ]
 
@@ -35,7 +36,7 @@ export function FaqOperativo() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
+          __html: safeJsonLd({
             '@context': 'https://schema.org',
             '@type': 'FAQPage',
             mainEntity: FAQS.map((f) => ({
@@ -90,25 +91,23 @@ export function FaqOperativo() {
                     </span>
                   </button>
 
-                  <AnimatePresence initial={false}>
-                    {isOpen && (
-                      <motion.div
-                        id={`faq-answer-${i}`}
-                        role="region"
-                        aria-labelledby={`faq-question-${i}`}
-                        key="answer"
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: 'auto', opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.35, ease }}
-                        style={{ overflow: 'hidden' }}
-                      >
-                        <p className="font-body font-normal text-[0.9375rem] leading-relaxed text-text-secondary pb-7 pr-10">
-                          {faq.a}
-                        </p>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                  {/* Siempre montada (plegada con altura 0): así todas las respuestas
+                      están en el HTML para buscadores e IAs, no solo la abierta */}
+                  <motion.div
+                    id={`faq-answer-${i}`}
+                    role="region"
+                    aria-labelledby={`faq-question-${i}`}
+                    aria-hidden={!isOpen}
+                    inert={!isOpen}
+                    initial={false}
+                    animate={isOpen ? { height: 'auto', opacity: 1 } : { height: 0, opacity: 0 }}
+                    transition={{ duration: 0.35, ease }}
+                    style={{ overflow: 'hidden' }}
+                  >
+                    <p className="font-body font-normal text-[0.9375rem] leading-relaxed text-text-secondary pb-7 pr-10">
+                      {faq.a}
+                    </p>
+                  </motion.div>
                 </div>
               )
             })}

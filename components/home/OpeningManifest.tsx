@@ -50,44 +50,28 @@ export function OpeningManifest() {
       <div className="relative z-10 h-full container-site flex flex-col justify-center pt-16">
         <div className="max-w-[36rem]">
 
-          <motion.h1
-            className="eyebrow"
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.6, ease }}
-          >
-            Fabricantes de Cestas de Mimbre al por Mayor · Desde 1969 · Valencia
-          </motion.h1>
+          {/* Un único H1 con la frase clave y el titular. Las entradas usan solo
+              CSS (sin opacidad 0 hasta hidratar), para no retrasar el LCP. */}
+          <h1 className="hero-rise">
+            <span className="eyebrow block">
+              Fabricantes de Cestas de Mimbre al por Mayor · Desde 1969 · Valencia
+            </span>
+            <span className="headline block mt-6" style={{ fontSize: 'clamp(3rem, 6.2vw, 6.25rem)' }}>
+              <em>El Arte de</em>
+              <br />
+              la Presentación
+            </span>
+          </h1>
 
-          <motion.p
-            className="headline mt-6"
-            style={{ fontSize: 'clamp(3rem, 6.2vw, 6.25rem)' }}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.8, ease }}
-          >
-            <em>El Arte de</em>
-            <br />
-            la Presentación
-          </motion.p>
-
-          <motion.p
-            className="lede mt-7"
-            style={{ maxWidth: '32rem' }}
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.45, duration: 0.7, ease }}
-          >
+          <p className="lede mt-7 hero-rise" style={{ maxWidth: '32rem', animationDelay: '80ms' }}>
             Medio siglo fabricando el contenedor perfecto para cada producto.
             Calidad de alta gama, diseño a medida y stock permanente —
             exclusivo para marcas exigentes.
-          </motion.p>
+          </p>
 
-          <motion.div
-            className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-8"
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.6, ease }}
+          <div
+            className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-8 hero-rise"
+            style={{ animationDelay: '160ms' }}
           >
             <Link href="/contacto" className="btn btn-light">
               Solicitar presupuesto
@@ -95,7 +79,7 @@ export function OpeningManifest() {
             <Link href="/catalogo" className="link-arrow">
               Ver Catálogo Mayorista <span className="arrow" aria-hidden="true">→</span>
             </Link>
-          </motion.div>
+          </div>
         </div>
       </div>
 

@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { encodeImagePath } from '@/lib/utils'
 import { CATEGORY_MAP } from '@/lib/constants'
 import type { CatalogItem } from '@/lib/types'
@@ -9,7 +10,8 @@ import type { CatalogItem } from '@/lib/types'
 interface Props {
   item: CatalogItem
   index: number
-  onSelect: (item: CatalogItem) => void
+  /** Si se pasa, un clic normal abre el detalle en el sitio; sin él, el enlace navega a la ficha. */
+  onSelect?: (item: CatalogItem) => void
   aspectRatio?: string
   sizes?: string
 }
@@ -20,10 +22,15 @@ export function ProductCard({ item, index, onSelect, aspectRatio = '4/3', sizes 
   const displayName  = item.name !== item.id ? item.name : null
 
   return (
-    <button
-      type="button"
-      onClick={() => onSelect(item)}
-      className="group text-left w-full cursor-pointer"
+    // Enlace real a la ficha: rastreable por buscadores y abrible en pestaña nueva.
+    <Link
+      href={`/catalogo/${item.id}`}
+      onClick={(e) => {
+        if (!onSelect || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return
+        e.preventDefault()
+        onSelect(item)
+      }}
+      className="group block text-left w-full cursor-pointer"
       aria-label={`Ver detalle: ${displayName ?? `Ref. ${item.id}`}`}
     >
       {/* Image container */}
@@ -83,18 +90,18 @@ export function ProductCard({ item, index, onSelect, aspectRatio = '4/3', sizes 
       {/* Meta */}
       <div className="mt-4">
         <p
-          className="font-sans uppercase tracking-[0.2em] mb-1"
-          style={{ fontSize: '0.5rem', color: 'var(--color-text-dim)' }}
+          className="font-sans uppercase tracking-[0.14em] mb-1"
+          style={{ fontSize: '0.6875rem', color: 'var(--color-text-dim)' }}
         >
           {categoryMeta?.labelPlural ?? item.category}
         </p>
         
         {/* Name section with fixed height to maintain alignment */}
-        <div style={{ height: '1.2rem', marginBottom: '0.2rem' }}>
+        <div style={{ height: '1.4rem', marginBottom: '0.2rem' }}>
           {displayName && (
             <p
-              className="font-body leading-snug line-clamp-1"
-              style={{ fontSize: '0.78rem', color: 'var(--color-text-primary)' }}
+              className="font-body font-normal leading-snug line-clamp-1"
+              style={{ fontSize: '0.875rem', color: 'var(--color-text-primary)' }}
             >
               {displayName}
             </p>
@@ -103,7 +110,7 @@ export function ProductCard({ item, index, onSelect, aspectRatio = '4/3', sizes 
 
         <p
           className="font-body tabular-nums"
-          style={{ fontSize: '0.65rem', color: 'var(--color-text-secondary)' }}
+          style={{ fontSize: '0.75rem', color: 'var(--color-text-secondary)' }}
         >
           Ref. {item.id}
           {item.variants.length > 1 && (
@@ -113,6 +120,6 @@ export function ProductCard({ item, index, onSelect, aspectRatio = '4/3', sizes 
           )}
         </p>
       </div>
-    </button>
+    </Link>
   )
 }

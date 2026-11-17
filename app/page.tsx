@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { OpeningManifest }   from '@/components/home/OpeningManifest'
 import { StatementNumbers }  from '@/components/home/StatementNumbers'
 import { ProductStage }      from '@/components/home/ProductStage'
@@ -9,6 +10,10 @@ import { DecadeStrip }       from '@/components/home/DecadeStrip'
 import { FaqOperativo }      from '@/components/home/FaqOperativo'
 import { LeadMagnet }        from '@/components/home/LeadMagnet'
 import { ClosingInvitation } from '@/components/home/ClosingInvitation'
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/' },
+}
 
 /**
  * HOME — narrativa en cuatro actos:

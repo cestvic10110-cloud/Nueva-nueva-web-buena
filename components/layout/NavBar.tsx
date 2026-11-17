@@ -97,7 +97,7 @@ export function NavBar() {
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden flex flex-col gap-1.5 p-2"
+            className="md:hidden flex flex-col justify-center items-center gap-1.5 w-11 h-11 -mr-2"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
           >

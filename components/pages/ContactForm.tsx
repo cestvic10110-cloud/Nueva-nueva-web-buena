@@ -122,7 +122,7 @@ export function ContactForm() {
           <input
             id="telefono"
             type="tel"
-            placeholder="+34 600 000 000"
+            placeholder="Teléfono de contacto"
             value={fields.telefono}
             onChange={set('telefono')}
             className={cn(inputBase)}

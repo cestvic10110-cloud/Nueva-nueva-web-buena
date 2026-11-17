@@ -1,37 +1,15 @@
-'use client'
-
-import { useEffect, useRef } from 'react'
-import { motion, useInView, useMotionValue, useTransform, animate, useReducedMotion } from 'motion/react'
 import { ScrollReveal } from '@/components/shared/ScrollReveal'
 import { TrustFacts } from './TrustTicker'
 
-const ease = [0.16, 1, 0.3, 1] as const
-
-function Counter({ to, start }: { to: number; start: boolean }) {
-  const reduced = useReducedMotion()
-  const value = useMotionValue(0)
-  const display = useTransform(value, (v) => Math.round(v).toString())
-
-  useEffect(() => {
-    if (!start) return
-    if (reduced) { value.set(to); return }
-    const a = animate(value, to, { duration: 1.8, ease })
-    return () => a.stop()
-  }, [start, reduced, to, value])
-
-  return <motion.span>{display}</motion.span>
-}
+/* Cifras estáticas en el HTML: un contador animado desde 0 hacía que buscadores
+   e IAs leyeran "+0 años de oficio" y "0+ modelos". */
+const STATS = [
+  { value: '+50',  label: 'años de oficio' },
+  { value: '130+', label: 'modelos en catálogo' },
+  { value: 'B2B',  label: 'Servicio Exclusivo' },
+]
 
 export function StatementNumbers() {
-  const statsRef = useRef<HTMLDivElement>(null)
-  const inView = useInView(statsRef, { once: true, margin: '-80px' })
-
-  const stats = [
-    { value: <>+<Counter to={50} start={inView} /></>, label: 'años de oficio' },
-    { value: <><Counter to={130} start={inView} />+</>, label: 'modelos en catálogo' },
-    { value: 'B2B', label: 'Servicio Exclusivo' },
-  ]
-
   return (
     <section className="bg-paper section-y border-t border-sand/60">
       <div className="container-site">
@@ -44,11 +22,8 @@ export function StatementNumbers() {
         </ScrollReveal>
 
         {/* Cifras */}
-        <div
-          ref={statsRef}
-          className="mt-16 md:mt-20 grid grid-cols-1 sm:grid-cols-3 sm:divide-x divide-sand"
-        >
-          {stats.map((s, i) => (
+        <div className="mt-16 md:mt-20 grid grid-cols-1 sm:grid-cols-3 sm:divide-x divide-sand">
+          {STATS.map((s, i) => (
             <ScrollReveal key={s.label} delay={i * 80} className="py-6 sm:py-2 text-center">
               <p
                 className="font-display font-semibold lining-nums tabular-nums leading-none text-text-primary"

@@ -6,8 +6,9 @@ import { ContactForm } from '@/components/pages/ContactForm'
 import { COMPANY } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: 'Contacto y Presupuesto',
-  description: 'Solicite presupuesto B2B. Respondemos en menos de 24 horas. Exclusivo para empresas, distribuidores y profesionales.',
+  title: 'Pedir Presupuesto al por Mayor',
+  description: 'Solicite presupuesto B2B a Cestería Vicent (Aielo de Malferit, Valencia). Respondemos en menos de 24 horas. Exclusivo para empresas, distribuidores y profesionales.',
+  alternates: { canonical: '/contacto' },
 }
 
 const INFO_ITEMS = [

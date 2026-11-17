@@ -67,12 +67,16 @@ export const CATEGORY_MAP = Object.fromEntries(
   CATEGORIES.map((c) => [c.slug, c])
 ) as Record<string, CategoryMeta>
 
+/** Host canónico: el dominio sin www redirige aquí. Úsese en sitemap, robots, canonicals y JSON-LD. */
+export const SITE_URL = 'https://www.cesteriavicent.es'
+
 export const COMPANY = {
   name: 'Cestería Vicent, S.L.',
   shortName: 'Cestería Vicent',
   founded: 1969,
   nif: 'B46301503',
   phone: '+34 679 28 61 78',
+  phoneE164: '+34679286178',
   whatsapp: '+34 679 28 61 78',
   email: 'cesteriavicent@cesteriavicent.es',
   address: 'C/ Leonardo Carreres, 24',
