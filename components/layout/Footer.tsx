@@ -2,18 +2,20 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { COMPANY, NAVIDAD_LANDING_PATH } from '@/lib/constants'
 
+// Las familias enlazan a su página propia (más fuerte para buscadores que el filtro del catálogo)
 const COL_CATALOGO = [
-  { href: '/catalogo',                            label: 'Mayoristas de Mimbre'     },
-  { href: '/catalogo?categoria=cestas-navidenas', label: 'Cestas Navideñas'         },
-  { href: '/catalogo?categoria=cestas',           label: 'Cestas de Mimbre'         },
-  { href: '/catalogo?categoria=bandejas',         label: 'Bandejas Artesanales'     },
-  { href: '/catalogo?categoria=baules',           label: 'Baúles'                   },
-  { href: '/catalogo?categoria=cuevanos',         label: 'Cuévanos'                 },
-  { href: '/catalogo?categoria=embalajes',        label: 'Embalajes'                },
-  { href: '/catalogo?categoria=estuches',         label: 'Estuches'                 },
-  { href: '/catalogo?categoria=forja',            label: 'Forja'                    },
-  { href: '/catalogo?categoria=madera',           label: 'Madera'                   },
-  { href: '/catalogo?categoria=oportunidades',    label: 'Oportunidades'            },
+  { href: '/catalogo',                              label: 'Mayoristas de Mimbre'     },
+  { href: NAVIDAD_LANDING_PATH,                     label: 'Cestas Navideñas'         },
+  { href: '/cestas-de-mimbre-al-por-mayor',         label: 'Cestas de Mimbre'         },
+  { href: '/bandejas-al-por-mayor',                 label: 'Bandejas Artesanales'     },
+  { href: '/baules-al-por-mayor',                   label: 'Baúles'                   },
+  { href: '/cuevanos-al-por-mayor',                 label: 'Cuévanos'                 },
+  { href: '/embalajes-para-cestas-y-lotes',         label: 'Embalajes'                },
+  { href: '/viruta-de-celofan-al-por-mayor',        label: 'Viruta de Celofán'        },
+  { href: '/estuches-decorativos-al-por-mayor',     label: 'Estuches'                 },
+  { href: '/forja-decorativa-al-por-mayor',         label: 'Forja'                    },
+  { href: '/envases-de-madera-al-por-mayor',        label: 'Madera'                   },
+  { href: '/catalogo?categoria=oportunidades',      label: 'Oportunidades'            },
 ]
 
 const COL_SECTORES = [

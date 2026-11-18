@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { ScrollReveal } from '@/components/shared/ScrollReveal'
 import type { CategoryMeta } from '@/lib/types'
 import { NAVIDAD_LANDING_PATH } from '@/lib/constants'
+import { LANDING_BY_CATEGORY, landingH1Text } from '@/lib/landings'
 import { CatalogSearch } from './CatalogSearch'
 
 interface Props {
@@ -9,11 +10,34 @@ interface Props {
   count: number
 }
 
+interface Banner { href: string; title: string; subtitle: string; cta: string }
+
+function familyBanner(meta: CategoryMeta | null): Banner | null {
+  if (!meta) return null
+  if (meta.slug === 'cestas-navidenas') {
+    return {
+      href: NAVIDAD_LANDING_PATH,
+      title: '¿Prepara lotes de Navidad?',
+      subtitle: 'Condiciones de campaña, personalización y preguntas frecuentes para profesionales.',
+      cta: 'Cestas navideñas al por mayor',
+    }
+  }
+  const landing = LANDING_BY_CATEGORY[meta.slug]
+  if (!landing) return null
+  return {
+    href: `/${landing.slug}`,
+    title: `¿Compra ${meta.labelPlural.toLowerCase()} al por mayor?`,
+    subtitle: 'Medidas, acabados, usos y preguntas frecuentes para profesionales.',
+    cta: landingH1Text(landing),
+  }
+}
+
 export function CatalogHeader({ meta, count }: Props) {
   const title       = meta ? meta.labelPlural : 'Catálogo'
   const description = meta
     ? meta.description
     : 'Soluciones artesanales para empresas exigentes. Fabricante B2B exclusivo desde Valencia, 1969.'
+  const banner = familyBanner(meta)
 
   return (
     <section className="bg-ink grain pt-32 pb-14 md:pt-36 md:pb-16">
@@ -81,25 +105,25 @@ export function CatalogHeader({ meta, count }: Props) {
           </ScrollReveal>
         </div>
 
-        {/* Franja hacia la landing de campaña */}
-        {meta?.slug === 'cestas-navidenas' && (
+        {/* Franja hacia la página propia de la familia (o la landing de campaña) */}
+        {banner && (
           <ScrollReveal className="mt-10">
             <Link
-              href={NAVIDAD_LANDING_PATH}
+              href={banner.href}
               className="on-dark group flex flex-col sm:flex-row sm:items-center justify-between gap-4
                          rounded-[1.5rem] border border-gold/30 bg-white/[0.04] px-6 py-5 md:px-8
                          transition-colors duration-300 hover:bg-white/[0.07]"
             >
               <div>
                 <p className="font-display font-semibold text-cream leading-tight" style={{ fontSize: 'clamp(1.25rem, 2vw, 1.6rem)' }}>
-                  ¿Prepara lotes de Navidad?
+                  {banner.title}
                 </p>
                 <p className="mt-1 font-sans text-[0.875rem] text-cream/65">
-                  Condiciones de campaña, personalización y preguntas frecuentes para profesionales.
+                  {banner.subtitle}
                 </p>
               </div>
               <span className="link-arrow flex-shrink-0">
-                Cestas navideñas al por mayor <span className="arrow" aria-hidden="true">→</span>
+                {banner.cta} <span className="arrow" aria-hidden="true">→</span>
               </span>
             </Link>
           </ScrollReveal>

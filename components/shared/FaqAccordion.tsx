@@ -11,7 +11,7 @@ export interface Faq {
 }
 
 /** Acordeón con todas las respuestas montadas (altura 0 al cerrar), para que estén en el HTML. */
-export function NavidadFaq({ faqs }: { faqs: Faq[] }) {
+export function FaqAccordion({ faqs }: { faqs: Faq[] }) {
   const [open, setOpen] = useState<number | null>(0)
 
   return (
@@ -23,8 +23,8 @@ export function NavidadFaq({ faqs }: { faqs: Faq[] }) {
             <button
               type="button"
               aria-expanded={isOpen}
-              aria-controls={`navidad-faq-answer-${i}`}
-              id={`navidad-faq-question-${i}`}
+              aria-controls={`faq-acc-answer-${i}`}
+              id={`faq-acc-question-${i}`}
               onClick={() => setOpen(isOpen ? null : i)}
               className="w-full flex items-center justify-between gap-6 py-6 text-left cursor-pointer"
             >
@@ -44,9 +44,9 @@ export function NavidadFaq({ faqs }: { faqs: Faq[] }) {
             </button>
 
             <motion.div
-              id={`navidad-faq-answer-${i}`}
+              id={`faq-acc-answer-${i}`}
               role="region"
-              aria-labelledby={`navidad-faq-question-${i}`}
+              aria-labelledby={`faq-acc-question-${i}`}
               aria-hidden={!isOpen}
               inert={!isOpen}
               initial={false}

@@ -2,8 +2,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { encodeImagePath } from '@/lib/utils'
 import { ScrollReveal } from '@/components/shared/ScrollReveal'
+import { categoryPagePath } from '@/lib/landings'
+import type { CategorySlug } from '@/lib/types'
 
-const INDEX_CATEGORIES = [
+const INDEX_CATEGORIES: { slug: CategorySlug; num: string; label: string; desc: string; image: string }[] = [
   { slug: 'cestas-navidenas', num: '01', label: 'Cestas Navideñas', desc: 'Para el lote perfecto',                              image: '/Cestas Navideñas/2012.png' },
   { slug: 'bandejas',         num: '02', label: 'Bandejas',         desc: 'Presentación premium para hostelería y gourmet',     image: '/Bandejas/4331.png' },
   { slug: 'baules',           num: '03', label: 'Baúles',           desc: 'Gran formato para regalos corporativos exclusivos',  image: '/Baules/7280.png' },
@@ -27,8 +29,8 @@ export function MaterialIndex() {
           {INDEX_CATEGORIES.map((cat, i) => (
             <ScrollReveal as="li" key={cat.slug} delay={(i % 3) * 60}>
               <Link
-                href={`/catalogo?categoria=${cat.slug}`}
-                aria-label={`Ver ${cat.label} en el catálogo`}
+                href={categoryPagePath(cat.slug)}
+                aria-label={`Ver ${cat.label}`}
                 className="group flex flex-col h-full overflow-hidden rounded-[1.75rem] bg-cream
                            transition-colors duration-300 hover:bg-bone"
               >
@@ -40,7 +42,7 @@ export function MaterialIndex() {
                   </h3>
                   <p className="mt-1.5 font-body font-normal text-[0.9375rem] text-text-secondary">{cat.desc}</p>
                   <span className="link-arrow mt-4">
-                    Ver en catálogo <span className="arrow" aria-hidden="true">→</span>
+                    Ver gama <span className="arrow" aria-hidden="true">→</span>
                   </span>
                 </div>
                 <div className="relative mt-6 mx-7 mb-7 aspect-[4/3] overflow-hidden rounded-2xl">

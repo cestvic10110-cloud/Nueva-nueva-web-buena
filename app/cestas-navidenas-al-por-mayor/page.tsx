@@ -8,7 +8,7 @@ import { safeJsonLd } from '@/lib/jsonld'
 import { ScrollReveal } from '@/components/shared/ScrollReveal'
 import { ProductCard } from '@/components/catalog/ProductCard'
 import { Check } from '@/components/home/TrustTicker'
-import { NavidadFaq, type Faq } from '@/components/navidad/NavidadFaq'
+import { FaqAccordion, type Faq } from '@/components/shared/FaqAccordion'
 
 /*
  * Reglas de negocio (spec 2026-11-17): solo envase vacío, nunca lotes preparados;
@@ -314,7 +314,7 @@ export default function CestasNavidenasPage() {
             </h2>
           </ScrollReveal>
           <ScrollReveal delay={80}>
-            <NavidadFaq faqs={FAQS} />
+            <FaqAccordion faqs={FAQS} />
           </ScrollReveal>
         </div>
       </section>
