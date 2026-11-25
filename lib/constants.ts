@@ -83,7 +83,7 @@ export const COMPANY = {
   whatsapp: '+34 679 28 61 78',
   email: 'cesteriavicent@cesteriavicent.es',
   // Almacén: dirección de contacto. El domicilio social (aviso legal y privacidad) es otro.
-  address: 'Carrer del Tèxtil, 2',
+  address: 'Avda. dels Serrans, 12',
   city: 'Aielo de Malferit',
   province: 'Valencia',
   postalCode: '46812',
