@@ -6,6 +6,7 @@ import type { CategorySlug } from '@/lib/types'
 import { CatalogHeader } from '@/components/catalog/CatalogHeader'
 import { CategoryNav } from '@/components/catalog/CategoryNav'
 import { ProductGrid } from '@/components/catalog/ProductGrid'
+import { FamilyLinks } from '@/components/catalog/FamilyLinks'
 import { OpportunityBanner } from '@/components/catalog/OpportunityBanner'
 
 export async function generateMetadata({
@@ -62,6 +63,7 @@ export default async function CatalogPage({
         <CategoryNav />
       </Suspense>
       <ProductGrid items={items} />
+      {!slug && !q && <FamilyLinks />}
       {showOpportunityBanner && <OpportunityBanner />}
     </>
   )

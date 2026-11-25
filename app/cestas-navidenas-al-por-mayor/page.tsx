@@ -3,6 +3,7 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 import { getByCategory } from '@/lib/catalog'
 import { CATEGORY_MAP, COMPANY, NAVIDAD_LANDING_PATH, SITE_URL } from '@/lib/constants'
+import { categoryPagePath } from '@/lib/landings'
 import { encodeImagePath } from '@/lib/utils'
 import { safeJsonLd } from '@/lib/jsonld'
 import { ScrollReveal } from '@/components/shared/ScrollReveal'
@@ -251,7 +252,7 @@ export default function CestasNavidenasPage() {
               return (
                 <ScrollReveal as="li" key={slug} delay={(i % 5) * 60}>
                   <Link
-                    href={`/catalogo?categoria=${slug}`}
+                    href={categoryPagePath(slug)}
                     className="group flex flex-col h-full overflow-hidden rounded-[1.75rem] bg-cream transition-colors duration-300 hover:bg-bone"
                   >
                     <div className="relative aspect-square overflow-hidden">

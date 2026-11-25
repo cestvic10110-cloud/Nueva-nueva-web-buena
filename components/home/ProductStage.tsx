@@ -4,21 +4,21 @@ import { getProduct } from '@/lib/catalog'
 import { encodeImagePath } from '@/lib/utils'
 import { ScrollReveal } from '@/components/shared/ScrollReveal'
 
-const STAGE: { id: string; slug: string; category: string }[] = [
-  { id: '2012', slug: 'cestas-navidenas', category: 'Cestas Navideñas' },
-  { id: '2017', slug: 'cestas-navidenas', category: 'Cestas Navideñas' },
-  { id: '4338', slug: 'bandejas',         category: 'Bandejas' },
-  { id: '4523', slug: 'cuevanos',         category: 'Cuévanos' },
-  { id: '7262', slug: 'baules',           category: 'Baúles' },
-  { id: '4788', slug: 'madera',           category: 'Madera' },
+const STAGE: { id: string; category: string }[] = [
+  { id: '2012', category: 'Cestas Navideñas' },
+  { id: '2017', category: 'Cestas Navideñas' },
+  { id: '4338', category: 'Bandejas' },
+  { id: '4523', category: 'Cuévanos' },
+  { id: '7262', category: 'Baúles' },
+  { id: '4788', category: 'Madera' },
 ]
 
 export function ProductStage() {
-  const items = STAGE.flatMap(({ id, slug, category }) => {
+  const items = STAGE.flatMap(({ id, category }) => {
     const product = getProduct(id)
     if (!product) return []
     const name = product.name !== product.id ? product.name : `Ref. ${product.id}`
-    return [{ id, slug, category, name, image: product.image }]
+    return [{ id, category, name, image: product.image }]
   })
 
   return (
@@ -49,7 +49,7 @@ export function ProductStage() {
           {items.map((item, i) => (
             <ScrollReveal as="li" key={item.id} delay={(i % 3) * 60}>
               <Link
-                href={`/catalogo?categoria=${item.slug}`}
+                href={`/catalogo/${item.id}`}
                 className="group card block overflow-hidden h-full"
               >
                 <div className="relative aspect-square overflow-hidden bg-bone">

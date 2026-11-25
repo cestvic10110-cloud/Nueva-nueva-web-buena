@@ -12,9 +12,12 @@ import type { CatalogItem, ProductVariant } from '@/lib/types'
 interface Props {
   item: CatalogItem
   related: CatalogItem[]
+  /** Página propia de la familia (o el filtro del catálogo si no la tiene) */
+  familyHref: string
+  familyLabel: string
 }
 
-export function ProductDetail({ item, related }: Props) {
+export function ProductDetail({ item, related, familyHref, familyLabel }: Props) {
   const [imgError, setImgError]  = useState(false)
   const [selected, setSelected]  = useState<ProductVariant | null>(
     item.variants.length === 1 ? item.variants[0] : null
@@ -39,7 +42,7 @@ export function ProductDetail({ item, related }: Props) {
           </Link>
           <span style={{ color: 'var(--color-sand)' }}>·</span>
           <Link
-            href={`/catalogo?categoria=${item.category}`}
+            href={familyHref}
             className="transition-colors duration-200 hover:text-gold"
             style={{ color: 'var(--color-text-dim)' }}
           >
@@ -261,11 +264,11 @@ export function ProductDetail({ item, related }: Props) {
                 Más de esta categoría
               </p>
               <Link
-                href={`/catalogo?categoria=${item.category}`}
+                href={familyHref}
                 className="font-sans uppercase tracking-[0.18em] transition-colors duration-200 hover:text-gold"
                 style={{ fontSize: '0.58rem', color: 'var(--color-gold)', opacity: 0.7 }}
               >
-                Ver todos →
+                {familyLabel} →
               </Link>
             </div>
 

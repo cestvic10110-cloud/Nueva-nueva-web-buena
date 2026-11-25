@@ -297,6 +297,8 @@ export const FAMILY_LANDINGS: FamilyLanding[] = [
 
 export const LANDING_BY_SLUG = Object.fromEntries(FAMILY_LANDINGS.map((l) => [l.slug, l])) as Record<string, FamilyLanding>
 
+const NAVIDAD_LABEL = 'Cestas navideñas al por mayor'
+
 /** Páginas extra de una categoría que ya tiene su página principal (no se usan como enlace de la categoría). */
 const SECONDARY_SLUGS = new Set(['viruta-de-celofan-al-por-mayor'])
 
@@ -311,6 +313,19 @@ export function categoryPagePath(slug: CategorySlug): string {
   const landing = LANDING_BY_CATEGORY[slug]
   return landing ? `/${landing.slug}` : `/catalogo?categoria=${slug}`
 }
+
+/** Texto del enlace a la página de una categoría. */
+export function categoryPageLabel(slug: CategorySlug): string {
+  if (slug === 'cestas-navidenas') return NAVIDAD_LABEL
+  const landing = LANDING_BY_CATEGORY[slug]
+  return landing ? landingH1Text(landing) : 'Ver todos'
+}
+
+/** Todas las páginas por familia, con la de Navidad, para los bloques de enlaces. */
+export const FAMILY_LINKS: { href: string; label: string }[] = [
+  { href: NAVIDAD_LANDING_PATH, label: NAVIDAD_LABEL },
+  ...FAMILY_LANDINGS.map((l) => ({ href: `/${l.slug}`, label: landingH1Text(l) })),
+]
 
 export function landingH1Text(l: FamilyLanding): string {
   return [l.h1.before, l.h1.em, l.h1.after].filter(Boolean).join(' ')

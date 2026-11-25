@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import { getCatalog, getProduct, getByCategory, hasRealName, toTitleCase } from '@/lib/catalog'
 import { CATEGORY_MAP, SITE_URL } from '@/lib/constants'
+import { categoryPageLabel, categoryPagePath } from '@/lib/landings'
 import { ProductDetail } from '@/components/catalog/ProductDetail'
 import { safeJsonLd } from '@/lib/jsonld'
 
@@ -93,7 +94,7 @@ export default async function ProductPage({ params }: Props) {
       { '@type': 'ListItem', position: 1, name: 'Inicio', item: SITE_URL },
       { '@type': 'ListItem', position: 2, name: 'Catálogo', item: `${SITE_URL}/catalogo` },
       ...(cat
-        ? [{ '@type': 'ListItem', position: 3, name: cat.labelPlural, item: `${SITE_URL}/catalogo?categoria=${cat.slug}` }]
+        ? [{ '@type': 'ListItem', position: 3, name: cat.labelPlural, item: `${SITE_URL}${categoryPagePath(cat.slug)}` }]
         : []),
       { '@type': 'ListItem', position: cat ? 4 : 3, name: displayName, item: url },
     ],
@@ -109,7 +110,12 @@ export default async function ProductPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: safeJsonLd(breadcrumbSchema) }}
       />
-      <ProductDetail item={item} related={related} />
+      <ProductDetail
+        item={item}
+        related={related}
+        familyHref={categoryPagePath(item.category)}
+        familyLabel={categoryPageLabel(item.category)}
+      />
     </>
   )
 }
