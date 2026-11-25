@@ -82,9 +82,13 @@ export const COMPANY = {
   phoneE164: '+34679286178',
   whatsapp: '+34 679 28 61 78',
   email: 'cesteriavicent@cesteriavicent.es',
-  address: 'C/ Leonardo Carreres, 24',
+  // Almacén: dirección de contacto. El domicilio social (aviso legal y privacidad) es otro.
+  address: 'Carrer del Tèxtil, 2',
   city: 'Aielo de Malferit',
   province: 'Valencia',
   postalCode: '46812',
   hours: 'Lunes a Viernes, 9:00 – 19:00 h',
+  // Ficha de Google "CESTERIA VICENT, S. L ( ALMACEN )"
+  mapUrl: 'https://maps.google.com/?cid=10935525146103994987',
+  geo: { latitude: 38.8845252, longitude: -0.5882827 },
 } as const

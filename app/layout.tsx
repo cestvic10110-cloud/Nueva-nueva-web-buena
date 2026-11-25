@@ -31,6 +31,8 @@ const SITE_JSONLD = {
         addressRegion: COMPANY.province,
         addressCountry: 'ES',
       },
+      geo: { '@type': 'GeoCoordinates', ...COMPANY.geo },
+      hasMap: COMPANY.mapUrl,
       telephone: COMPANY.phoneE164,
       email: COMPANY.email,
       openingHoursSpecification: [

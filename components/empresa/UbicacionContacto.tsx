@@ -1,21 +1,22 @@
 'use client'
 
 import { motion } from 'motion/react'
+import { COMPANY } from '@/lib/constants'
 
 const ease = [0.16, 1, 0.3, 1] as const
 
 const CONTACT_ROWS = [
   {
     label: 'Dirección',
-    value: 'C/ Leonardo Carreres, 24\n46812 Aielo de Malferit\nValencia, España',
+    value: `${COMPANY.address}\n${COMPANY.postalCode} ${COMPANY.city}\n${COMPANY.province}, España`,
   },
   {
     label: 'Teléfono / WhatsApp',
-    value: '+34 679 28 61 78',
+    value: COMPANY.phone,
   },
   {
     label: 'Email',
-    value: 'cesteriavicent@cesteriavicent.es',
+    value: COMPANY.email,
   },
   {
     label: 'Horario B2B',
@@ -23,11 +24,8 @@ const CONTACT_ROWS = [
   },
 ]
 
-/* Google Maps embed — placeholder pointing to Aielo de Malferit.
-   Replace src with the verified Google Maps embed URL once the
-   business listing is claimed. */
-const MAP_SRC =
-  'https://maps.google.com/maps?q=Cesteria%20Vicent,%20Leonardo%20Carreres%2024,%20Aielo%20de%20Malferit&t=&z=16&ie=UTF8&iwloc=&output=embed'
+/* Mapa centrado en la ficha de Google del almacén */
+const MAP_SRC = `${COMPANY.mapUrl.replace('/?', '/maps?')}&z=16&hl=es&output=embed`
 
 export function UbicacionContacto() {
   return (
@@ -60,7 +58,7 @@ export function UbicacionContacto() {
               transition={{ duration: 0.7, ease }}
             >
               Nuestro<br />
-              <span style={{ color: 'var(--color-rattan)' }}>Taller.</span>
+              <span style={{ color: 'var(--color-rattan)' }}>Almacén.</span>
             </motion.h2>
 
             {/* Gold divider */}
@@ -101,7 +99,7 @@ export function UbicacionContacto() {
 
             {/* Cómo llegar link */}
             <motion.a
-              href="https://maps.google.com/?q=Cesteria+Vicent,+Aielo+de+Malferit"
+              href={COMPANY.mapUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex items-center gap-2.5 mt-10 font-sans uppercase
