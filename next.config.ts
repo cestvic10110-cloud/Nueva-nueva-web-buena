@@ -23,6 +23,14 @@ const nextConfig: NextConfig = {
     imageSizes: IMAGE_SIZES,
     qualities: [75, 85, 90],
   },
+  async redirects() {
+    return [
+      // Direcciones de la web antigua que Google todavía conserva
+      { source: "/productos", destination: "/catalogo", permanent: true },
+      { source: "/productos/:id", destination: "/catalogo/:id", permanent: true },
+      { source: "/politica-privacidad", destination: "/privacidad", permanent: true },
+    ];
+  },
   async headers() {
     return [
       { source: "/:path*", headers: securityHeaders },
