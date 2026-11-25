@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import { DEVICE_SIZES, fotoUrl } from '@/lib/foto-path.mjs'
 import { motion } from 'motion/react'
 
 const ease = [0.16, 1, 0.3, 1] as const
@@ -131,7 +132,9 @@ export function HistoriaTimeline() {
               >
                 {era.year === '1969' ? (
                   <img
-                    src={era.image}
+                    src={fotoUrl(era.image, 1200)}
+                    srcSet={DEVICE_SIZES.map((w) => `${fotoUrl(era.image, w)} ${w}w`).join(', ')}
+                    sizes="(max-width: 768px) 100vw, 60vw"
                     alt={era.imageAlt}
                     className="w-full h-auto block"
                   />

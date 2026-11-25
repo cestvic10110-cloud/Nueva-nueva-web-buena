@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import { DEVICE_SIZES, fotoUrl } from '@/lib/foto-path.mjs'
 import Link from 'next/link'
 import { motion } from 'motion/react'
 import { NAVIDAD_LANDING_PATH } from '@/lib/constants'
@@ -212,7 +213,9 @@ export function SectoresList() {
                 >
                   {(sector.key === 'hosteleria' || sector.key === 'interiorismo') ? (
                     <img
-                      src={sector.image}
+                      src={fotoUrl(sector.image, 1200)}
+                      srcSet={DEVICE_SIZES.map((w) => `${fotoUrl(sector.image, w)} ${w}w`).join(', ')}
+                      sizes="(max-width: 768px) 100vw, 58vw"
                       alt={sector.imageAlt}
                       className="w-full h-auto block"
                     />

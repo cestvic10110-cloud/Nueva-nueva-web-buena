@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { DEVICE_SIZES, IMAGE_SIZES } from "./lib/foto-path.mjs";
 
 const securityHeaders = [
   { key: "X-Content-Type-Options", value: "nosniff" },
@@ -15,12 +16,21 @@ const nextConfig: NextConfig = {
     viewTransition: true,
   },
   images: {
+    // Fotos ya preparadas en public/fotos (scripts/preparar-fotos.mjs): Vercel no procesa imágenes
+    loader: "custom",
+    loaderFile: "./lib/image-loader.ts",
+    deviceSizes: DEVICE_SIZES,
+    imageSizes: IMAGE_SIZES,
     qualities: [75, 85, 90],
-    // Las imágenes optimizadas no cambian entre deploys: caché de 1 año en navegador/CDN
-    minimumCacheTTL: 31536000,
   },
   async headers() {
-    return [{ source: "/:path*", headers: securityHeaders }];
+    return [
+      { source: "/:path*", headers: securityHeaders },
+      {
+        source: "/fotos/:path*",
+        headers: [{ key: "Cache-Control", value: "public, max-age=2592000, stale-while-revalidate=86400" }],
+      },
+    ];
   },
 };
 
