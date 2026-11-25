@@ -28,7 +28,7 @@ export default function AvisoLegalPage() {
       <LegalUl>
         <LegalLi><strong>Titular:</strong> Cestería Vicent, S.L.</LegalLi>
         <LegalLi><strong>NIF:</strong> B46301503</LegalLi>
-        <LegalLi><strong>Domicilio Social:</strong> C/ Leonardo Carreres, 24, Valencia</LegalLi>
+        <LegalLi><strong>Domicilio Social:</strong> C/ Leonardo Carreres, 24, 46812 Aielo de Malferit, Valencia</LegalLi>
         <LegalLi><strong>Correo Electrónico:</strong> cesteriavicent@cesteriavicent.es</LegalLi>
       </LegalUl>
 
