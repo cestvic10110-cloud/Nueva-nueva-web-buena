@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { CATEGORIES, NAVIDAD_LANDING_PATH, SITE_URL } from '@/lib/constants'
 import { getCatalog, hasRealName } from '@/lib/catalog'
-import { FAMILY_LANDINGS } from '@/lib/landings'
+import { FAMILY_LANDINGS, categoryPagePath } from '@/lib/landings'
 
 // Fechas reales de última modificación (no `new Date()`, que cambia en cada deploy).
 // Actualícense cuando cambie el contenido correspondiente.
@@ -25,9 +25,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: FAMILIES_UPDATED,
   }))
 
-  // Cada categoría tiene título, descripción y canonical propios (ver app/catalogo/page.tsx)
+  // Solo los filtros sin página propia: los demás son canónicos a ella (ver app/catalogo/page.tsx)
   const categoryRoutes: MetadataRoute.Sitemap = CATEGORIES.map((cat) => ({
-    url: `${SITE_URL}/catalogo?categoria=${cat.slug}`,
+    path: `/catalogo?categoria=${cat.slug}`,
+    slug: cat.slug,
+  })).filter(({ path, slug }) => categoryPagePath(slug) === path).map(({ path }) => ({
+    url: `${SITE_URL}${path}`,
     lastModified: CATALOG_UPDATED,
   }))
 

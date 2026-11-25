@@ -2,6 +2,7 @@ import { Suspense } from 'react'
 import type { Metadata } from 'next'
 import { getCatalog, getByCategory } from '@/lib/catalog'
 import { CATEGORIES, CATEGORY_MAP } from '@/lib/constants'
+import { categoryPagePath } from '@/lib/landings'
 import type { CategorySlug } from '@/lib/types'
 import { CatalogHeader } from '@/components/catalog/CatalogHeader'
 import { CategoryNav } from '@/components/catalog/CategoryNav'
@@ -30,7 +31,8 @@ export async function generateMetadata({
       ? 'Rincón de Oportunidades: Stock al por Mayor'
       : `${meta.labelPlural} de Mimbre al por Mayor`,
     description: `${meta.description} ${meta.labelPlural} de fabricación propia en Valencia desde 1969. Venta exclusiva a empresas, precio según volumen.`,
-    alternates: { canonical: `/catalogo?categoria=${meta.slug}` },
+    // La versión principal de cada filtro es su página de familia (si la tiene)
+    alternates: { canonical: categoryPagePath(meta.slug) },
   }
 }
 
